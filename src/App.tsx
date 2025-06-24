@@ -1,10 +1,14 @@
 import React from "react";
-import Header from "./components/header";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/router";
+import { ThemeProvider } from "./contexts/theme-context";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </div>
   );
 }
