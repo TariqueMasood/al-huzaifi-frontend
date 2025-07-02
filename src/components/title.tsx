@@ -40,6 +40,7 @@ const Heading = styled.h1`
   font-size: 18px;
   font-weight: 500;
   padding: 12px 0px;
+  margin: 0;
 
   ${mq("sm")} {
     font-size: 24px;

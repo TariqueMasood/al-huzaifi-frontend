@@ -95,7 +95,7 @@ const popularCourseCardData = [
 const PopularCourseList = () => {
   return (
     <Wrapper>
-      <WrapContainer>
+      <div className="container">
         <Title
           // subTitle="Our Courses List"
           title="Most Popular"
@@ -110,7 +110,7 @@ const PopularCourseList = () => {
             ))}
           </Row>
         </RowContainer>
-      </WrapContainer>
+      </div>
     </Wrapper>
   );
 };
@@ -119,13 +119,6 @@ export default PopularCourseList;
 
 const Wrapper = styled.div`
   padding: 50px 0px;
-`;
-
-const WrapContainer = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
 `;
 
 const RowContainer = styled.div`

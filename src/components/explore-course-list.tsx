@@ -52,7 +52,7 @@ const exploreCardData = [
 const ExploreCourseList = () => {
   return (
     <Wrapper>
-      <WrapContainer>
+      <div className="container">
         <Title title="Explore Our" colorTitle="Courses" />
         <CardWrapper>
           <Row gutter={[24, 24]} justify="center">
@@ -68,7 +68,7 @@ const ExploreCourseList = () => {
             ))}
           </Row>
         </CardWrapper>
-      </WrapContainer>
+      </div>
     </Wrapper>
   );
 };
@@ -79,13 +79,6 @@ export default ExploreCourseList;
 const Wrapper = styled.div`
   background-color: #137c8f;
   color: #72819f;
-`;
-
-const WrapContainer = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
 `;
 
 const CardWrapper = styled.div`

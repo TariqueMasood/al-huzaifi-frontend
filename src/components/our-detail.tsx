@@ -7,7 +7,7 @@ export const OurDetail = () => {
   return (
     <Wrapper>
       {/* <BgImage src={bgImg} alt="bg-image"></BgImage> */}
-      <WrapContainer>
+      <div className="container">
         <Row justify="center">
           <Col>
             <ContentWrapper>
@@ -25,7 +25,7 @@ export const OurDetail = () => {
             </ContentWrapper>
           </Col>
         </Row>
-      </WrapContainer>
+      </div>
     </Wrapper>
   );
 };
@@ -41,13 +41,6 @@ const Wrapper = styled.div`
   ${mq("md")} {
     padding: 60px 0;
   }
-`;
-
-const WrapContainer = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
 `;
 
 // const BgImage = styled.img`

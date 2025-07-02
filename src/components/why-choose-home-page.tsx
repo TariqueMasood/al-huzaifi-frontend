@@ -1,4 +1,5 @@
 import { Row, Col } from "antd";
+
 import {
   GlobalOutlined,
   EnvironmentOutlined,
@@ -64,9 +65,9 @@ export const WhychooseHomePage = () => {
       <TitleContainer>
         <Title title="Why Choose Us?" />
       </TitleContainer>
-      <Container>
+      <div className="container">
         <Row gutter={[32, 32]}>
-          <Col span={12} xs={24} md={8}>
+          <Col span={12} xs={24} md={12}>
             {features.slice(0, 4).map((item, index) => (
               <CardWrapper key={index}>
                 <IconWrapper>{item.icon}</IconWrapper>
@@ -77,7 +78,7 @@ export const WhychooseHomePage = () => {
               </CardWrapper>
             ))}
           </Col>
-          <Col span={12} xs={24} md={8}>
+          <Col span={12} xs={24} md={12}>
             {features.slice(4).map((item, index) => (
               <CardWrapper key={index + 4}>
                 <IconWrapper>{item.icon}</IconWrapper>
@@ -89,7 +90,7 @@ export const WhychooseHomePage = () => {
             ))}
           </Col>
         </Row>
-      </Container>
+      </div>
     </Wrapper>
   );
 };
@@ -97,6 +98,7 @@ export const WhychooseHomePage = () => {
 // Styled Components
 const Wrapper = styled.div`
   padding: 30px 0px;
+
   ${mq("md")} {
     padding: 40px 0px;
   }
@@ -106,12 +108,12 @@ const TitleContainer = styled.div`
   margin-bottom: 50px;
 `;
 
-const Container = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
-`;
+// const Container = styled.div`
+//   max-width: 1200px;
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0 16px;
+// `;
 
 const CardWrapper = styled.div`
   display: flex;

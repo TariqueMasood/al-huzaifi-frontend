@@ -1,5 +1,3 @@
-// Converted Contact.tsx: Bootstrap + React Icons removed, Ant Design added
-
 import styled from "styled-components";
 import bgImg from "../../src/images/contact-bg-img.jpeg";
 import { Row, Col, Form, Input } from "antd";

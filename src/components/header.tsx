@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Menu, Drawer, Button } from "antd";
 import { DownOutlined, MenuOutlined } from "@ant-design/icons";
-// import { useMediaQuery } from "react-responsive";
 import { TopHeader } from "./top-header";
 import styled from "styled-components";
 import useViewportWidth from "../hooks/use-viewport-width";
+import { Link } from "react-router-dom";
 
 // ✅ Menu Items with dropdown icon manually added
 
@@ -16,8 +16,8 @@ const Header: React.FC = () => {
   const closeDrawer = () => setOpen(false);
 
   const menuItems = [
-    { label: "Home", key: "home" },
-    { label: "About", key: "about" },
+    { label: <Link to="/">Home</Link>, key: "home" },
+    { label: <Link to="/about">About</Link>, key: "about" },
 
     {
       label: !isMobile ? (
@@ -222,7 +222,7 @@ const Header: React.FC = () => {
         { label: "Iftah Course", key: "iftah course" },
       ],
     },
-    { label: "Contact", key: "contact" },
+    { label: <Link to="/contact">Contact</Link>, key: "contact" },
   ];
 
   return (

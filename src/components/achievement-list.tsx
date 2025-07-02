@@ -35,7 +35,7 @@ const achievementCardData = [
 const AchievementList = () => {
   return (
     <Wrapper>
-      <WrapContainer>
+      <div className="container">
         <TitleContainer>
           <Title title="Our" colorTitle="Achievements" />
         </TitleContainer>
@@ -52,7 +52,7 @@ const AchievementList = () => {
             ))}
           </Row>
         </CardWrapper>
-      </WrapContainer>
+      </div>
     </Wrapper>
   );
 };
@@ -71,13 +71,6 @@ const Wrapper = styled.div`
   ${mq("md")} {
     padding: 40px 0;
   }
-`;
-
-const WrapContainer = styled.div`
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 16px;
 `;
 
 const TitleContainer = styled.div`
