@@ -12,8 +12,8 @@ export const MemorizationCoursePage = () => {
       <Title>Quran Memorization Course</Title>
       <SubTitle>Al-Huzaifi Academy</SubTitle>
       <Wrapper className="container">
-        <Row>
-          <Col xs={24} sm={12} md={16} lg={16} xl={16}>
+        <Row gutter={24}>
+          <Col xs={24} sm={24} md={16} lg={16} xl={16}>
             <CourseDiscription>
               <h5>course objective:</h5>
               <p>
@@ -139,7 +139,7 @@ export const MemorizationCoursePage = () => {
               </p>
             </CourseDiscription>
           </Col>
-          <Col xs={24} sm={12} md={8} lg={8} xl={8}>
+          <Col xs={24} sm={24} md={8} lg={8} xl={8}>
             <CourseDetail>
               <h5>
                 course name: <span>Quran Memorization Course</span>

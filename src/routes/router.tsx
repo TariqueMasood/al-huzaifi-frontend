@@ -14,7 +14,7 @@ import { FacultyOfLanguagePage } from "../pages/faculty-of-language";
 import { NooraniQaedahPage } from "../pages/noorani-qaedah";
 import { RecitationCoursePage } from "../pages/recitation-course";
 import { WhyChooseUsPage } from "../pages/why-choose-us";
-// import { MemorizationCoursePage } from "../pages/memorization-course";
+import { MemorizationCoursePage } from "../pages/memorization-course";
 // import { TajweedCoursePage } from "../pages/tajweed-course";
 // import { SevenQiraatCoursePage } from "../pages/seven-qiraat";
 // import { IjazahProgramPage } from "../pages/ijazah-program";
@@ -127,9 +127,9 @@ const router = createBrowserRouter([
       },
       {
         path: "memorization-course",
-        //       element: <MemorizationCoursePage />,
-        //     },
-        //     {
+        element: <MemorizationCoursePage />,
+      },
+      {
         //       path: "tajweed-course",
         //       element: <TajweedCoursePage />,
         //     },

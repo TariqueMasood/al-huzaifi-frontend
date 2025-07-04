@@ -34,7 +34,7 @@ const Header: React.FC = () => {
           key: "quran courses",
           children: [
             {
-              label: <Link to="/noorani-qaedah">"Noorani Qa'edah Course"</Link>,
+              label: <Link to="/noorani-qaedah">Noorani Qa'edah Course</Link>,
               key: "noorani qa'edah course",
             },
             {
@@ -44,7 +44,9 @@ const Header: React.FC = () => {
               key: "quran recitation course",
             },
             {
-              label: "Quran Memorition Course",
+              label: (
+                <Link to="/memorization-course">Quran Memorition Course</Link>
+              ),
               key: "quran memorization course",
             },
             { label: "Tajweed Course", key: "tajweed course" },
