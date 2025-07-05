@@ -1,177 +1,165 @@
 import styled from "styled-components";
 import { mq } from "../styles/breakpoints";
-import bgImage from "../../src/images/quran-recitation.png";
-import { Row, Col } from "antd";
+import bgImage from "../../src/images/tajweed.png";
+import { Col, Row } from "antd";
 
-export const RecitationCoursePage = () => {
+export const TajweedCoursePage = () => {
   return (
     <>
       <div>
         <Image src={bgImage} alt="pic"></Image>
       </div>
       <Wrapper className="container">
-        <Title>Quran Recitation Course</Title>
+        <Title>Tajweed Course</Title>
         <SubTitle>Al-Huzaifi Academy</SubTitle>
         <Row gutter={24}>
           <Col xs={24} sm={24} md={16} lg={16} xl={16}>
             <CourseDiscription>
               <h5>course objective:</h5>
               <p>
-                The Quran Recitation Course is designed to enhance the
-                recitation skills of students by focusing on the accurate
-                pronunciation, rhythm, and melody of Quranic verses. This course
-                aims to instill a deep appreciation for the beauty of Quranic
-                recitation while ensuring that students adhere to the rules of
-                Tajweed.
+                The Tajweed course is meticulously designed to provide students
+                with an in-depth understanding of the rules and principles that
+                govern the proper recitation of the Quran. Tajweed, which means
+                "to improve" or "to make better," refers to the set of rules
+                that ensures the accurate pronunciation and melodious recitation
+                of the Quranic text.
               </p>
               <h5>Course Content:</h5>
               <p>
-                The Quran Recitation Course offers a comprehensive curriculum
-                that covers all aspects of Quranic recitation. Key components of
-                the course include:
+                The Tajweed course covers a comprehensive curriculum that
+                systematically introduces and reinforces the essential aspects
+                of Tajweed.The key topics include:
               </p>
               <ol>
                 <li>
                   <strong>Introduction to Tajweed: </strong>
-                  Learning the fundamental rules of Tajweed, including
-                  articulation points (Makharij) and characteristics of letters
-                  (Sifaat).
+                  Understanding the importance and history of Tajweed in
+                  preserving the Quranic recitation.
                 </li>
                 <li>
-                  <strong>Pronunciation Practice: </strong>Intensive practice of
-                  proper pronunciation for all Arabic letters and sounds.
+                  <strong>Makharij (Articulation Points): </strong>Identifying
+                  and practicing the points of articulation for each letter.
                 </li>
                 <li>
-                  <strong>Rules of Prolongation (Madd): </strong>Understanding
-                  and applying the rules of prolongation, including different
-                  types of Madd and their appropriate usage.
+                  <strong>Sifat (Characteristics of Letters): </strong>Exploring
+                  the intrinsic and relative characteristics of Arabic letters.
                 </li>
                 <li>
-                  <strong>Stopping and Pausing (Waqf and Ibtida): </strong>{" "}
-                  Learning the rules of stopping and pausing, ensuring
-                  continuity and coherence in recitation.
+                  <strong>Noon Saakin and Tanween: </strong>Rules for the
+                  pronunciation of Noon Saakin and Tanween in various contexts.
                 </li>
                 <li>
-                  <strong>Practical Recitation Sessions: </strong>Regular
-                  recitation practice with feedback from experienced instructors
-                  to refine students' skills.
+                  <strong>Meem Saakin: </strong>Guidelines for the pronunciation
+                  of Meem Saakin, including Ikhfaa Shafawee, Idghaam Shafawee,
+                  and Izhaar Shafawee.
                 </li>
                 <li>
-                  <strong>Listening and Imitation: </strong>Listening to
-                  renowned Qaris and practicing imitation to develop a strong
-                  sense of rhythm and melody.
+                  <strong>Qalqalah: </strong>Understanding and applying the
+                  Qalqalah rules for specific letters.
                 </li>
                 <li>
-                  <strong>Group Recitation: </strong>Group recitation exercises
-                  to build confidence and foster a sense of community among
-                  students.
+                  <strong>Madd (Prolongation): </strong>Rules for elongation of
+                  sounds in different scenarios, including Madd Tabee'ee, Madd
+                  Munfasil, Madd Mutasil, and Madd Lazim.
                 </li>
                 <li>
-                  <strong>Spiritual Reflections: </strong>Integrating spiritual
-                  reflections and meditations to deepen the connection with the
-                  recited verses.
+                  <strong>Lahn (Errors in Recitation): </strong>Identifying and
+                  correcting common mistakes in Quranic recitation.
+                </li>
+                <li>
+                  <strong>Practical Application: </strong>Regular practice
+                  sessions to apply the rules of Tajweed in recitation, with
+                  feedback from experienced instructors.
                 </li>
               </ol>
               <h5>Learning Outcomes: </h5>
               <p>
-                Upon successful completion of the Quran Recitation Course,
-                students will achieve the following learning outcomes:
+                Upon successful completion of the Tajweed course, students will
+                achieve the following learning outcomes:
               </p>
               <ol>
                 <li>
-                  <strong>Proficient in Tajweed: </strong>Students will have a
-                  solid understanding of Tajweed rules and be able to apply them
-                  in their recitation.
+                  <strong>Proficient Pronunciation: </strong>Students will be
+                  able to pronounce Arabic letters correctly, with a clear
+                  understanding of their articulation points and
+                  characteristics.
                 </li>
                 <li>
-                  <strong>Basic Reading Skills: </strong> Students will develop
-                  the ability to read Arabic words and sentences with proper
-                  pronunciation and fluency.
+                  <strong>Application of Tajweed Rules: </strong>Students will
+                  demonstrate the ability to apply Tajweed rules accurately in
+                  their recitation, ensuring correct pronunciation and
+                  elongation of sounds.
                 </li>
                 <li>
-                  <strong>Fluent Recitation: </strong> Students will have a
-                  foundational understanding of Tajweed rules, ensuring accurate
-                  recitation.
+                  <strong>Enhanced Recitation Skills: </strong>Students will
+                  develop a melodious and aesthetically pleasing recitation
+                  style, reflecting the beauty of the Quran.
                 </li>
                 <li>
-                  <strong>Confidence in Recitation: </strong>Students will be
-                  able to recite the Quran fluently, with clear articulation and
-                  proper pronunciation.
+                  <strong>Error-Free Recitation: </strong>Students will be
+                  capable of identifying and correcting common errors in Quranic
+                  recitation, thereby ensuring precision and clarity.
                 </li>
                 <li>
-                  <strong>Enhanced Melody and Rhythm: </strong>Students will
-                  develop the ability to recite the Quran melodiously, following
-                  established rhythmic patterns.
+                  <strong>Deepened Spiritual Connection: </strong>Students will
+                  experience an enhanced spiritual connection to the Quran,
+                  facilitated by the beauty and correctness of their recitation.
+                </li>
+                <li>
+                  <strong>Confidence in Recitation: </strong>Students will gain
+                  confidence in their ability to recite the Quran publicly and
+                  privately, adhering to the principles of Tajweed.
                 </li>
               </ol>
-              <h5>Confident Reciters: </h5>
+              <h5>Who Should Enroll: </h5>
               <p>
-                Students will gain confidence in their recitation skills,
-                enabling them to recite in various settings, including public
-                recitations.
+                The Tajweed course is suitable for a diverse range of learners
+                who are committed to improving their Quranic recitation. This
+                includes:
               </p>
               <ol>
                 <li>
-                  <strong>Deep Spiritual Connection: </strong>Students will
-                  experience a profound spiritual connection with the Quran
-                  through its recitation, enriching their faith and practice.
-                </li>
-              </ol>
-              <h5>Who Should Enroll</h5>
-              <p>
-                The Quran Recitation Course is ideal for a wide range of
-                learners who wish to improve their Quranic recitation skills.
-                This includes:
-              </p>
-              <ol>
-                <li>
-                  <strong>Beginner Reciters: </strong>Individuals who have basic
-                  reading skills and wish to enhance their recitation with
-                  proper Tajweed.
+                  <strong>Intermediate Learners: </strong>Individuals who can
+                  read Arabic and have a basic understanding of Quranic
+                  recitation but seek to enhance their proficiency and apply
+                  Tajweed rules.
                 </li>
                 <li>
-                  <strong>Intermediate Reciters: </strong>Those who can read the
-                  Quran but seek to improve their fluency, pronunciation, and
-                  melodic recitation.
+                  <strong>Hifz Students: </strong>Those who are memorizing the
+                  Quran and wish to ensure their recitation adheres to the
+                  highest standards of accuracy and beauty.
                 </li>
                 <li>
-                  <strong>Advanced Reciters: </strong>Experienced reciters who
-                  want to refine their skills and master the art of melodious
-                  recitation.
+                  <strong>Quran Teachers: </strong>Educators who teach Quranic
+                  recitation and desire to deepen their knowledge of Tajweed to
+                  provide more effective instruction to their students.
                 </li>
                 <li>
-                  <strong>Imams and Qaris: </strong>Religious leaders who wish
-                  to enhance their recitation skills for leading prayers and
-                  delivering public recitations.
+                  <strong>Imams and Qaris: </strong>Religious leaders and
+                  reciters who aim to perfect their recitation skills for
+                  leading prayers and public recitations.
                 </li>
                 <li>
-                  <strong>Parents and Educators: </strong>Those who aim to teach
-                  proper Quranic recitation to their children or students.
-                </li>
-                <li>
-                  <strong>Anyone Seeking Spiritual Enrichment: </strong>Anyone
-                  who desires to deepen their spiritual connection with the
-                  Quran through its recitation.
+                  <strong>Enthusiastic Learners: </strong>Anyone with a passion
+                  for the Quran and a desire to recite it in the most beautiful
+                  and correct manner possible.
                 </li>
               </ol>
               <p>
-                By enrolling in the Quran Recitation Course, students embark on
-                a transformative journey to master the art of Quranic
-                recitation. This course provides the foundational knowledge,
-                practical skills, and spiritual insights needed to recite the
-                Quran beautifully and accurately, ensuring that students can
-                connect deeply with the divine text and convey its profound
-                messages through their recitation.
+                By enrolling in the Tajweed course, students embark on a
+                transformative journey that not only improves their recitation
+                skills but also deepens their connection to the sacred text of
+                the Quran, enhancing their spiritual experience and devotion.
               </p>
             </CourseDiscription>
           </Col>
           <Col xs={24} sm={24} md={8} lg={8} xl={8}>
             <CourseDetail>
               <h5>
-                course name: <span>Quran Recitation Course</span>
+                course name: <span>Tajweed Course</span>
               </h5>
               <h5>
-                course code: <span>QRN02</span>
+                course code: <span>QRN04</span>
               </h5>
               <h5>
                 Learning Mode: <span>Online</span>
@@ -183,14 +171,14 @@ export const RecitationCoursePage = () => {
                 type: <span>Part Time</span>
               </h5>
               <h5>
-                Duration: <span>1 Year</span>
+                Duration: <span>1 Years</span>
               </h5>
+              {/* <h5>
+              Fee: <span>75 USD / Per Month</span>
+            </h5> */}
               <h5>
                 Entry Requirement:{" "}
-                <span>
-                  Must hold QRN01 Certificate or an equivalent that demonstrates
-                  proficiency in basic Quranic reading skills.{" "}
-                </span>
+                <span>Must have proficiency in Quran Recitation</span>
               </h5>
               <h5>
                 Application Deadline: <span>Open</span>
@@ -301,6 +289,7 @@ const CourseDiscription = styled.div`
 
 
   ${mq("md")}{
+  flex: 2;
     margin: 20px 0px;
 
     h5 {
@@ -379,6 +368,7 @@ const CourseDetail = styled.div`
   }
 
   ${mq("sm")} {
+    flex: 1;
     margin: 20px 0px;
 
     h5:first-of-type {

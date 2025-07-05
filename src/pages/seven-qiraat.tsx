@@ -1,177 +1,161 @@
 import styled from "styled-components";
 import { mq } from "../styles/breakpoints";
-import bgImage from "../../src/images/quran-recitation.png";
-import { Row, Col } from "antd";
+import bgImage from "../../src/images/seven-qirat.png";
+import { Col, Row } from "antd";
 
-export const RecitationCoursePage = () => {
+export const SevenQiraatCoursePage = () => {
   return (
     <>
       <div>
         <Image src={bgImage} alt="pic"></Image>
       </div>
       <Wrapper className="container">
-        <Title>Quran Recitation Course</Title>
+        <Title>Seven Qira'ats Course</Title>
         <SubTitle>Al-Huzaifi Academy</SubTitle>
-        <Row gutter={24}>
+        <Row>
           <Col xs={24} sm={24} md={16} lg={16} xl={16}>
             <CourseDiscription>
               <h5>course objective:</h5>
               <p>
-                The Quran Recitation Course is designed to enhance the
-                recitation skills of students by focusing on the accurate
-                pronunciation, rhythm, and melody of Quranic verses. This course
-                aims to instill a deep appreciation for the beauty of Quranic
-                recitation while ensuring that students adhere to the rules of
-                Tajweed.
+                The Seven Qira'ats Course is a specialized program aimed at
+                providing students with a comprehensive understanding of the
+                seven canonical modes of Quranic recitation. These Qira'ats,
+                each with its unique set of rules and nuances, offer a profound
+                insight into the diversity and richness of the Quranic text.
               </p>
               <h5>Course Content:</h5>
               <p>
-                The Quran Recitation Course offers a comprehensive curriculum
-                that covers all aspects of Quranic recitation. Key components of
-                the course include:
+                The Seven Qira'ats Course offers an extensive curriculum
+                designed to cover all aspects of the Qira'ats, from foundational
+                principles to advanced recitation practices. Key topics include:
               </p>
               <ol>
                 <li>
-                  <strong>Introduction to Tajweed: </strong>
-                  Learning the fundamental rules of Tajweed, including
-                  articulation points (Makharij) and characteristics of letters
-                  (Sifaat).
+                  <strong>Introduction to the Qira'ats: </strong>
+                  Understanding the history, development, and classification of
+                  the seven canonical Qira'ats.
                 </li>
                 <li>
-                  <strong>Pronunciation Practice: </strong>Intensive practice of
-                  proper pronunciation for all Arabic letters and sounds.
+                  <strong>Profiles of Renowned Qaris: </strong>Studying the
+                  lives and contributions of the prominent Qaris associated with
+                  each Qiraat.
                 </li>
                 <li>
-                  <strong>Rules of Prolongation (Madd): </strong>Understanding
-                  and applying the rules of prolongation, including different
-                  types of Madd and their appropriate usage.
+                  <strong>Phonetic Characteristics: </strong>Exploring the
+                  unique phonetic traits and articulation points specific to
+                  each Qiraat.
                 </li>
                 <li>
-                  <strong>Stopping and Pausing (Waqf and Ibtida): </strong>{" "}
-                  Learning the rules of stopping and pausing, ensuring
-                  continuity and coherence in recitation.
+                  <strong>Tajweed Rules for Each Qiraat: </strong>Detailed study
+                  of the Tajweed rules as they apply to each Qiraat, including
+                  variations in pronunciation and elongation.
                 </li>
                 <li>
-                  <strong>Practical Recitation Sessions: </strong>Regular
-                  recitation practice with feedback from experienced instructors
-                  to refine students' skills.
+                  <strong>Comparative Analysis: </strong>Analyzing the
+                  differences and similarities between the Qira'ats,
+                  highlighting their unique features.
                 </li>
                 <li>
-                  <strong>Listening and Imitation: </strong>Listening to
-                  renowned Qaris and practicing imitation to develop a strong
-                  sense of rhythm and melody.
+                  <strong>Practical Recitation: </strong>Regular practice
+                  sessions to recite the Quran according to the specific rules
+                  of each Qiraat, with feedback from experienced instructors.
                 </li>
                 <li>
-                  <strong>Group Recitation: </strong>Group recitation exercises
-                  to build confidence and foster a sense of community among
-                  students.
-                </li>
-                <li>
-                  <strong>Spiritual Reflections: </strong>Integrating spiritual
-                  reflections and meditations to deepen the connection with the
-                  recited verses.
+                  <strong>Memorization and Retention: </strong>Techniques for
+                  memorizing verses in multiple Qira'ats and ensuring long-term
+                  retention.
                 </li>
               </ol>
               <h5>Learning Outcomes: </h5>
               <p>
-                Upon successful completion of the Quran Recitation Course,
+                Upon successful completion of the Seven Qira'ats Course,
                 students will achieve the following learning outcomes:
               </p>
               <ol>
                 <li>
-                  <strong>Proficient in Tajweed: </strong>Students will have a
-                  solid understanding of Tajweed rules and be able to apply them
-                  in their recitation.
+                  <strong>Proficient Recitation: </strong>Students will be able
+                  to recite the Quran proficiently according to each of the
+                  seven Qira'ats, adhering to their specific rules and
+                  characteristics.
                 </li>
                 <li>
-                  <strong>Basic Reading Skills: </strong> Students will develop
-                  the ability to read Arabic words and sentences with proper
-                  pronunciation and fluency.
+                  <strong>In-depth Knowledge of Qira'ats: </strong>Students will
+                  have a thorough understanding of the history, development, and
+                  significance of the seven canonical Qira'ats.
                 </li>
                 <li>
-                  <strong>Fluent Recitation: </strong> Students will have a
-                  foundational understanding of Tajweed rules, ensuring accurate
-                  recitation.
+                  <strong>Mastery of Tajweed: </strong>Students will apply the
+                  rules of Tajweed accurately within the context of each Qiraat,
+                  ensuring precise and melodious recitation.
                 </li>
                 <li>
-                  <strong>Confidence in Recitation: </strong>Students will be
-                  able to recite the Quran fluently, with clear articulation and
-                  proper pronunciation.
+                  <strong>Enhanced Analytical Skills: </strong>Students will
+                  develop the ability to analyze and appreciate the differences
+                  and nuances between the Qira'ats.
                 </li>
                 <li>
-                  <strong>Enhanced Melody and Rhythm: </strong>Students will
-                  develop the ability to recite the Quran melodiously, following
-                  established rhythmic patterns.
+                  <strong>Spiritual Enrichment: </strong>Students will
+                  experience a deeper spiritual connection to the Quran,
+                  enriched by the understanding and recitation of its diverse
+                  forms.
+                </li>
+                <li>
+                  <strong>Confidence in Public Recitation: </strong>Students
+                  will gain confidence in reciting the Quran in various
+                  Qira'ats, whether in private study or public settings.
                 </li>
               </ol>
-              <h5>Confident Reciters: </h5>
+              <h5>Who Should Enroll: </h5>
               <p>
-                Students will gain confidence in their recitation skills,
-                enabling them to recite in various settings, including public
-                recitations.
+                The Seven Qira'ats Course is ideal for a diverse range of
+                learners who are dedicated to deepening their understanding and
+                recitation of the Quran. This includes:
               </p>
               <ol>
                 <li>
-                  <strong>Deep Spiritual Connection: </strong>Students will
-                  experience a profound spiritual connection with the Quran
-                  through its recitation, enriching their faith and practice.
-                </li>
-              </ol>
-              <h5>Who Should Enroll</h5>
-              <p>
-                The Quran Recitation Course is ideal for a wide range of
-                learners who wish to improve their Quranic recitation skills.
-                This includes:
-              </p>
-              <ol>
-                <li>
-                  <strong>Beginner Reciters: </strong>Individuals who have basic
-                  reading skills and wish to enhance their recitation with
-                  proper Tajweed.
+                  <strong>Advanced Students of Quranic Studies: </strong>
+                  Individuals who have a solid foundation in Quranic recitation
+                  and Tajweed, looking to further their expertise.
                 </li>
                 <li>
-                  <strong>Intermediate Reciters: </strong>Those who can read the
-                  Quran but seek to improve their fluency, pronunciation, and
-                  melodic recitation.
+                  <strong>Aspiring Scholars: </strong>Those aiming to become
+                  scholars of Quranic studies, with a focus on the canonical
+                  Qira'ats.
                 </li>
                 <li>
-                  <strong>Advanced Reciters: </strong>Experienced reciters who
-                  want to refine their skills and master the art of melodious
-                  recitation.
+                  <strong>Quran Teachers: </strong>Educators who teach Quranic
+                  recitation and wish to expand their knowledge and teaching
+                  repertoire to include the seven Qira'ats.
                 </li>
                 <li>
-                  <strong>Imams and Qaris: </strong>Religious leaders who wish
-                  to enhance their recitation skills for leading prayers and
-                  delivering public recitations.
+                  <strong>Imams and Qaris: </strong>Religious leaders and
+                  reciters who want to perfect their recitation skills and gain
+                  a deeper understanding of the Qira'ats.
                 </li>
                 <li>
-                  <strong>Parents and Educators: </strong>Those who aim to teach
-                  proper Quranic recitation to their children or students.
-                </li>
-                <li>
-                  <strong>Anyone Seeking Spiritual Enrichment: </strong>Anyone
-                  who desires to deepen their spiritual connection with the
-                  Quran through its recitation.
+                  <strong>Enthusiastic Learners: </strong>Anyone with a passion
+                  for the Quran and a desire to explore its various recitational
+                  forms in greater depth.
                 </li>
               </ol>
               <p>
-                By enrolling in the Quran Recitation Course, students embark on
-                a transformative journey to master the art of Quranic
-                recitation. This course provides the foundational knowledge,
-                practical skills, and spiritual insights needed to recite the
-                Quran beautifully and accurately, ensuring that students can
-                connect deeply with the divine text and convey its profound
-                messages through their recitation.
+                By enrolling in the Seven Qira'ats Course, students embark on an
+                enriching journey that not only enhances their recitation skills
+                but also deepens their appreciation and understanding of the
+                Quran's multifaceted nature. This course provides the
+                comprehensive knowledge and practical expertise needed to master
+                the seven Qira'ats, ensuring that students can recite the Quran
+                with confidence, accuracy, and profound spiritual insight.
               </p>
             </CourseDiscription>
           </Col>
           <Col xs={24} sm={24} md={8} lg={8} xl={8}>
             <CourseDetail>
               <h5>
-                course name: <span>Quran Recitation Course</span>
+                course name: <span>Seven Qira'ats Course</span>
               </h5>
               <h5>
-                course code: <span>QRN02</span>
+                course code: <span>QRN05</span>
               </h5>
               <h5>
                 Learning Mode: <span>Online</span>
@@ -183,17 +167,20 @@ export const RecitationCoursePage = () => {
                 type: <span>Part Time</span>
               </h5>
               <h5>
-                Duration: <span>1 Year</span>
+                Duration: <span>1-2 Years</span>
               </h5>
+              {/* <h5>
+              Fee: <span>75 USD / Per Month</span>
+            </h5> */}
               <h5>
                 Entry Requirement:{" "}
                 <span>
-                  Must hold QRN01 Certificate or an equivalent that demonstrates
-                  proficiency in basic Quranic reading skills.{" "}
+                  Must have proficiency in Quran Recitation and application of
+                  Basic Arabic Grammer{" "}
                 </span>
               </h5>
               <h5>
-                Application Deadline: <span>Open</span>
+                Application Deadline: <span>Fall & Spring Semester</span>
               </h5>
               <ButtonContainer>
                 <a href="/registration">Apply Here</a>
@@ -301,6 +288,7 @@ const CourseDiscription = styled.div`
 
 
   ${mq("md")}{
+  flex: 2;
     margin: 20px 0px;
 
     h5 {
@@ -379,6 +367,7 @@ const CourseDetail = styled.div`
   }
 
   ${mq("sm")} {
+    flex: 1;
     margin: 20px 0px;
 
     h5:first-of-type {

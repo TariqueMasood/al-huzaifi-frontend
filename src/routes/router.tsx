@@ -15,9 +15,9 @@ import { NooraniQaedahPage } from "../pages/noorani-qaedah";
 import { RecitationCoursePage } from "../pages/recitation-course";
 import { WhyChooseUsPage } from "../pages/why-choose-us";
 import { MemorizationCoursePage } from "../pages/memorization-course";
-// import { TajweedCoursePage } from "../pages/tajweed-course";
-// import { SevenQiraatCoursePage } from "../pages/seven-qiraat";
-// import { IjazahProgramPage } from "../pages/ijazah-program";
+import { TajweedCoursePage } from "../pages/tajweed-course";
+import { SevenQiraatCoursePage } from "../pages/seven-qiraat";
+import { IjazahProgramPage } from "../pages/ijazah-program";
 // import { TranslationCoursePage } from "../pages/translation-course";
 // import { TafseerCoursePage } from "../pages/tafseer-course";
 // import { DeeniyatForKidsPage } from "../pages/deeniyat-for-kids";
@@ -130,18 +130,18 @@ const router = createBrowserRouter([
         element: <MemorizationCoursePage />,
       },
       {
-        //       path: "tajweed-course",
-        //       element: <TajweedCoursePage />,
-        //     },
-        //     {
-        //       path: "seven-qiraat",
-        //       element: <SevenQiraatCoursePage />,
-        //     },
-        //     {
-        //       path: "ijazah-program",
-        //       element: <IjazahProgramPage />,
-        //     },
-        //     {
+        path: "tajweed-course",
+        element: <TajweedCoursePage />,
+      },
+      {
+        path: "seven-qiraat",
+        element: <SevenQiraatCoursePage />,
+      },
+      {
+        path: "ijazah-program",
+        element: <IjazahProgramPage />,
+      },
+      {
         //       path: "translation-course",
         //       element: <TranslationCoursePage />,
         //     },

@@ -1,177 +1,136 @@
 import styled from "styled-components";
 import { mq } from "../styles/breakpoints";
-import bgImage from "../../src/images/quran-recitation.png";
-import { Row, Col } from "antd";
+import bgImage from "../../src/images/quran-Ijazah.png";
+import { Col, Row } from "antd";
 
-export const RecitationCoursePage = () => {
+export const IjazahProgramPage = () => {
   return (
     <>
       <div>
         <Image src={bgImage} alt="pic"></Image>
       </div>
       <Wrapper className="container">
-        <Title>Quran Recitation Course</Title>
+        <Title>Quran Ijazah Program</Title>
         <SubTitle>Al-Huzaifi Academy</SubTitle>
         <Row gutter={24}>
           <Col xs={24} sm={24} md={16} lg={16} xl={16}>
             <CourseDiscription>
               <h5>course objective:</h5>
               <p>
-                The Quran Recitation Course is designed to enhance the
-                recitation skills of students by focusing on the accurate
-                pronunciation, rhythm, and melody of Quranic verses. This course
-                aims to instill a deep appreciation for the beauty of Quranic
-                recitation while ensuring that students adhere to the rules of
-                Tajweed.
+                The Quran Ijazah Program is an advanced and esteemed course
+                designed to certify students in Quranic recitation and
+                memorization. This program culminates in the awarding of an
+                Ijazah (authorization) by a renowned Egyptian Qari, signifying
+                the highest level of mastery and proficiency.
               </p>
               <h5>Course Content:</h5>
               <p>
-                The Quran Recitation Course offers a comprehensive curriculum
-                that covers all aspects of Quranic recitation. Key components of
-                the course include:
+                The Quran Ijazah Program encompasses a rigorous curriculum
+                designed to thoroughly prepare students for certification. The
+                key components include:
               </p>
               <ol>
                 <li>
-                  <strong>Introduction to Tajweed: </strong>
-                  Learning the fundamental rules of Tajweed, including
-                  articulation points (Makharij) and characteristics of letters
-                  (Sifaat).
+                  <strong>Advanced Tajweed: </strong>
+                  Detailed study and application of the advanced rules of
+                  Tajweed to ensure perfect recitation.
                 </li>
                 <li>
-                  <strong>Pronunciation Practice: </strong>Intensive practice of
-                  proper pronunciation for all Arabic letters and sounds.
+                  <strong>Intensive Memorization: </strong>Systematic
+                  memorization of the entire Quran, focusing on accuracy and
+                  consistency.
                 </li>
                 <li>
-                  <strong>Rules of Prolongation (Madd): </strong>Understanding
-                  and applying the rules of prolongation, including different
-                  types of Madd and their appropriate usage.
+                  <strong>Revision Techniques: </strong>Strategies for effective
+                  revision and retention of memorized portions.
                 </li>
                 <li>
-                  <strong>Stopping and Pausing (Waqf and Ibtida): </strong>{" "}
-                  Learning the rules of stopping and pausing, ensuring
-                  continuity and coherence in recitation.
+                  <strong>Personal Mentorship: </strong>One-on-one guidance from
+                  a qualified Egyptian Qari, providing personalized feedback and
+                  support.
                 </li>
                 <li>
-                  <strong>Practical Recitation Sessions: </strong>Regular
-                  recitation practice with feedback from experienced instructors
-                  to refine students' skills.
+                  <strong>Recitation Practice: </strong>Regular recitation
+                  sessions to practice and refine skills, including public
+                  recitation opportunities.
                 </li>
                 <li>
-                  <strong>Listening and Imitation: </strong>Listening to
-                  renowned Qaris and practicing imitation to develop a strong
-                  sense of rhythm and melody.
-                </li>
-                <li>
-                  <strong>Group Recitation: </strong>Group recitation exercises
-                  to build confidence and foster a sense of community among
-                  students.
-                </li>
-                <li>
-                  <strong>Spiritual Reflections: </strong>Integrating spiritual
-                  reflections and meditations to deepen the connection with the
-                  recited verses.
+                  <strong>Assessment and Evaluation: </strong>Continuous
+                  assessment of recitation and memorization, culminating in a
+                  final evaluation by the Egyptian Qari.
                 </li>
               </ol>
               <h5>Learning Outcomes: </h5>
               <p>
-                Upon successful completion of the Quran Recitation Course,
-                students will achieve the following learning outcomes:
+                Upon successful completion of the Quran Ijazah Program, students
+                will achieve the following learning outcomes:
               </p>
               <ol>
                 <li>
-                  <strong>Proficient in Tajweed: </strong>Students will have a
-                  solid understanding of Tajweed rules and be able to apply them
-                  in their recitation.
+                  <strong>Certified Mastery: </strong>Students will receive an
+                  Ijazah from a renowned Egyptian Qari, certifying their mastery
+                  in Quranic recitation and memorization.
                 </li>
                 <li>
-                  <strong>Basic Reading Skills: </strong> Students will develop
-                  the ability to read Arabic words and sentences with proper
-                  pronunciation and fluency.
+                  <strong>Flawless Recitation: </strong>Students will recite the
+                  Quran with impeccable pronunciation and application of Tajweed
+                  rules.
                 </li>
                 <li>
-                  <strong>Fluent Recitation: </strong> Students will have a
-                  foundational understanding of Tajweed rules, ensuring accurate
-                  recitation.
+                  <strong>Complete Memorization: </strong>Students will have
+                  memorized the entire Quran accurately and effectively.
                 </li>
                 <li>
-                  <strong>Confidence in Recitation: </strong>Students will be
-                  able to recite the Quran fluently, with clear articulation and
-                  proper pronunciation.
-                </li>
-                <li>
-                  <strong>Enhanced Melody and Rhythm: </strong>Students will
-                  develop the ability to recite the Quran melodiously, following
-                  established rhythmic patterns.
+                  <strong>Authorization to Teach: </strong>Students will be
+                  authorized to teach Quranic recitation and memorization,
+                  continuing the chain of authentic transmission.
                 </li>
               </ol>
-              <h5>Confident Reciters: </h5>
+              <h5>Who Should Enroll: </h5>
               <p>
-                Students will gain confidence in their recitation skills,
-                enabling them to recite in various settings, including public
-                recitations.
+                The Quran Ijazah Program is designed for a diverse range of
+                dedicated learners who aspire to achieve the highest level of
+                proficiency in Quranic recitation and/or memorization. This
+                includes:
               </p>
               <ol>
                 <li>
-                  <strong>Deep Spiritual Connection: </strong>Students will
-                  experience a profound spiritual connection with the Quran
-                  through its recitation, enriching their faith and practice.
-                </li>
-              </ol>
-              <h5>Who Should Enroll</h5>
-              <p>
-                The Quran Recitation Course is ideal for a wide range of
-                learners who wish to improve their Quranic recitation skills.
-                This includes:
-              </p>
-              <ol>
-                <li>
-                  <strong>Beginner Reciters: </strong>Individuals who have basic
-                  reading skills and wish to enhance their recitation with
-                  proper Tajweed.
+                  <strong>Advanced Students of Quranic Studies: </strong>
+                  Individuals with a strong foundation in Quranic recitation and
+                  memorization, seeking certification.
                 </li>
                 <li>
-                  <strong>Intermediate Reciters: </strong>Those who can read the
-                  Quran but seek to improve their fluency, pronunciation, and
-                  melodic recitation.
+                  <strong>Aspiring Quran Teachers: </strong>Those aiming to
+                  become certified Quran teachers, with a focus on both
+                  recitation and memorization.
                 </li>
                 <li>
-                  <strong>Advanced Reciters: </strong>Experienced reciters who
-                  want to refine their skills and master the art of melodious
-                  recitation.
+                  <strong>Imams and Qaris: </strong>Religious leaders and
+                  reciters who want to formalize their expertise with an Ijazah.
                 </li>
                 <li>
-                  <strong>Imams and Qaris: </strong>Religious leaders who wish
-                  to enhance their recitation skills for leading prayers and
-                  delivering public recitations.
-                </li>
-                <li>
-                  <strong>Parents and Educators: </strong>Those who aim to teach
-                  proper Quranic recitation to their children or students.
-                </li>
-                <li>
-                  <strong>Anyone Seeking Spiritual Enrichment: </strong>Anyone
-                  who desires to deepen their spiritual connection with the
-                  Quran through its recitation.
+                  <strong>Dedicated Huffaz: </strong>Individuals who have
+                  memorized the Quran and wish to receive formal certification
+                  and authorization.
                 </li>
               </ol>
               <p>
-                By enrolling in the Quran Recitation Course, students embark on
-                a transformative journey to master the art of Quranic
-                recitation. This course provides the foundational knowledge,
-                practical skills, and spiritual insights needed to recite the
-                Quran beautifully and accurately, ensuring that students can
-                connect deeply with the divine text and convey its profound
-                messages through their recitation.
+                By enrolling in the Quran Ijazah Program, students undertake a
+                transformative journey that not only certifies their skills but
+                also connects them to a prestigious scholarly tradition. The
+                Ijazah, awarded by a distinguished Egyptian Qari, is a testament
+                to their dedication and mastery, empowering them to teach and
+                transmit the sacred text with authority and authenticity.
               </p>
             </CourseDiscription>
           </Col>
           <Col xs={24} sm={24} md={8} lg={8} xl={8}>
             <CourseDetail>
               <h5>
-                course name: <span>Quran Recitation Course</span>
+                course name: <span>Quran Ijazah Program</span>
               </h5>
               <h5>
-                course code: <span>QRN02</span>
+                course code: <span>QRN06</span>
               </h5>
               <h5>
                 Learning Mode: <span>Online</span>
@@ -183,14 +142,11 @@ export const RecitationCoursePage = () => {
                 type: <span>Part Time</span>
               </h5>
               <h5>
-                Duration: <span>1 Year</span>
+                Duration: <span>1-2 Years</span>
               </h5>
               <h5>
                 Entry Requirement:{" "}
-                <span>
-                  Must hold QRN01 Certificate or an equivalent that demonstrates
-                  proficiency in basic Quranic reading skills.{" "}
-                </span>
+                <span>An outstanding Hafiz aware of Basic Tajweed rules</span>
               </h5>
               <h5>
                 Application Deadline: <span>Open</span>
@@ -301,6 +257,7 @@ const CourseDiscription = styled.div`
 
 
   ${mq("md")}{
+  flex: 2;
     margin: 20px 0px;
 
     h5 {
@@ -379,6 +336,7 @@ const CourseDetail = styled.div`
   }
 
   ${mq("sm")} {
+    flex: 1;
     margin: 20px 0px;
 
     h5:first-of-type {

@@ -49,9 +49,18 @@ const Header: React.FC = () => {
               ),
               key: "quran memorization course",
             },
-            { label: "Tajweed Course", key: "tajweed course" },
-            { label: "Seven Qiraats Course", key: "seven qiraats course" },
-            { label: "Quran Ijazah Course", key: "quran ijazah course" },
+            {
+              label: <Link to="/tajweed-course">Tajweed Course</Link>,
+              key: "tajweed course",
+            },
+            {
+              label: <Link to="/seven-qiraat">Seven Qiraats Course</Link>,
+              key: "seven qiraats course",
+            },
+            {
+              label: <Link to="/ijazah-program">Quran Ijazah Course</Link>,
+              key: "quran ijazah course",
+            },
             {
               label: "Quran's Translation Course",
               key: "quran's translation course",
