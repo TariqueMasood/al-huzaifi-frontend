@@ -62,19 +62,33 @@ const Header: React.FC = () => {
               key: "quran ijazah course",
             },
             {
-              label: "Quran's Translation Course",
+              label: (
+                <Link to="translation-course">Quran's Translation Course</Link>
+              ),
               key: "quran's translation course",
             },
-            { label: "Tafseer Course", key: "tafseer course" },
+            {
+              label: <Link to="/tafseer-course">Tafseer Course</Link>,
+              key: "tafseer course",
+            },
           ],
         },
         {
           label: "Deeniyat Courses",
           key: "deeniyat courses",
           children: [
-            { label: "Deeniyat For Kids", key: "deeniyat for kids" },
-            { label: "Deeniyat For Men", key: "deeniyat for men" },
-            { label: "Deeniyat For Women", key: "deeniyat for women" },
+            {
+              label: <Link to="deeniyat-for-kids">Deeniyat For Kids</Link>,
+              key: "deeniyat for kids",
+            },
+            {
+              label: <Link to="/deeniyat-for-men">Deeniyat For Men</Link>,
+              key: "deeniyat for men",
+            },
+            {
+              label: <Link to="/deeniyat-for-women">Deeniyat For Women</Link>,
+              key: "deeniyat for women",
+            },
           ],
         },
         {
@@ -82,10 +96,13 @@ const Header: React.FC = () => {
           key: "alimiyat courses",
           children: [
             {
-              label: "Dars-e-Nizami Carriculum",
+              label: <Link to="/dars-e-nizami">Dars-e-Nizami Carriculum</Link>,
               key: "dars-e-nizami carriculum",
             },
-            { label: "Modern Carriculum", key: "modern carriculum" },
+            {
+              label: <Link to="/modern-curriculum">Modern Carriculum</Link>,
+              key: "modern carriculum",
+            },
           ],
         },
         {
