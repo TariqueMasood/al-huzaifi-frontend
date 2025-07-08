@@ -110,24 +110,43 @@ const Header: React.FC = () => {
           key: "fazilat courses",
           children: [
             {
-              label: "Fazilat in Quranic Science",
+              label: (
+                <Link to="/fazilat-in-tafsir">Fazilat in Quranic Science</Link>
+              ),
               key: "fazilat in quranic science",
             },
             {
-              label: "Fazilat in Hadith Science",
+              label: (
+                <Link to="/fazilat-in-hadith">Fazilat in Hadith Science</Link>
+              ),
               key: "fazilat in hadith science",
             },
             {
-              label: "Fazilat in Islamic Jurisprudence",
+              label: (
+                <Link to="/fazilat-in-islamic">
+                  Fazilat in Islamic Jurisprudence
+                </Link>
+              ),
               key: "fazilat in islamic jurisprudence",
             },
-            { label: "Fazilat in Theology", key: "fazilat in theology" },
             {
-              label: "Fazilat in Islamic Finance",
+              label: <Link to="/fazilat-in-theology">Fazilat in Theology</Link>,
+              key: "fazilat in theology",
+            },
+            {
+              label: (
+                <Link to="/fazilat-in-islamic-finance">
+                  Fazilat in Islamic Finance
+                </Link>
+              ),
               key: "fazilat in islamic finance",
             },
             {
-              label: "Fazilat in Arabic Language",
+              label: (
+                <Link to="/fazilat-in-arabic-language">
+                  Fazilat in Arabic Language
+                </Link>
+              ),
               key: "fazilat in arabic language",
             },
           ],
@@ -137,16 +156,39 @@ const Header: React.FC = () => {
           key: "arabic language courses",
           children: [
             {
-              label: "Arabic Foundation Course",
+              label: (
+                <Link to="/arabic-language-course">
+                  Arabic Foundation Course
+                </Link>
+              ),
               key: "arabic foundation course",
             },
-            { label: "arabic speaking Course", key: "arabic speaking course" },
-            { label: "Quranic Arabic Course", key: "quranic arabic course" },
             {
-              label: "Calssical Arabic Course",
+              label: (
+                <Link to="/arabic-speaking-course">arabic speaking Course</Link>
+              ),
+              key: "arabic speaking course",
+            },
+            {
+              label: (
+                <Link to="/quranic-arabic-course">Quranic Arabic Course</Link>
+              ),
+              key: "quranic arabic course",
+            },
+            {
+              label: (
+                <Link to="/classical-arabic-course">
+                  Calssical Arabic Course
+                </Link>
+              ),
               key: "classical arabic course",
             },
-            { label: "Arabic Grammer Course", key: "arabic grammer course" },
+            {
+              label: (
+                <Link to="/arabic-grammar-course">Arabic Grammer Course</Link>
+              ),
+              key: "arabic grammer course",
+            },
             {
               label: "Arabic Rhetoric (Balaghat) Course",
               key: "arbic rhetoric course",

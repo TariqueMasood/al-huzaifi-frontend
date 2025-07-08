@@ -25,11 +25,11 @@ import { DeeniyatForMenPage } from "../pages/deeniyat-for-men";
 import { DeeniyatForWomenPage } from "../pages/deeniyat-for-women";
 import { DarsEnizamiPage } from "../pages/dars-e-nizami";
 import { ModernCurriculumPage } from "../pages/modern-curriculum";
-// import { ArabicLaguageCoursePage } from "../pages/arabic-language-course";
-// import { ArabicSpeakingCoursePage } from "../pages/arabic-speaking-course";
-// import { QuranicArabicCoursePage } from "../pages/quranic-arabic-course";
-// import { ClassicalArabicCoursePage } from "../pages/classical-arabic-course";
-// import { ArabicGrammarCoursePage } from "../pages/arabic-grammar-course";
+import { ArabicLaguageCoursePage } from "../pages/arabic-language-course";
+import { ArabicSpeakingCoursePage } from "../pages/arabic-speaking-course";
+import { QuranicArabicCoursePage } from "../pages/quranic-arabic-course";
+import { ClassicalArabicCoursePage } from "../pages/classical-arabic-course";
+import { ArabicGrammarCoursePage } from "../pages/arabic-grammar-course";
 // import { ArabicBlaghatCoursePage } from "../pages/arabic-blaghat-course";
 // import { ArabicAroozQafiyahCoursePage } from "../pages/arabic-arooz-qafiyah-course";
 // import { ElementaryEnglishCoursePage } from "../pages/elementary-english-course";
@@ -43,12 +43,12 @@ import { ModernCurriculumPage } from "../pages/modern-curriculum";
 // import { RamadanSpecialCoursePage } from "../pages/ramadan-special-course";
 // import { HajjAndUmrahCoursePage } from "../pages/hajj-&-umrah-course";
 // import { SeeratCoursePage } from "../pages/seerat-course";
-// import { FazilatInTafsirPage } from "../pages/fazilat-in-tafsir";
-// import { FazilatInHadithPage } from "../pages/fazilat-in-hadith";
-// import { FazilatInIslamicPage } from "../pages/fazilat-in-islamic";
-// import { FazilatInTheologyPage } from "../pages/fazilat-in-theology";
-// import { FazilatInIslamicFinancePage } from "../pages/fazilat-in-islamic-finance";
-// import { FazilatInArabicLanguagePage } from "../pages/fazilat-in-arabic-language";
+import { FazilatInTafsirPage } from "../pages/fazilat-in-tafsir";
+import { FazilatInHadithPage } from "../pages/fazilat-in-hadith";
+import { FazilatInIslamicPage } from "../pages/fazilat-in-islamic";
+import { FazilatInTheologyPage } from "../pages/fazilat-in-theology";
+import { FazilatInIslamicFinancePage } from "../pages/fazilat-in-islamic-finance";
+import { FazilatInArabicLanguagePage } from "../pages/fazilat-in-arabic-language";
 // import { IftaCoursePage } from "../pages/ifta-course";
 // import { WhyChooseUsPage } from "../pages/why-choose-us";
 // import { DarulIftaPage } from "../pages/darul-ifta";
@@ -170,26 +170,26 @@ const router = createBrowserRouter([
         element: <ModernCurriculumPage />,
       },
       {
-        //       path: "arabic-language-course",
-        //       element: <ArabicLaguageCoursePage />,
-        //     },
-        //     {
-        //       path: "arabic-speaking-course",
-        //       element: <ArabicSpeakingCoursePage />,
-        //     },
-        //     {
-        //       path: "quranic-arabic-course",
-        //       element: <QuranicArabicCoursePage />,
-        //     },
-        //     {
-        //       path: "classical-arabic-course",
-        //       element: <ClassicalArabicCoursePage />,
-        //     },
-        //     {
-        //       path: "arabic-grammar-course",
-        //       element: <ArabicGrammarCoursePage />,
-        //     },
-        //     {
+        path: "arabic-language-course",
+        element: <ArabicLaguageCoursePage />,
+      },
+      {
+        path: "arabic-speaking-course",
+        element: <ArabicSpeakingCoursePage />,
+      },
+      {
+        path: "quranic-arabic-course",
+        element: <QuranicArabicCoursePage />,
+      },
+      {
+        path: "classical-arabic-course",
+        element: <ClassicalArabicCoursePage />,
+      },
+      {
+        path: "arabic-grammar-course",
+        element: <ArabicGrammarCoursePage />,
+      },
+      {
         //       path: "arabic-blaghat-course",
         //       element: <ArabicBlaghatCoursePage />,
         //     },
@@ -250,30 +250,30 @@ const router = createBrowserRouter([
         //       element: <ImamatCoursePage />,
         //     },
         //     {
-        //       path: "fazilat-in-tafsir",
-        //       element: <FazilatInTafsirPage />,
-        //     },
-        //     {
-        //       path: "fazilat-in-hadith",
-        //       element: <FazilatInHadithPage />,
-        //     },
-        //     {
-        //       path: "fazilat-in-islamic",
-        //       element: <FazilatInIslamicPage />,
-        //     },
-        //     {
-        //       path: "fazilat-in-theology",
-        //       element: <FazilatInTheologyPage />,
-        //     },
-        //     {
-        //       path: "fazilat-in-islamic-finance",
-        //       element: <FazilatInIslamicFinancePage />,
-        //     },
-        //     {
-        //       path: "fazilat-in-arabic-language",
-        //       element: <FazilatInArabicLanguagePage />,
-        //     },
-        //     {
+        path: "fazilat-in-tafsir",
+        element: <FazilatInTafsirPage />,
+      },
+      {
+        path: "fazilat-in-hadith",
+        element: <FazilatInHadithPage />,
+      },
+      {
+        path: "fazilat-in-islamic",
+        element: <FazilatInIslamicPage />,
+      },
+      {
+        path: "fazilat-in-theology",
+        element: <FazilatInTheologyPage />,
+      },
+      {
+        path: "fazilat-in-islamic-finance",
+        element: <FazilatInIslamicFinancePage />,
+      },
+      {
+        path: "fazilat-in-arabic-language",
+        element: <FazilatInArabicLanguagePage />,
+      },
+      {
         //       path: "ifta-course",
         //       element: <IftaCoursePage />,
         //     },
