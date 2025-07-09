@@ -17,40 +17,15 @@ const theme: DefaultTheme = {
     footerBackground: "#00343d",
     yellowColor:"#cdad7e",
     yellowColor2:"#c78426;",
-    
   },
-};
 
-export default theme;
-
-export const lightTheme: DefaultTheme = {
   background: "#fff",
   secondaryBg: "#f2f2f2",
   text: "#434343",
   toggleBorder: "#f3f3f3",
-  colors: {
-    // ...theme.colors,
-    sidebarBackground: "#f8f9fa",
-    headerBackground: "#e9ecef",
-    footerBackground: "#dee2e6",
-  },
   boxShadow: "0px 3px 6px 0px rgba(140, 149, 159, 0.15)",
   border:"none",
   cardDividerColor: "#f5f5f5", 
 };
 
-export const darkTheme: DefaultTheme = {
-  background: "#242831",
-  secondaryBg: "#333944",
-  text: "#798087",
-  toggleBorder: "#394051",
-  colors: {
-    // ...theme.colors,
-    sidebarBackground: "#1c1f26",
-    headerBackground: "#2c3038",
-    footerBackground: "#1a1d23",
-  },
-  boxShadow: "none",
-  border:"1px solid #434343",
-  cardDividerColor: "#434343",
-};
+export default theme;
