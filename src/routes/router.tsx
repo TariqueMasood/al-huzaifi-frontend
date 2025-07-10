@@ -32,17 +32,17 @@ import { ClassicalArabicCoursePage } from "../pages/classical-arabic-course";
 import { ArabicGrammarCoursePage } from "../pages/arabic-grammar-course";
 import { ArabicBlaghatCoursePage } from "../pages/arabic-blaghat-course";
 import { ArabicAroozQafiyahCoursePage } from "../pages/arabic-arooz-qafiyah-course";
-// import { ElementaryEnglishCoursePage } from "../pages/elementary-english-course";
-// import { IntermediateEnglishCoursePage } from "../pages/intermediate-english-course";
-// import { AdvancedEnglishCoursePage } from "../pages/advanced-english-course";
-// import { ElementaryUrduCoursePage } from "../pages/elementary-urdu-course";
-// import { IntermediateUrduCoursePage } from "../pages/intermediate-urdu-course";
-// import { AdvancedUrduCoursePage } from "../pages/advanced-urdu-course";
-// import { IbadaatCoursePage } from "../pages/ibadaat-course";
-// import { ZakatCoursePage } from "../pages/zakat-course";
-// import { RamadanSpecialCoursePage } from "../pages/ramadan-special-course";
-// import { HajjAndUmrahCoursePage } from "../pages/hajj-&-umrah-course";
-// import { SeeratCoursePage } from "../pages/seerat-course";
+import { ElementaryEnglishCoursePage } from "../pages/elementary-english-course";
+import { IntermediateEnglishCoursePage } from "../pages/intermediate-english-course";
+import { AdvancedEnglishCoursePage } from "../pages/advanced-english-course";
+import { ElementaryUrduCoursePage } from "../pages/elementary-urdu-course";
+import { IntermediateUrduCoursePage } from "../pages/intermediate-urdu-course";
+import { AdvancedUrduCoursePage } from "../pages/advanced-urdu-course";
+import { IbadaatCoursePage } from "../pages/ibadaat-course";
+import { ZakatCoursePage } from "../pages/zakat-course";
+import { RamadanSpecialCoursePage } from "../pages/ramadan-special-course";
+import { HajjAndUmrahCoursePage } from "../pages/hajj-&-umrah-course";
+import { SeeratCoursePage } from "../pages/seerat-course";
 import { FazilatInTafsirPage } from "../pages/fazilat-in-tafsir";
 import { FazilatInHadithPage } from "../pages/fazilat-in-hadith";
 import { FazilatInIslamicPage } from "../pages/fazilat-in-islamic";
@@ -53,8 +53,8 @@ import { FazilatInArabicLanguagePage } from "../pages/fazilat-in-arabic-language
 // import { WhyChooseUsPage } from "../pages/why-choose-us";
 // import { DarulIftaPage } from "../pages/darul-ifta";
 // import { ScholarshipProgramPage } from "../pages/scholarship-program";
-// import { InheritanceCoursePage } from "../pages/inheritance-course";
-// import { ImamatCoursePage } from "../pages/imamat-course";
+import { InheritanceCoursePage } from "../pages/inheritance-course";
+import { ImamatCoursePage } from "../pages/imamat-course";
 // import { AcademicCalendarPage } from "../pages/academic-calendar";
 // import { TuitionFeePage } from "../pages/tution-fee";
 // import Login from "../admin/pages/login";
@@ -198,58 +198,58 @@ const router = createBrowserRouter([
         element: <ArabicAroozQafiyahCoursePage />,
       },
       {
-        //       path: "elementary-english-course",
-        //       element: <ElementaryEnglishCoursePage />,
-        //     },
-        //     {
-        //       path: "intermediate-english-course",
-        //       element: <IntermediateEnglishCoursePage />,
-        //     },
-        //     {
-        //       path: "advanced-english-course",
-        //       element: <AdvancedEnglishCoursePage />,
-        //     },
-        //     {
-        //       path: "elementary-urdu-course",
-        //       element: <ElementaryUrduCoursePage />,
-        //     },
-        //     {
-        //       path: "intermediate-urdu-course",
-        //       element: <IntermediateUrduCoursePage />,
-        //     },
-        //     {
-        //       path: "advanced-urdu-course",
-        //       element: <AdvancedUrduCoursePage />,
-        //     },
-        //     {
-        //       path: "ibadaat-course",
-        //       element: <IbadaatCoursePage />,
-        //     },
-        //     {
-        //       path: "zakat-course",
-        //       element: <ZakatCoursePage />,
-        //     },
-        //     {
-        //       path: "ramadan-special-course",
-        //       element: <RamadanSpecialCoursePage />,
-        //     },
-        //     {
-        //       path: "hajj-&-umrah-course",
-        //       element: <HajjAndUmrahCoursePage />,
-        //     },
-        //     {
-        //       path: "seerat-course",
-        //       element: <SeeratCoursePage />,
-        //     },
-        //     {
-        //       path: "inheritance-course",
-        //       element: <InheritanceCoursePage />,
-        //     },
-        //     {
-        //       path: "imamat-course",
-        //       element: <ImamatCoursePage />,
-        //     },
-        //     {
+        path: "elementary-english-course",
+        element: <ElementaryEnglishCoursePage />,
+      },
+      {
+        path: "intermediate-english-course",
+        element: <IntermediateEnglishCoursePage />,
+      },
+      {
+        path: "advanced-english-course",
+        element: <AdvancedEnglishCoursePage />,
+      },
+      {
+        path: "elementary-urdu-course",
+        element: <ElementaryUrduCoursePage />,
+      },
+      {
+        path: "intermediate-urdu-course",
+        element: <IntermediateUrduCoursePage />,
+      },
+      {
+        path: "advanced-urdu-course",
+        element: <AdvancedUrduCoursePage />,
+      },
+      {
+        path: "ibadaat-course",
+        element: <IbadaatCoursePage />,
+      },
+      {
+        path: "zakat-course",
+        element: <ZakatCoursePage />,
+      },
+      {
+        path: "ramadan-special-course",
+        element: <RamadanSpecialCoursePage />,
+      },
+      {
+        path: "hajj-&-umrah-course",
+        element: <HajjAndUmrahCoursePage />,
+      },
+      {
+        path: "seerat-course",
+        element: <SeeratCoursePage />,
+      },
+      {
+        path: "inheritance-course",
+        element: <InheritanceCoursePage />,
+      },
+      {
+        path: "imamat-course",
+        element: <ImamatCoursePage />,
+      },
+      {
         path: "fazilat-in-tafsir",
         element: <FazilatInTafsirPage />,
       },
