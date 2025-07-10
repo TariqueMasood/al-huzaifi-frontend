@@ -212,15 +212,27 @@ const Header: React.FC = () => {
           key: "english language courses",
           children: [
             {
-              label: "Elementray English Course",
+              label: (
+                <Link to="/elementary-english-course">
+                  Elementray English Course
+                </Link>
+              ),
               key: "elementray english course",
             },
             {
-              label: "Intermediate English Course",
+              label: (
+                <Link to="/intermediate-english-course">
+                  Intermediate English Course
+                </Link>
+              ),
               key: "intermediate english course",
             },
             {
-              label: "Advanced English Course",
+              label: (
+                <Link to="/advanced-english-course">
+                  Advanced English Course
+                </Link>
+              ),
               key: "advanced english course",
             },
           ],
@@ -229,31 +241,68 @@ const Header: React.FC = () => {
           label: "Urdu Language Courses",
           key: "urdu language courses",
           children: [
-            { label: "Elementray Urdu Course", key: "elementray urdu course" },
             {
-              label: "Intermediate Urdu Course",
+              label: (
+                <Link to="/elementary-urdu-course">Elementray Urdu Course</Link>
+              ),
+              key: "elementray urdu course",
+            },
+            {
+              label: (
+                <Link to="/intermediate-urdu-course">
+                  Intermediate Urdu Course
+                </Link>
+              ),
               key: "intermediate urdu course",
             },
-            { label: "Advanced Urdu Course", key: "advanced urdu course" },
+            {
+              label: (
+                <Link to="/advanced-urdu-course">Advanced Urdu Course</Link>
+              ),
+              key: "advanced urdu course",
+            },
           ],
         },
         {
           label: "Short Courses",
           key: "short courses",
           children: [
-            { label: "Ibadaat Course", key: "Ibadaat course" },
-            { label: "zakat Course", key: "zakat course" },
-            { label: "Ramazan Special Course", key: "ramazan special course" },
-            { label: "Hajj & Umrah Course", key: "hajj & umrah course" },
             {
-              label: "Life of Prophet (Seerat) Course",
+              label: <Link to="/ibadaat-course">Ibadaat Course</Link>,
+              key: "Ibadaat course",
+            },
+            {
+              label: <Link to="/zakat-course">zakat Course</Link>,
+              key: "zakat course",
+            },
+            {
+              label: (
+                <Link to="/ramadan-special-course">Ramazan Special Course</Link>
+              ),
+              key: "ramazan special course",
+            },
+            {
+              label: <Link to="/hajj-&-umrah-course">Hajj & Umrah Course</Link>,
+              key: "hajj & umrah course",
+            },
+            {
+              label: (
+                <Link to="/seerat-course">Life of Prophet (Seerat) Course</Link>
+              ),
               key: "life of prophet course",
             },
             {
-              label: "Inheritance (Meerath) Course",
+              label: (
+                <Link to="/inheritance-course">
+                  Inheritance (Meerath) Course
+                </Link>
+              ),
               key: "inheritance course",
             },
-            { label: "Imamat Course", key: "imamat course" },
+            {
+              label: <Link to="/imamat-course">Imamat Course</Link>,
+              key: "imamat course",
+            },
           ],
         },
       ],
@@ -268,8 +317,14 @@ const Header: React.FC = () => {
       ),
       key: "faculty",
       children: [
-        { label: "Faculty of Quran", key: "faculty of quran" },
-        { label: "Faculty of Deeniyat", key: "faculty of deeniyat" },
+        {
+          label: <Link to="/faculty-of-quran">Faculty of Quran</Link>,
+          key: "faculty of quran",
+        },
+        {
+          label: <Link to="/faculty-of-deeniyat">Faculty of Deeniyat</Link>,
+          key: "faculty of deeniyat",
+        },
         { label: "Faculty of Alimiyat", key: "faculty of alimiyat" },
         { label: "Faculty of Fazilat", key: "faculty of fazilat" },
         { label: "Faculty of Language", key: "faculty of language" },
