@@ -3,6 +3,7 @@ import { mq } from "../styles/breakpoints";
 import bgImage from "../../src/images/faculty-of-quran-2.png";
 import { Link } from "react-router-dom";
 import { Row, Col } from "antd";
+import Title from "../components/title";
 
 export const FacultyOfQuranPage = () => {
   return (
@@ -12,7 +13,7 @@ export const FacultyOfQuranPage = () => {
       </div>
       <Wrapper>
         <Row>
-          {/* <Title>Faculty of Quran</Title> */}
+          <Title title="Faculty of Quran" />
           <Col xs={24} sm={22} md={20} lg={18} xl={16}>
             <SubTitle>Overview:</SubTitle>
             <Content>
