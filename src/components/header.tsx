@@ -325,9 +325,18 @@ const Header: React.FC = () => {
           label: <Link to="/faculty-of-deeniyat">Faculty of Deeniyat</Link>,
           key: "faculty of deeniyat",
         },
-        { label: "Faculty of Alimiyat", key: "faculty of alimiyat" },
-        { label: "Faculty of Fazilat", key: "faculty of fazilat" },
-        { label: "Faculty of Language", key: "faculty of language" },
+        {
+          label: <Link to="/faculty-of-alimiyat">Faculty of Alimiyat</Link>,
+          key: "faculty of alimiyat",
+        },
+        {
+          label: <Link to="/faculty-of-fazilat">Faculty of Fazilat</Link>,
+          key: "faculty of fazilat",
+        },
+        {
+          label: <Link to="/faculty-of-language">Faculty of Language</Link>,
+          key: "faculty of language",
+        },
       ],
     },
     {
@@ -341,9 +350,15 @@ const Header: React.FC = () => {
       key: "admission",
       children: [
         { label: "Registration", key: "registration" },
-        { label: "Tution Fee", key: "tution fee" },
-        { label: "Scholarship", key: "scholarship" },
-        { label: "Acadmic Calender", key: "acadmic calender" },
+        { label: <Link to="/tution-fee">Tution Fee</Link>, key: "tution fee" },
+        {
+          label: <Link to="/scholarship-program">Scholarship</Link>,
+          key: "scholarship",
+        },
+        {
+          label: <Link to="/acadmic-calendar">Acadmic Calender</Link>,
+          key: "acadmic calender",
+        },
       ],
     },
     {
@@ -356,8 +371,14 @@ const Header: React.FC = () => {
       ),
       key: "darul iftah",
       children: [
-        { label: "Ask Darul Iftah", key: "ask darul iftah" },
-        { label: "Iftah Course", key: "iftah course" },
+        {
+          label: <Link to="/darul-ifta">Ask Darul Iftah</Link>,
+          key: "ask darul ifta",
+        },
+        {
+          label: <Link to="/ifta-course">Iftah Course</Link>,
+          key: "ifta course",
+        },
       ],
     },
     { label: <Link to="/contact">Contact</Link>, key: "contact" },

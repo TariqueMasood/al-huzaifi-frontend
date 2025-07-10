@@ -57,14 +57,14 @@ import Dashboard from "../admin/pages/dashboard";
 import RegisteredUsers from "../admin/pages/registered-users";
 import Registrations from "../admin/pages/registrations";
 import RegistrationDetails from "../admin/pages/registration-details";
-// import { IftaCoursePage } from "../pages/ifta-course";
+import { IftaCoursePage } from "../pages/ifta-course";
 // import { WhyChooseUsPage } from "../pages/why-choose-us";
-// import { DarulIftaPage } from "../pages/darul-ifta";
-// import { ScholarshipProgramPage } from "../pages/scholarship-program";
+import { DarulIftaPage } from "../pages/darul-ifta";
+import { ScholarshipProgramPage } from "../pages/scholarship-program";
 import { InheritanceCoursePage } from "../pages/inheritance-course";
 import { ImamatCoursePage } from "../pages/imamat-course";
-// import { AcademicCalendarPage } from "../pages/academic-calendar";
-// import { TuitionFeePage } from "../pages/tution-fee";
+import { AcademicCalendarPage } from "../pages/academic-calendar";
+import { TuitionFeePage } from "../pages/tution-fee";
 // import Login from "../admin/pages/login";
 // import ProtectedRoute from "./protected-route";
 // import Dashboard from "../admin/pages/dashboard";
@@ -282,47 +282,47 @@ const router = createBrowserRouter([
         element: <FazilatInArabicLanguagePage />,
       },
       {
-        //       path: "ifta-course",
-        //       element: <IftaCoursePage />,
-        //     },
-        //     {
-        //       path: "why-choose-us",
-        //       element: <WhyChooseUsPage />,
-        //     },
-        //     {
-        //       path: "darul-ifta",
-        //       element: <DarulIftaPage />,
-        //     },
-        //     {
-        //       path: "scholarship-program",
-        //       element: <ScholarshipProgramPage />,
-        //     },
-        //     {
-        //       path: "acadmic-calendar",
-        //       element: <AcademicCalendarPage />,
-        //     },
-        //     {
-        //       path: "tution-fee",
-        //       element: <TuitionFeePage />,
-        //     },
-        //   ],
-        // },
-        // {
-        //   path: "/login",
-        //   element: <AuthLayout />,
-        //   children: [{ index: true, element: <Login /> }],
-        // },
-        // {
-        //   path: "/dashboard",
-        //   element: <ProtectedRoute />,
-        //   children: [
-        //     {
-        //       element: <DashboardLayout />,
-        //       children: [
-        //         { index: true, element: <Dashboard /> },
-        //         { path: "registered-users", element: <RegisteredUsers /> },
-        //       ],
+        path: "ifta-course",
+        element: <IftaCoursePage />,
       },
+      //     {
+      //       path: "why-choose-us",
+      //       element: <WhyChooseUsPage />,
+      //     },
+      {
+        path: "darul-ifta",
+        element: <DarulIftaPage />,
+      },
+      {
+        path: "scholarship-program",
+        element: <ScholarshipProgramPage />,
+      },
+      {
+        path: "acadmic-calendar",
+        element: <AcademicCalendarPage />,
+      },
+      {
+        path: "tution-fee",
+        element: <TuitionFeePage />,
+      },
+      //   ],
+      // },
+      // {
+      //   path: "/login",
+      //   element: <AuthLayout />,
+      //   children: [{ index: true, element: <Login /> }],
+      // },
+      // {
+      //   path: "/dashboard",
+      //   element: <ProtectedRoute />,
+      //   children: [
+      //     {
+      //       element: <DashboardLayout />,
+      //       children: [
+      //         { index: true, element: <Dashboard /> },
+      //         { path: "registered-users", element: <RegisteredUsers /> },
+      //       ],
+      // },
     ],
   },
   {
