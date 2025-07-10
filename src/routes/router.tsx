@@ -30,8 +30,8 @@ import { ArabicSpeakingCoursePage } from "../pages/arabic-speaking-course";
 import { QuranicArabicCoursePage } from "../pages/quranic-arabic-course";
 import { ClassicalArabicCoursePage } from "../pages/classical-arabic-course";
 import { ArabicGrammarCoursePage } from "../pages/arabic-grammar-course";
-// import { ArabicBlaghatCoursePage } from "../pages/arabic-blaghat-course";
-// import { ArabicAroozQafiyahCoursePage } from "../pages/arabic-arooz-qafiyah-course";
+import { ArabicBlaghatCoursePage } from "../pages/arabic-blaghat-course";
+import { ArabicAroozQafiyahCoursePage } from "../pages/arabic-arooz-qafiyah-course";
 // import { ElementaryEnglishCoursePage } from "../pages/elementary-english-course";
 // import { IntermediateEnglishCoursePage } from "../pages/intermediate-english-course";
 // import { AdvancedEnglishCoursePage } from "../pages/advanced-english-course";
@@ -198,14 +198,14 @@ const router = createBrowserRouter([
         element: <ArabicGrammarCoursePage />,
       },
       {
-        //       path: "arabic-blaghat-course",
-        //       element: <ArabicBlaghatCoursePage />,
-        //     },
-        //     {
-        //       path: "arabic-arooz-qafiyah-course",
-        //       element: <ArabicAroozQafiyahCoursePage />,
-        //     },
-        //     {
+        path: "arabic-blaghat-course",
+        element: <ArabicBlaghatCoursePage />,
+      },
+      {
+        path: "arabic-arooz-qafiyah-course",
+        element: <ArabicAroozQafiyahCoursePage />,
+      },
+      {
         //       path: "elementary-english-course",
         //       element: <ElementaryEnglishCoursePage />,
         //     },

@@ -190,11 +190,19 @@ const Header: React.FC = () => {
               key: "arabic grammer course",
             },
             {
-              label: "Arabic Rhetoric (Balaghat) Course",
+              label: (
+                <Link to="/arabic-blaghat-course">
+                  Arabic Rhetoric (Balaghat) Course
+                </Link>
+              ),
               key: "arbic rhetoric course",
             },
             {
-              label: "Arabic Prosody and Rhyme Course",
+              label: (
+                <Link to="/arabic-arooz-qafiyah-course">
+                  Arabic Prosody and Rhyme Course
+                </Link>
+              ),
               key: "arabic prosody and rhyme course",
             },
           ],
