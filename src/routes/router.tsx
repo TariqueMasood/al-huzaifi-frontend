@@ -49,6 +49,14 @@ import { FazilatInIslamicPage } from "../pages/fazilat-in-islamic";
 import { FazilatInTheologyPage } from "../pages/fazilat-in-theology";
 import { FazilatInIslamicFinancePage } from "../pages/fazilat-in-islamic-finance";
 import { FazilatInArabicLanguagePage } from "../pages/fazilat-in-arabic-language";
+import AuthLayout from "../layouts/auth-layout";
+import ProtectedRoute from "./protected-route";
+import DashboardLayout from "../layouts/dashboard-layout";
+import Login from "../admin/pages/login";
+import Dashboard from "../admin/pages/dashboard";
+import RegisteredUsers from "../admin/pages/registered-users";
+import Registrations from "../admin/pages/registrations";
+import RegistrationDetails from "../admin/pages/registration-details";
 // import { IftaCoursePage } from "../pages/ifta-course";
 // import { WhyChooseUsPage } from "../pages/why-choose-us";
 // import { DarulIftaPage } from "../pages/darul-ifta";
@@ -314,6 +322,26 @@ const router = createBrowserRouter([
         //         { index: true, element: <Dashboard /> },
         //         { path: "registered-users", element: <RegisteredUsers /> },
         //       ],
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <AuthLayout />,
+    children: [{ index: true, element: <Login /> }],
+  },
+  {
+    path: "/dashboard",
+    element: <ProtectedRoute />,
+    children: [
+      {
+        element: <DashboardLayout />,
+        children: [
+          { index: true, element: <Dashboard /> },
+          { path: "registered-users", element: <RegisteredUsers /> },
+          { path: "registrations", element: <Registrations /> },
+          { path: "registrations/:id", element: <RegistrationDetails /> },
+        ],
       },
     ],
   },

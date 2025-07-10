@@ -1,43 +1,65 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
-import styled from "styled-components";
+import { Layout } from "antd";
+import Sidebar from "../admin/components/sidebar";
+import DashboardHeader from "../admin/components/dashboard-header";
+import DashboardFooter from "../admin/components/dashboard-footer";
 
-const DashboardLayout = () => {
+const { Header, Sider, Content, Footer } = Layout;
+
+const DashboardLayout: React.FC = () => {
   return (
-    <LayoutContainer>
-      <ContentWrapper>
-        <MainContent>
+    <Layout style={{ minHeight: "100vh" }}>
+      <Sider
+        width={250}
+        breakpoint="md"
+        collapsedWidth="0"
+        style={{
+          backgroundColor: "#fff",
+          boxShadow: "2px 0 8px rgba(0, 0, 0, 0.1)",
+          zIndex: 10,
+        }}
+      >
+        <Sidebar />
+      </Sider>
+
+      <Layout>
+        <Header
+          style={{
+            background: "#fff",
+            padding: 0,
+            height: 64,
+            boxShadow: "0 1px 4px rgba(0, 0, 0, 0.1)",
+            zIndex: 9,
+          }}
+        >
+          <DashboardHeader />
+        </Header>
+
+        <Content
+          style={{
+            margin: "24px 40px",
+            padding: "24px",
+            background: "#f5f5f5",
+            minHeight: "calc(100vh - 128px)", // Adjust for header + footer
+          }}
+        >
           <Outlet />
-        </MainContent>
-      </ContentWrapper>
-    </LayoutContainer>
+        </Content>
+
+        <Footer
+          style={{
+            textAlign: "center",
+            background: "#fff",
+            padding: "16px 40px",
+            boxShadow: "0 -1px 4px rgba(0, 0, 0, 0.05)",
+          }}
+        >
+          <DashboardFooter />
+        </Footer>
+      </Layout>
+    </Layout>
   );
 };
 
 export default DashboardLayout;
-
-const LayoutContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
-  flex: 1;
-`;
-
-const MainContent = styled.div`
-  margin-left: 250px;
-  padding: 2rem;
-  padding-right: 5rem;
-  margin-top: 60px;
-  min-height: calc(100vh - 130px);
-  background-color: ${({ theme }) => theme.secondaryBg};
-  box-shadow: ${({ theme }) => theme.boxShadow};
-  width: 100%;
-  @media (max-width: 768px) {
-    margin-left: 0;
-    padding: 1rem;
-  }
-`;
