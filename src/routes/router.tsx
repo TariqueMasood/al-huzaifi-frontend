@@ -65,6 +65,7 @@ import { ImamatCoursePage } from "../pages/imamat-course";
 import { AcademicCalendarPage } from "../pages/academic-calendar";
 import { TuitionFeePage } from "../pages/tution-fee";
 import Registration from "../pages/registration";
+import DashboardLayout2 from "../layouts/dashboard-layout2";
 
 const router = createBrowserRouter([
   {
@@ -300,6 +301,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <AuthLayout />,
+    children: [{ index: true, element: <Login /> }],
+  },
+  {
+    path: "/dashboard2",
+    element: <DashboardLayout2 />,
     children: [{ index: true, element: <Login /> }],
   },
   {
