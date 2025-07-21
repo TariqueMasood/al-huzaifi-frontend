@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { mq } from "../styles/breakpoints";
-import CountryList from "./country-list"; // keep this or rewrite with AntD
+import CountryList from "./country-list";
 import {
   facultyOptions,
   genderOptions,
   languageOptions,
   timingOptions,
 } from "../constants/registration";
-import * as Yup from "yup";
 import {
   Form,
   Input,
@@ -19,13 +18,12 @@ import {
 } from "antd";
 import { RegistrationPayload } from "../@types/registration";
 import { useRegistrationMutation } from "../hooks/use-queries";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 const { Option } = Select;
 const { TextArea } = Input;
-
-const validationSchema = Yup.object().shape({
-  /* your existing validation schema */
-});
 
 const RegistrationForm = () => {
   const [form] = Form.useForm();
@@ -39,23 +37,16 @@ const RegistrationForm = () => {
 
   const handleFinish = (values: any) => {
     registrationMutation.mutate(values as RegistrationPayload, {
-      onSuccess: () => message.success("Registration successful!"),
+      onSuccess: () => {
+        message.success("Registration successful!");
+        form.resetFields();
+        setCourses([]);
+      },
       onError: (err: any) =>
         message.error(
           err?.response?.data?.message || err.message || "Registration failed"
         ),
     });
-  };
-
-  const validateForm = async () => {
-    const values = await form.validateFields().catch((err) => {
-      const errors = err.errorFields.reduce((acc: any, cur: any) => {
-        acc[cur.name[0]] = cur.errors[0];
-        return acc;
-      }, {});
-      return Promise.reject(errors);
-    });
-    return validationSchema.validate(values, { abortEarly: false });
   };
 
   return (
@@ -107,17 +98,11 @@ const RegistrationForm = () => {
         </RowWrap>
 
         <RowWrap>
-          <Form.Item
+          <CountryList
             name="country"
-            label="Country"
-            rules={[{ required: true }]}
-          >
-            <CountryList
-              name="country"
-              value={form.getFieldValue("country")}
-              onChange={(val) => form.setFieldsValue({ country: val })}
-            />
-          </Form.Item>
+            value={form.getFieldValue("country")}
+            onChange={(val) => form.setFieldsValue({ country: val })}
+          />
           <Form.Item
             name="email"
             label="Email"
@@ -130,9 +115,43 @@ const RegistrationForm = () => {
         <Form.Item
           name="phone"
           label="WhatsApp Number"
-          rules={[{ required: true }]}
+          rules={[
+            { required: true, message: "Please enter your WhatsApp number" },
+            {
+              validator: (_, value) => {
+                try {
+                  const phoneNumber = parsePhoneNumberFromString("+" + value);
+                  if (!phoneNumber || !phoneNumber.isValid()) {
+                    return Promise.reject(
+                      "Invalid phone number for selected country"
+                    );
+                  }
+                  return Promise.resolve();
+                } catch {
+                  return Promise.reject("Invalid phone number format");
+                }
+              },
+            },
+          ]}
         >
-          <Input placeholder="Phone" />
+          <PhoneInput
+            country={"in"}
+            enableSearch
+            countryCodeEditable={false}
+            inputStyle={{ width: "100%" }}
+            containerStyle={{ width: "100%" }}
+            specialLabel=""
+            value={form.getFieldValue("phone")}
+            onChange={(value) => {
+              form.setFieldsValue({ phone: value });
+            }}
+            inputProps={{
+              name: "phone",
+              required: true,
+              id: "phoneInput",
+              autoComplete: "off",
+            }}
+          />
         </Form.Item>
 
         <RowWrap>
@@ -244,36 +263,50 @@ const RegistrationForm = () => {
         </RowWrap>
 
         <Form.Item name="applyForScholarship" valuePropName="checked">
-          <Checkbox>Apply for scholarship?</Checkbox>
+          <Checkbox>Do you want to apply for a scholarship?</Checkbox>
         </Form.Item>
 
-        {form.getFieldValue("applyForScholarship") && (
-          <>
-            <Form.Item
-              name="scholarshipType"
-              label="Scholarship Type"
-              rules={[{ required: true }]}
-            >
-              <Select placeholder="Select scholarship type">
-                <Option value="meritBased">Merit-Based</Option>
-                <Option value="siblingScholarship">Sibling Scholarship</Option>
-                <Option value="specialCircumstances">
-                  Special Circumstances
-                </Option>
-              </Select>
-            </Form.Item>
+        <Form.Item
+          shouldUpdate={(prev, curr) =>
+            prev.applyForScholarship !== curr.applyForScholarship
+          }
+        >
+          {({ getFieldValue }) =>
+            getFieldValue("applyForScholarship") && (
+              <>
+                <Form.Item
+                  name="scholarshipType"
+                  label="Scholarship Type"
+                  rules={[{ required: true }]}
+                >
+                  <Select placeholder="Select scholarship type">
+                    <Option value="meritBased">Merit-Based</Option>
+                    <Option value="siblingScholarship">
+                      Sibling Scholarship
+                    </Option>
+                    <Option value="specialCircumstances">
+                      Special Circumstances
+                    </Option>
+                  </Select>
+                </Form.Item>
 
-            <Form.Item
-              name="scholarshipReason"
-              label="Why deserve this scholarship?"
-              rules={[{ required: true }]}
-            >
-              <TextArea rows={3} placeholder="Your reason..." />
-            </Form.Item>
-          </>
-        )}
+                <Form.Item
+                  name="scholarshipReason"
+                  label="Why deserve this scholarship?"
+                  rules={[{ required: true }]}
+                >
+                  <TextArea rows={3} placeholder="Your reason..." />
+                </Form.Item>
+              </>
+            )
+          }
+        </Form.Item>
 
-        <AntButton type="primary" htmlType="submit">
+        <AntButton
+          type="primary"
+          htmlType="submit"
+          loading={registrationMutation.isPending}
+        >
           Register
         </AntButton>
       </FormWrapper>

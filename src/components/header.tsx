@@ -349,7 +349,10 @@ const Header: React.FC = () => {
       ),
       key: "admission",
       children: [
-        { label: "Registration", key: "registration" },
+        {
+          label: <Link to="/registration">Registration</Link>,
+          key: "registration",
+        },
         { label: <Link to="/tution-fee">Tution Fee</Link>, key: "tution fee" },
         {
           label: <Link to="/scholarship-program">Scholarship</Link>,

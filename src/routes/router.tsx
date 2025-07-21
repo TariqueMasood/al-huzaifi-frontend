@@ -58,19 +58,13 @@ import RegisteredUsers from "../admin/pages/registered-users";
 import Registrations from "../admin/pages/registrations";
 import RegistrationDetails from "../admin/pages/registration-details";
 import { IftaCoursePage } from "../pages/ifta-course";
-// import { WhyChooseUsPage } from "../pages/why-choose-us";
 import { DarulIftaPage } from "../pages/darul-ifta";
 import { ScholarshipProgramPage } from "../pages/scholarship-program";
 import { InheritanceCoursePage } from "../pages/inheritance-course";
 import { ImamatCoursePage } from "../pages/imamat-course";
 import { AcademicCalendarPage } from "../pages/academic-calendar";
 import { TuitionFeePage } from "../pages/tution-fee";
-// import Login from "../admin/pages/login";
-// import ProtectedRoute from "./protected-route";
-// import Dashboard from "../admin/pages/dashboard";
-// import RegisteredUsers from "../admin/pages/registered-users";
-// import AuthLayout from "../layouts/auth-layout";
-// import DashboardLayout from "../layouts/dashboard-layout";
+import Registration from "../pages/registration";
 
 const router = createBrowserRouter([
   {
@@ -87,7 +81,7 @@ const router = createBrowserRouter([
       },
       {
         path: "registration",
-        // element: <Registration />,
+        element: <Registration />,
       },
       {
         path: "contact",
@@ -285,10 +279,6 @@ const router = createBrowserRouter([
         path: "ifta-course",
         element: <IftaCoursePage />,
       },
-      //     {
-      //       path: "why-choose-us",
-      //       element: <WhyChooseUsPage />,
-      //     },
       {
         path: "darul-ifta",
         element: <DarulIftaPage />,
@@ -305,24 +295,6 @@ const router = createBrowserRouter([
         path: "tution-fee",
         element: <TuitionFeePage />,
       },
-      //   ],
-      // },
-      // {
-      //   path: "/login",
-      //   element: <AuthLayout />,
-      //   children: [{ index: true, element: <Login /> }],
-      // },
-      // {
-      //   path: "/dashboard",
-      //   element: <ProtectedRoute />,
-      //   children: [
-      //     {
-      //       element: <DashboardLayout />,
-      //       children: [
-      //         { index: true, element: <Dashboard /> },
-      //         { path: "registered-users", element: <RegisteredUsers /> },
-      //       ],
-      // },
     ],
   },
   {
