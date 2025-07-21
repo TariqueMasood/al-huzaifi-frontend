@@ -68,14 +68,14 @@ const RegistrationForm = () => {
           <Form.Item
             name="firstName"
             label="First Name"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "First Name is required" }]}
           >
             <Input placeholder="First Name" />
           </Form.Item>
           <Form.Item
             name="lastName"
             label="Last Name"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Last Name is required" }]}
           >
             <Input placeholder="Last Name" />
           </Form.Item>
@@ -90,12 +90,17 @@ const RegistrationForm = () => {
                 required: true,
                 type: "number",
                 transform: (val) => Number(val),
+                message: "Age is required and must be a number",
               },
             ]}
           >
             <Input type="number" placeholder="Age" />
           </Form.Item>
-          <Form.Item name="gender" label="Gender" rules={[{ required: true }]}>
+          <Form.Item
+            name="gender"
+            label="Gender"
+            rules={[{ required: true, message: "Gender is required" }]}
+          >
             <Select placeholder="Select gender">
               {genderOptions.map((g) => (
                 <Option key={g} value={g}>
@@ -115,7 +120,13 @@ const RegistrationForm = () => {
           <Form.Item
             name="email"
             label="Email"
-            rules={[{ required: true, type: "email" }]}
+            rules={[
+              {
+                required: true,
+                type: "email",
+                message: "Please enter a valid email",
+              },
+            ]}
           >
             <Input placeholder="Email" />
           </Form.Item>
@@ -198,7 +209,7 @@ const RegistrationForm = () => {
           <Form.Item
             name="religion"
             label="Religion"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Religion is required" }]}
           >
             <Select placeholder="Select religion">
               <Option value="Muslim">Muslim</Option>
@@ -209,7 +220,7 @@ const RegistrationForm = () => {
           <Form.Item
             name="nativeLanguage"
             label="Native Language"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Native Language is required" }]}
           >
             <Select placeholder="Select native language">
               {languageOptions.map((lang) => (
@@ -223,7 +234,12 @@ const RegistrationForm = () => {
           <Form.Item
             name="knownLanguage"
             label="Known Languages"
-            rules={[{ required: true }]}
+            rules={[
+              {
+                required: true,
+                message: "At least one known language must be selected",
+              },
+            ]}
           >
             <Select mode="multiple" placeholder="Select known languages">
               {languageOptions.map((lang) => (
@@ -239,7 +255,7 @@ const RegistrationForm = () => {
           <Form.Item
             name="guardianName"
             label="Guardian Name"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Guardian Name is required" }]}
           >
             <Input placeholder="Guardian Name" />
           </Form.Item>
@@ -247,7 +263,7 @@ const RegistrationForm = () => {
           <Form.Item
             name="relationship"
             label="Relationship"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Relationship is required" }]}
           >
             <Input placeholder="Relationship" />
           </Form.Item>
@@ -257,7 +273,7 @@ const RegistrationForm = () => {
           <Form.Item
             name="faculty"
             label="Faculty"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Faculty is required" }]}
           >
             <Select onChange={onFacultyChange} placeholder="Select faculty">
               {Object.keys(facultyOptions).map((f) => (
@@ -268,7 +284,11 @@ const RegistrationForm = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item name="course" label="Course" rules={[{ required: true }]}>
+          <Form.Item
+            name="course"
+            label="Course"
+            rules={[{ required: true, message: "Course is required" }]}
+          >
             <Select placeholder="Select course">
               {courses.map((c) => (
                 <Option key={c} value={c}>
@@ -283,7 +303,7 @@ const RegistrationForm = () => {
           <Form.Item
             name="availability"
             label="Availability"
-            rules={[{ required: true }]}
+            rules={[{ required: true, message: "Availability is required" }]}
           >
             <Select placeholder="Select availability">
               <Option value="Weekdays">Weekdays</Option>
@@ -291,7 +311,11 @@ const RegistrationForm = () => {
             </Select>
           </Form.Item>
 
-          <Form.Item name="timing" label="Timing" rules={[{ required: true }]}>
+          <Form.Item
+            name="timing"
+            label="Timing"
+            rules={[{ required: true, message: "Timing is required" }]}
+          >
             <Select placeholder="Select timing">
               {timingOptions.map((t) => (
                 <Option key={t} value={t}>
@@ -317,7 +341,12 @@ const RegistrationForm = () => {
                 <Form.Item
                   name="scholarshipType"
                   label="Scholarship Type"
-                  rules={[{ required: true }]}
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please select a scholarship type",
+                    },
+                  ]}
                 >
                   <Select placeholder="Select scholarship type">
                     <Option value="meritBased">Merit-Based</Option>
@@ -333,7 +362,13 @@ const RegistrationForm = () => {
                 <Form.Item
                   name="scholarshipReason"
                   label="Why deserve this scholarship?"
-                  rules={[{ required: true }]}
+                  rules={[
+                    {
+                      required: true,
+                      message:
+                        "Scholarship reason is required when applying for a scholarship",
+                    },
+                  ]}
                 >
                   <TextArea rows={3} placeholder="Your reason..." />
                 </Form.Item>
