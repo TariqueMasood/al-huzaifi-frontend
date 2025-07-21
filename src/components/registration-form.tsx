@@ -20,7 +20,13 @@ import { RegistrationPayload } from "../@types/registration";
 import { useRegistrationMutation } from "../hooks/use-queries";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { parsePhoneNumberFromString } from "libphonenumber-js";
+import {
+  parsePhoneNumberFromString,
+  getExampleNumber,
+  CountryCode,
+} from "libphonenumber-js";
+import examples from "libphonenumber-js/examples.mobile.json";
+import { CountryData } from "react-phone-input-2";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -28,6 +34,9 @@ const { TextArea } = Input;
 const RegistrationForm = () => {
   const [form] = Form.useForm();
   const [courses, setCourses] = useState<string[]>([]);
+  const [phoneTouched, setPhoneTouched] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState("in");
+
   const registrationMutation = useRegistrationMutation();
 
   const onFacultyChange = (value: keyof typeof facultyOptions) => {
@@ -116,12 +125,16 @@ const RegistrationForm = () => {
           name="phone"
           label="WhatsApp Number"
           rules={[
-            { required: true, message: "Please enter your WhatsApp number" },
+            {
+              required: true,
+              message: "Please enter your WhatsApp number",
+            },
             {
               validator: (_, value) => {
+                if (!phoneTouched || !value) return Promise.resolve();
                 try {
                   const phoneNumber = parsePhoneNumberFromString("+" + value);
-                  if (!phoneNumber || !phoneNumber.isValid()) {
+                  if (!phoneNumber?.isValid()) {
                     return Promise.reject(
                       "Invalid phone number for selected country"
                     );
@@ -135,19 +148,46 @@ const RegistrationForm = () => {
           ]}
         >
           <PhoneInput
-            country={"in"}
+            country={selectedCountry}
             enableSearch
             countryCodeEditable={false}
             inputStyle={{ width: "100%" }}
             containerStyle={{ width: "100%" }}
             specialLabel=""
             value={form.getFieldValue("phone")}
-            onChange={(value) => {
-              form.setFieldsValue({ phone: value });
+            onChange={(
+              value: string,
+              country: CountryData | {},
+              event: React.ChangeEvent<HTMLInputElement>,
+              formattedValue: string
+            ) => {
+              const newCountryCode =
+                "countryCode" in country ? country.countryCode : "in";
+
+              // If country changed, reset the phone value and clear the touched flag
+              if (selectedCountry !== newCountryCode) {
+                setSelectedCountry(newCountryCode);
+                setPhoneTouched(false); // avoid showing validation error
+                form.setFieldsValue({ phone: "" }); // clear input field
+                return;
+              }
+
+              // Now user is typing (same country), allow validation
+              setPhoneTouched(value.length > 0);
+
+              const example = getExampleNumber(
+                newCountryCode.toUpperCase() as CountryCode,
+                examples
+              );
+              const maxLength = example?.nationalNumber.length || 15;
+
+              const digitsOnly = value.replace(/\D/g, "");
+              if (digitsOnly.length <= maxLength) {
+                form.setFieldsValue({ phone: value });
+              }
             }}
             inputProps={{
               name: "phone",
-              required: true,
               id: "phoneInput",
               autoComplete: "off",
             }}

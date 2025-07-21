@@ -4,26 +4,24 @@ import { Spin, Alert, Card, Button } from "antd";
 import styled from "styled-components";
 import { useRegistrationDetails } from "../../hooks/use-queries";
 import { scholarshipTypeLabels } from "../../components/registration-form";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 export function formatPhoneWithCountryCode(phone: string): string {
-  let display = phone;
   if (!phone) return "";
-  if (phone.startsWith("00")) {
-    display = "+" + phone.slice(2);
-  } else if (phone.startsWith("+")) {
-    display = phone;
-  } else if (/^\d+$/.test(phone)) {
-    let code = "";
-    let number = "";
-    if (phone.length > 10) {
-      code = phone.slice(0, phone.length - 10);
-      number = phone.slice(phone.length - 10);
-    } else {
-      number = phone;
+  try {
+    const parsed = parsePhoneNumberFromString(
+      "+" + phone.replace(/[^0-9]/g, "")
+    );
+    if (parsed && parsed.isValid()) {
+      // e.g., +91 9876543210 or +1 2125550123
+      return `${
+        parsed.countryCallingCode ? "+" + parsed.countryCallingCode : ""
+      } ${parsed.nationalNumber}`;
     }
-    display = code ? `+${code} ${number}` : number;
+  } catch (e) {
+    console.warn("Phone formatting failed:", e);
   }
-  return display;
+  return phone; // fallback to raw if invalid
 }
 
 const RegistrationDetails: React.FC = () => {
