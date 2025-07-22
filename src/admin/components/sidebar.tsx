@@ -1,62 +1,61 @@
-import React from "react";
-import { Menu } from "antd";
-import { NavLink } from "react-router-dom";
-import {
-  PieChartOutlined,
-  UserOutlined,
-  FileOutlined,
-} from "@ant-design/icons";
-import styled from "styled-components";
+import React, { useState } from "react";
+import { Layout, Menu } from "antd";
+import { menuConfig } from "../../config/menu-config";
+import type { MenuProps } from "antd";
+import { Link } from "react-router-dom";
 
-const items = [
-  {
-    key: "/dashboard",
-    icon: <PieChartOutlined />,
-    label: <NavLink to="/dashboard">Dashboard</NavLink>,
-  },
-  {
-    key: "/dashboard/registered-users",
-    icon: <UserOutlined />,
-    label: <NavLink to="/dashboard/registered-users">Users</NavLink>,
-  },
-  {
-    key: "/dashboard/registrations",
-    icon: <FileOutlined />,
-    label: <NavLink to="/dashboard/registrations">Registrations</NavLink>,
-  },
-];
+const { Sider } = Layout;
+
+const renderMenuItems = (items: typeof menuConfig): MenuProps["items"] =>
+  items.map((item) => {
+    if (item.children) {
+      return {
+        key: item.key,
+        icon: item.icon,
+        label: item.label,
+        children: item.children.map((sub) => ({
+          key: sub.key,
+          label: <Link to={sub.path!}>{sub.label}</Link>,
+        })),
+      };
+    }
+    return {
+      key: item.key,
+      icon: item.icon,
+      label: <Link to={item.path!}>{item.label}</Link>,
+    };
+  });
 
 const Sidebar: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
-    <SidebarContainer>
-      <h4>Admin Panel</h4>
-      <Menu mode="inline" items={items} />
-      <SidebarFooter>&copy; 2025 Admin Dashboard</SidebarFooter>
-    </SidebarContainer>
+    <Sider
+      style={siderStyle}
+      collapsible
+      collapsed={collapsed}
+      onCollapse={(value) => setCollapsed(value)}
+    >
+      <div className="demo-logo-vertical" />
+      <Menu
+        theme="dark"
+        mode="inline"
+        defaultSelectedKeys={["1"]}
+        items={renderMenuItems(menuConfig)}
+      />
+    </Sider>
   );
 };
 
 export default Sidebar;
 
-const SidebarContainer = styled.div`
-  height: 100vh;
-  background-color: ${({ theme }) => theme.colors.headerBackground};
-  padding: 2rem 1rem;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-shadow: ${({ theme }) => theme.boxShadow};
-`;
-
-const SidebarFooter = styled.div`
-  text-align: center;
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.colors.themeTextColor2};
-  padding-top: 1rem;
-  border-top: 1px solid ${({ theme }) => theme.colors.themeTextColor};
-`;
+const siderStyle: React.CSSProperties = {
+  overflow: "auto",
+  height: "100vh",
+  position: "sticky",
+  insetInlineStart: 0,
+  top: 0,
+  bottom: 0,
+  scrollbarWidth: "thin",
+  // scrollbarGutter: "stable",
+};

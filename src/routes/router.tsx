@@ -51,7 +51,6 @@ import { FazilatInIslamicFinancePage } from "../pages/fazilat-in-islamic-finance
 import { FazilatInArabicLanguagePage } from "../pages/fazilat-in-arabic-language";
 import AuthLayout from "../layouts/auth-layout";
 import ProtectedRoute from "./protected-route";
-import DashboardLayout from "../layouts/dashboard-layout";
 import Login from "../admin/pages/login";
 import Dashboard from "../admin/pages/dashboard";
 import RegisteredUsers from "../admin/pages/registered-users";
@@ -65,7 +64,7 @@ import { ImamatCoursePage } from "../pages/imamat-course";
 import { AcademicCalendarPage } from "../pages/academic-calendar";
 import { TuitionFeePage } from "../pages/tution-fee";
 import Registration from "../pages/registration";
-import DashboardLayout2 from "../layouts/dashboard-layout2";
+import DashboardLayout from "../layouts/dashboard-layout";
 
 const router = createBrowserRouter([
   {
@@ -304,11 +303,6 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <Login /> }],
   },
   {
-    path: "/dashboard2",
-    element: <DashboardLayout2 />,
-    children: [{ index: true, element: <Login /> }],
-  },
-  {
     path: "/dashboard",
     element: <ProtectedRoute />,
     children: [
@@ -316,7 +310,7 @@ const router = createBrowserRouter([
         element: <DashboardLayout />,
         children: [
           { index: true, element: <Dashboard /> },
-          { path: "registered-users", element: <RegisteredUsers /> },
+          { path: "users", element: <RegisteredUsers /> },
           { path: "registrations", element: <Registrations /> },
           { path: "registrations/:id", element: <RegistrationDetails /> },
         ],

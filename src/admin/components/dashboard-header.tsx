@@ -1,27 +1,14 @@
-import React from "react";
+import { Layout, theme } from "antd";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 
-const HeaderContainer = styled.header`
-  background-color: ${({ theme }) => theme.colors.headerBackground};
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 250px;
-  color: ${({ theme }) => theme.colors.themeTextColor2};
-  box-shadow: ${({ theme }) => theme.boxShadow};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.themeTextColor};
-  position: fixed;
-  right: 0;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  height: 60px;
-`;
+const { Header } = Layout;
 
 const DashboardHeader = () => {
   const navigate = useNavigate();
+
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -29,12 +16,21 @@ const DashboardHeader = () => {
   };
 
   return (
-    <HeaderContainer>
-      <h5>Admin Dashboard</h5>
-      <button className="btn btn-danger" onClick={handleLogout}>
-        Logout
-      </button>
-    </HeaderContainer>
+    <Header style={{ padding: 0, background: colorBgContainer }}>
+      <div
+        className="header-content"
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <h1>Dashboard</h1>
+        <button onClick={handleLogout} className="logout-button">
+          Logout
+        </button>
+      </div>
+    </Header>
   );
 };
 
