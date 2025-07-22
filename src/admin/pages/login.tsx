@@ -42,7 +42,13 @@ const Login: React.FC = () => {
           navigate("/dashboard");
         },
         onError: (error: any) => {
-          message.error(error.response?.data?.message || "Login failed");
+          if (!error.response) {
+            message.error(
+              "Network error: Please check your internet connection."
+            );
+          } else {
+            message.error(error.response.data?.message || "Login failed");
+          }
         },
       });
     }
@@ -98,18 +104,24 @@ const Login: React.FC = () => {
           )}
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" block>
+            <Button
+              type="primary"
+              htmlType="submit"
+              block
+              loading={loginMutation.status === "pending"}
+              disabled={loginMutation.status === "pending"}
+            >
               {isRegister ? "Register" : "Login"}
             </Button>
           </Form.Item>
         </Form>
 
-        <ToggleText>
+        {/* <ToggleText>
           {isRegister ? "Already registered? " : "Not registered yet? "}
           <Button type="link" onClick={() => setIsRegister(!isRegister)}>
             {isRegister ? "Login" : "Register"}
           </Button>
-        </ToggleText>
+        </ToggleText> */}
       </FormWrapper>
     </PageContainer>
   );
@@ -123,15 +135,16 @@ const PageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 300px;
+  width: 100%;
 `;
 
 const FormWrapper = styled.div`
   background-color: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px;
 `;
 
 const Title = styled.h2`

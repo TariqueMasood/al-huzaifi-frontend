@@ -2,8 +2,8 @@ import { Layout } from "antd";
 const { Footer } = Layout;
 
 const DashboardFooter = () => (
-  <Footer style={{ textAlign: "center" }}>
-    Ant Design ©{new Date().getFullYear()} Created by Ant UED
+  <Footer style={{ textAlign: "center", backgroundColor: "#fff" }}>
+    ©{new Date().getFullYear()} All Rights Reserved | Al-Huzaifi
   </Footer>
 );
 

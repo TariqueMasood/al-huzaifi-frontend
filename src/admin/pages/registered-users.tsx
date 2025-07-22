@@ -1,10 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Table, Input, Select, Alert, Spin } from "antd";
+import { Table, Input, Select, Alert, Spin, Typography } from "antd";
 import styled from "styled-components";
 import { useUsers } from "../../hooks/use-queries";
 import { User } from "../../@types/registered-user";
 
 const { Option } = Select;
+const { Title } = Typography;
+const { Search } = Input;
 
 const RegisteredUsers: React.FC = () => {
   const { data: users, isLoading, isError } = useUsers();
@@ -54,48 +56,34 @@ const RegisteredUsers: React.FC = () => {
     []
   );
 
-  if (isLoading) {
-    return <Spin tip="Loading..." fullscreen />;
-  }
   if (isError)
     return <Alert message="Error fetching users data" type="error" />;
 
   return (
     <Wrapper>
       <Header>
-        <h2>Registered Users</h2>
-        <Input
+        <Title level={3}>Registered Users</Title>
+        <Search
           placeholder="Search users..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          className="search-input"
+          style={{ maxWidth: 300 }}
         />
       </Header>
 
       <Table
-        dataSource={filteredData}
+        loading={isLoading}
         columns={columns}
+        dataSource={filteredData || []}
         rowKey="email"
         pagination={{
           pageSize,
-          showSizeChanger: false,
+          showSizeChanger: true,
+          pageSizeOptions: ["5", "10", "20"],
+          onShowSizeChange: (_, size) => setPageSize(size),
         }}
+        scroll={{ x: true }}
       />
-
-      <PaginationWrapper>
-        <span>Page Size: </span>
-        <Select
-          value={pageSize}
-          onChange={(size) => setPageSize(size)}
-          className="page-size-select"
-        >
-          {[5, 10, 20].map((size) => (
-            <Option key={size} value={size}>
-              Show {size}
-            </Option>
-          ))}
-        </Select>
-      </PaginationWrapper>
     </Wrapper>
   );
 };
@@ -103,8 +91,8 @@ const RegisteredUsers: React.FC = () => {
 export default RegisteredUsers;
 
 const Wrapper = styled.div`
-  padding: 2rem;
-  background-color: ${({ theme }) => theme.secondaryBg};
+  padding: 1.5rem;
+  background-color: ${({ theme }) => theme.background};
   border-radius: 8px;
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
@@ -114,27 +102,4 @@ const Header = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
-
-  .search-input {
-    max-width: 300px;
-  }
-`;
-
-const PaginationWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 8px;
-
-  .page-size-select {
-    width: 120px;
-  }
-`;
-
-const Centered = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
 `;

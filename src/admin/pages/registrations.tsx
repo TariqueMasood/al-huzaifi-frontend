@@ -20,7 +20,6 @@ import { formatPhoneWithCountryCode } from "./registration-details";
 import type { ColumnsType } from "antd/es/table";
 
 const { Search } = Input;
-const { Option } = Select;
 const { Title } = Typography;
 
 const Registrations: React.FC = () => {
@@ -36,7 +35,6 @@ const Registrations: React.FC = () => {
 
   const [search, setSearch] = useState("");
   const [pageSize, setPageSize] = useState(5);
-  const [deleteId, setDeleteId] = useState<string | null>(null);
 
   const filteredData = registrations?.filter((user: RegistrationPayload) => {
     const fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
@@ -158,8 +156,8 @@ const Registrations: React.FC = () => {
 export default Registrations;
 
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.secondaryBg};
-  padding: 24px;
+  background-color: ${({ theme }) => theme.background};
+  padding: 1.5rem;
   border-radius: 8px;
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
@@ -168,5 +166,5 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 `;
