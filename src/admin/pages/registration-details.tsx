@@ -1,10 +1,14 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { Spin, Alert, Card, Button } from "antd";
+import { Spin, Alert, Card, Button, Row, Col, Typography, Avatar } from "antd";
 import styled from "styled-components";
 import { useRegistrationDetails } from "../../hooks/use-queries";
 import { scholarshipTypeLabels } from "../../components/registration-form";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
+import { DownloadOutlined, PrinterOutlined } from "@ant-design/icons";
+import html2pdf from "html2pdf.js";
+
+const { Title } = Typography;
 
 export function formatPhoneWithCountryCode(phone: string): string {
   if (!phone) return "";
@@ -13,20 +17,37 @@ export function formatPhoneWithCountryCode(phone: string): string {
       "+" + phone.replace(/[^0-9]/g, "")
     );
     if (parsed && parsed.isValid()) {
-      // e.g., +91 9876543210 or +1 2125550123
-      return `${
-        parsed.countryCallingCode ? "+" + parsed.countryCallingCode : ""
-      } ${parsed.nationalNumber}`;
+      return `+${parsed.countryCallingCode} ${parsed.nationalNumber}`;
     }
   } catch (e) {
     console.warn("Phone formatting failed:", e);
   }
-  return phone; // fallback to raw if invalid
+  return phone;
 }
 
 const RegistrationDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { data, isLoading, isError, error } = useRegistrationDetails(id);
+
+  const handlePrint = () => {
+    window.print();
+  };
+
+  const handleDownload = async () => {
+    const element = document.getElementById("printable-area");
+    if (!element) return;
+
+    html2pdf()
+      .set({
+        margin: 0.5,
+        filename: `registration-${id}.pdf`,
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+      })
+      .from(element)
+      .save();
+  };
 
   if (isLoading)
     return (
@@ -34,119 +55,131 @@ const RegistrationDetails: React.FC = () => {
         <Spin tip="Loading..." />
       </Centered>
     );
+
   if (isError || !data) {
     console.error("Registration details error:", error);
     return (
-      <Alert type="error" message="Failed to load registration details." />
+      <Centered>
+        <Alert type="error" message="Failed to load registration details." />
+      </Centered>
     );
   }
 
+  const renderItem = (label: string, value: React.ReactNode) => (
+    <Col xs={24} sm={12} md={12} lg={12} key={label}>
+      <Item>
+        <strong>{label}:</strong> {value || "-"}
+      </Item>
+    </Col>
+  );
+
   return (
     <Wrapper>
-      <Card
+      <StyledCard
         title="Registration Details"
         extra={
           <Button type="link">
-            <Link to="/dashboard/registrations">Back to List</Link>
+            <Link to="/dashboard/registrations">← Back to List</Link>
           </Button>
         }
       >
-        <DetailList>
-          <li>
-            <strong>First Name:</strong> {data.firstName}
-          </li>
-          <li>
-            <strong>Last Name:</strong> {data.lastName}
-          </li>
-          <li>
-            <strong>Age:</strong> {data.age}
-          </li>
-          <li>
-            <strong>Gender:</strong> {data.gender}
-          </li>
-          <li>
-            <strong>Email:</strong> {data.email}
-          </li>
-          <li>
-            <strong>Phone:</strong>{" "}
-            {formatPhoneWithCountryCode(data.phone || "")}
-          </li>
-          <li>
-            <strong>Religion:</strong> {data.religion}
-          </li>
-          <li>
-            <strong>Native Language:</strong> {data.nativeLanguage}
-          </li>
-          <li>
-            <strong>Known Languages:</strong>{" "}
-            {Array.isArray(data.knownLanguage)
-              ? data.knownLanguage.join(", ")
-              : data.knownLanguage}
-          </li>
-          <li>
-            <strong>Guardian Name:</strong> {data.guardianName}
-          </li>
-          <li>
-            <strong>Relationship:</strong> {data.relationship}
-          </li>
-          <li>
-            <strong>Faculty:</strong> {data.faculty}
-          </li>
-          <li>
-            <strong>Course:</strong> {data.course}
-          </li>
-          <li>
-            <strong>Availability:</strong> {data.availability}
-          </li>
-          <li>
-            <strong>Timing:</strong> {data.timing}
-          </li>
-          <li>
-            <strong>Country:</strong> {data.country}
-          </li>
-          <li>
-            <strong>Scholarship Type:</strong>{" "}
-            {data.scholarshipType
-              ? scholarshipTypeLabels[data.scholarshipType] ||
-                data.scholarshipType
-              : "-"}
-          </li>
-          <li>
-            <strong>Scholarship Reason:</strong> {data.scholarshipReason || "-"}
-          </li>
-          <li>
-            <strong>Created At:</strong>{" "}
-            {new Date(data.createdAt).toLocaleString()}
-          </li>
-          <li>
-            <strong>Updated At:</strong>{" "}
-            {new Date(data.updatedAt).toLocaleString()}
-          </li>
-        </DetailList>
-      </Card>
+        <HeaderBar>
+          <Button icon={<PrinterOutlined />} onClick={handlePrint}>
+            Print
+          </Button>
+          <Button icon={<DownloadOutlined />} onClick={handleDownload}>
+            Download
+          </Button>
+        </HeaderBar>
+
+        <PrintSection id="printable-area">
+          <Row gutter={[16, 16]}>
+            {renderItem(
+              "Name",
+              `${data.firstName || ""} ${data.lastName || ""}`.trim()
+            )}
+            {renderItem("Age", data.age)}
+            {renderItem("Gender", data.gender)}
+            {renderItem("Email", data.email)}
+            {renderItem("Phone", formatPhoneWithCountryCode(data.phone || ""))}
+            {renderItem("Country", data.country)}
+            {renderItem("Faculty", data.faculty)}
+            {renderItem("Course", data.course)}
+            {renderItem("Availability", data.availability)}
+            {renderItem("Timing", data.timing)}
+            {renderItem("Guardian Name", data.guardianName)}
+            {renderItem("Relationship", data.relationship)}
+            {renderItem("Religion", data.religion)}
+            {renderItem("Native Language", data.nativeLanguage)}
+            {renderItem(
+              "Known Languages",
+              Array.isArray(data.knownLanguage)
+                ? data.knownLanguage.join(", ")
+                : data.knownLanguage
+            )}
+            {renderItem(
+              "Scholarship Type",
+              data.scholarshipType
+                ? scholarshipTypeLabels[data.scholarshipType] ||
+                    data.scholarshipType
+                : "-"
+            )}
+            {renderItem("Scholarship Reason", data.scholarshipReason)}
+            {renderItem(
+              "Created At",
+              new Date(data.createdAt).toLocaleString()
+            )}
+            {renderItem(
+              "Updated At",
+              new Date(data.updatedAt).toLocaleString()
+            )}
+          </Row>
+        </PrintSection>
+      </StyledCard>
     </Wrapper>
   );
 };
 
 export default RegistrationDetails;
 
+// Styled Components
 const Wrapper = styled.div`
-  max-width: 700px;
-  margin: 40px auto;
+  padding: 40px 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
 `;
 
-const DetailList = styled.ul`
-  list-style: none;
-  padding: 0;
-  li {
-    margin-bottom: 12px;
-    font-size: 1rem;
-  }
+const StyledCard = styled(Card)`
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  background-color: #ffffff;
+`;
+
+const Item = styled.div`
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
 `;
 
 const Centered = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  min-height: 200px;
+`;
+
+const HeaderBar = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-bottom: 1rem;
+`;
+
+const PrintSection = styled.div`
+  @media print {
+    button,
+    .ant-card-extra {
+      display: none !important;
+    }
+  }
 `;
