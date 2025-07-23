@@ -67,16 +67,6 @@ const ImageContainer = styled.div`
   position: relative;
 `;
 
-// const Fee = styled.span`
-//   position: absolute;
-//   top: 20px;
-//   left: 24px;
-//   background-color: ${(props) => props.theme.colors.themeColor};
-//   padding: 7px 18px;
-//   border-radius: 8px;
-//   color: #fff;
-// `;
-
 const Image = styled.img`
   max-width: 420px;
   width: 100%;
@@ -117,34 +107,3 @@ const CardDetailWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
-// const Author = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   border-top: 1px solid ${(props) => props.theme.cardDividerColor};
-//   padding-top: 20px;
-// `;
-
-// const AuthorDeatil = styled.span`
-//   display: flex;
-//   align-items: center;
-//   gap: 12px;
-// `;
-
-// const NameLink = styled.a`
-//   text-transform: capitalize;
-//   text-decoration: none;
-//   font-size: 16px;
-//   font-weight: 500;
-//   color: #6b6b6b;
-
-//   &:hover {
-//     color: ${(props) => props.theme.colors.themeColor};
-//   }
-// `;
-
-// const DesignationLink = styled.a`
-//   text-transform: capitalize;
-//   text-decoration: none;
-//   font-weight: 500;
-// `;

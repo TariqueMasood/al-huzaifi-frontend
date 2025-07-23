@@ -104,9 +104,3 @@ const CardTitle = styled.a`
   //   color: #137C8F;
   // }
 `;
-
-// const CardSubtitle = styled.span`
-//   text-transform: capitalize;
-//   color: ${(props) => props.theme.colors.themeTextColor3};
-//   text-decoration: underline;
-// `;

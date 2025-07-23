@@ -188,14 +188,14 @@ const Image = styled.img`
 const Title = styled.h1`
   text-align: center;
   font-weight: 600;
-  color: ${(props) => props.theme.colors.themeColor};
+  color: ${(props) => props.theme.colors.colorPrimary};
   padding: 16px 0px;
   font-size: 20px;
 
   ${mq("sm")} {
     text-align: center;
     font-weight: 600;
-    color: ${(props) => props.theme.colors.themeColor};
+    color: ${(props) => props.theme.colors.colorPrimary};
     padding: 24px 0px;
     font-size: 24px;
   }
@@ -203,7 +203,7 @@ const Title = styled.h1`
   ${mq("md")} {
     text-align: center;
     font-weight: 600;
-    color: ${(props) => props.theme.colors.themeColor};
+    color: ${(props) => props.theme.colors.colorPrimary};
     padding: 30px 0px;
     font-size: 36px;
   }
@@ -315,25 +315,25 @@ const CourseDetail = styled.div`
   }
 
   h5:nth-of-type(2) {
-    background-color: ${(props) => props.theme.colors.themeColor2};
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     opacity: 0.9;
     color: #4f835b;
   }
 
   h5:nth-of-type(4) {
-    background-color: ${(props) => props.theme.colors.themeColor2};
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     opacity: 0.9;
     color: #4f835b;
   }
 
   h5:nth-of-type(6) {
-    background-color: ${(props) => props.theme.colors.themeColor2};
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     opacity: 0.9;
     color: #4f835b;
   }
 
   h5:nth-of-type(8) {
-    background-color: ${(props) => props.theme.colors.themeColor2};
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     opacity: 0.9;
     color: #4f835b;
   }
@@ -382,18 +382,18 @@ const ButtonContainer = styled.div`
   a {
     display: block;
     text-align: center;
-    border: 1px solid ${(props) => props.theme.colors.themeColor};
+    border: 1px solid ${(props) => props.theme.colors.colorPrimary};
     background: transparent;
     padding: 9px 16px;
     border-radius: 6px;
     font-weight: 500;
-    color: ${(props) => props.theme.colors.themeColor};
+    color: ${(props) => props.theme.colors.colorPrimary};
     transition: all ease-in-out 0.5s;
     font-size: 14px;
   }
 
   a:hover {
-    background-color: ${(props) => props.theme.colors.themeColor};
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     color: #fff;
   }
 
@@ -402,18 +402,18 @@ const ButtonContainer = styled.div`
     a {
       display: block;
       text-align: center;
-      border: 1px solid ${(props) => props.theme.colors.themeColor};
+      border: 1px solid ${(props) => props.theme.colors.colorPrimary};
       background: transparent;
       padding: 14px 20px;
       border-radius: 6px;
       font-weight: 600;
-      color: ${(props) => props.theme.colors.themeColor};
+      color: ${(props) => props.theme.colors.colorPrimary};
       transition: all ease-in-out 0.5s;
       font-size: 16px;
     }
 
     a:hover {
-      background-color: ${(props) => props.theme.colors.themeColor};
+      background-color: ${(props) => props.theme.colors.colorPrimary};
       color: #fff;
     }
   }
@@ -424,18 +424,18 @@ const ButtonContainer = styled.div`
     a {
       display: block;
       text-align: center;
-      border: 1px solid ${(props) => props.theme.colors.themeColor};
+      border: 1px solid ${(props) => props.theme.colors.colorPrimary};
       background: transparent;
       padding: 20px;
       border-radius: 6px;
       font-weight: 600;
-      color: ${(props) => props.theme.colors.themeColor};
+      color: ${(props) => props.theme.colors.colorPrimary};
       transition: all ease-in-out 0.5s;
       font-size: 18px;
     }
 
     a:hover {
-      background-color: ${(props) => props.theme.colors.themeColor};
+      background-color: ${(props) => props.theme.colors.colorPrimary};
       color: #fff;
     }
   }

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     background: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.colors.colorPrimaryText};
     transition: all 0.3s linear;
   }
 

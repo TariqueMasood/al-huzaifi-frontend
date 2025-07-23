@@ -148,13 +148,7 @@ const FormWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  color: ${(props) => props.theme.colors.themeColor3};
+  color: ${(props) => props.theme.colors.colorPrimary};
   text-align: center;
   margin-bottom: 1.5rem;
-`;
-
-const ToggleText = styled.div`
-  margin-top: 1rem;
-  text-align: center;
-  color: ${(props) => props.theme.text || "#333"};
 `;

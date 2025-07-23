@@ -147,14 +147,14 @@ const Image = styled.img`
 const Title = styled.h1`
   text-align: center;
   font-weight: 600;
-  color: ${(props) => props.theme.colors.themeColor};
+  color: ${(props) => props.theme.colors.colorPrimary};
   padding: 16px 0px;
   font-size: 20px;
 
   ${mq("sm")} {
     text-align: center;
     font-weight: 600;
-    color: ${(props) => props.theme.colors.themeColor};
+    color: ${(props) => props.theme.colors.colorPrimary};
     padding: 24px 0px;
     font-size: 24px;
   }
@@ -162,7 +162,7 @@ const Title = styled.h1`
   ${mq("md")} {
     text-align: center;
     font-weight: 600;
-    color: ${(props) => props.theme.colors.themeColor};
+    color: ${(props) => props.theme.colors.colorPrimary};
     padding: 30px 0px;
     font-size: 36px;
   }
@@ -281,16 +281,16 @@ const CourseDiscription = styled.div`
 const SubmitBtn = styled(Button)`
   padding: 6px 24px;
   margin: 24px 0px;
-  border: 1px solid ${(props) => props.theme.colors.themeColor};
-  color: ${(props) => props.theme.colors.themeColor};
+  border: 1px solid ${(props) => props.theme.colors.colorPrimary};
+  color: ${(props) => props.theme.colors.colorPrimary};
   background-color: #ffffff;
   border-radius: 8px;
   transition: all ease-in 0.4s;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.themeColor};
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     color: #fff;
-    border-color: ${(props) => props.theme.colors.themeColor};
+    border-color: ${(props) => props.theme.colors.colorPrimary};
   }
 `;
 
@@ -302,7 +302,7 @@ const FormContainer = styled.div`
     width: 100%;
     margin: 20px auto;
     padding: 35px;
-    border: 2px solid ${(props) => props.theme.colors.themeColor};
+    border: 2px solid ${(props) => props.theme.colors.colorPrimary};
     border-radius: 4px;
   }
 
@@ -311,7 +311,7 @@ const FormContainer = styled.div`
     width: 100%;
     margin: 40px auto;
     padding: 60px;
-    border: 2px solid ${(props) => props.theme.colors.themeColor};
+    border: 2px solid ${(props) => props.theme.colors.colorPrimary};
     border-radius: 4px;
   }
 `;

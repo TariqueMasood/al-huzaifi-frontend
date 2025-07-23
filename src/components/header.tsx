@@ -141,7 +141,7 @@ const StyledMenu = styled(Menu)`
   }
 
   .ant-menu-item:hover {
-    color: #1677ff;
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 `;
 
@@ -156,16 +156,11 @@ const RegisterButton = styled(Button)`
   padding: 0 20px;
   height: 38px;
   border-radius: 20px;
-  background: #1677ff;
   color: #fff;
   transition: all 0.3s ease;
 
   a {
     color: #fff;
     text-decoration: none;
-  }
-
-  &:hover {
-    background: #0958d9;
   }
 `;

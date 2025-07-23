@@ -58,11 +58,11 @@ export const TopHeader = () => {
 };
 
 const Wrapper = styled.div`
-  background-color: #ffffff; /* Matches the main header */
+  background-color: #ffffff;
   color: #333;
   padding: 6px 0;
   font-size: 14px;
-  border-bottom: 1px solid #eaeaea; /* subtle bottom separator */
+  border-bottom: 1px solid #eaeaea;
 `;
 
 const ContentWrapper = styled.div`
@@ -83,7 +83,7 @@ const SocialIcons = styled(Space)`
   }
 
   a:hover {
-    color: #1890ff;
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 `;
 

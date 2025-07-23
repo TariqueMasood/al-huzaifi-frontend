@@ -143,20 +143,6 @@ const Image = styled.img`
   width: 100%;
 `;
 
-// const Title = styled.h1`
-//   text-align: center;
-//   padding: 16px 0px;
-//   font-weight: 600;
-//   color: ${(props) => props.theme.colors.themeColor};
-
-//   ${mq("sm")} {
-//     text-align: center;
-//     padding: 30px 0px;
-//     font-weight: 600;
-//     color: ${(props) => props.theme.colors.themeColor};
-//   }
-// `;
-
 const SubTitle = styled.h5`
   font-weight: 600;
   padding: 5px 0px;
