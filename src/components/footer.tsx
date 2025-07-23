@@ -1,4 +1,3 @@
-// Footer.tsx
 import { Row, Col, Divider, Typography } from "antd";
 import {
   InstagramOutlined,
@@ -16,22 +15,25 @@ const { Title, Paragraph } = Typography;
 const Footer = () => {
   return (
     <Wrapper>
-      <div className="container">
+      <Container>
         <Row gutter={[32, 32]}>
           {/* Logo and Socials */}
           <Col xs={24} md={12} lg={8}>
-            <FooterLogo src={fLogo} alt="Logo" />
+            <FooterLogo src={fLogo} alt="Al-Huzaifi Academy Logo" />
             <Paragraph>
               An online hub for authentic Islamic and academic education,
               serving a global community with a focus on faith, excellence, and
               holistic development.
             </Paragraph>
-            <Title level={5}>Follow Us On:</Title>
+            <Title level={5} style={{ color: "inherit", marginTop: "1.5rem" }}>
+              Follow Us On:
+            </Title>
             <IconRow>
               <a
                 href="https://www.instagram.com/alhuzaifiacademy"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
               >
                 <InstagramOutlined />
               </a>
@@ -39,6 +41,7 @@ const Footer = () => {
                 href="https://www.facebook.com/alhuzaifiacademy"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
               >
                 <FacebookFilled />
               </a>
@@ -46,6 +49,7 @@ const Footer = () => {
                 href="https://www.youtube.com/@alhuzaifiacademy"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="YouTube"
               >
                 <YoutubeFilled />
               </a>
@@ -54,7 +58,9 @@ const Footer = () => {
 
           {/* Useful Links */}
           <Col xs={24} md={12} lg={8}>
-            <Title level={5}>Useful Links</Title>
+            <Title level={5} style={{ color: "inherit" }}>
+              Useful Links
+            </Title>
             <StyledList>
               <li>
                 <Link to="/">Home</Link>
@@ -66,7 +72,7 @@ const Footer = () => {
                 <Link to="/registration">Registration</Link>
               </li>
               <li>
-                <Link to="/tution-fee">Tution Fee</Link>
+                <Link to="/tution-fee">Tuition Fee</Link>
               </li>
               <li>
                 <Link to="/scholarship-program">Scholarship</Link>
@@ -82,7 +88,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <Col xs={24} md={12} lg={8}>
-            <Title level={5}>Contact Us</Title>
+            <Title level={5} style={{ color: "inherit" }}>
+              Contact Us
+            </Title>
             <ContactRow>
               <WhatsAppOutlined />
               <a
@@ -103,40 +111,45 @@ const Footer = () => {
                 info@alhuzaifi.com
               </a>
             </ContactRow>
-            <div style={{ marginTop: "16px", fontWeight: "bold" }}>
-              Our Offices
-            </div>
-            <ul>
+            <OfficesTitle>Our Offices</OfficesTitle>
+            <OfficesList>
               <li>USA</li>
               <li>India</li>
               <li>Egypt</li>
               <li>Turkiye</li>
-            </ul>
+            </OfficesList>
           </Col>
         </Row>
         <StyledDivider />
         <CopyRight>© 2024 Al-Huzaifi. All rights reserved.</CopyRight>
-      </div>
+      </Container>
     </Wrapper>
   );
 };
 
 export default Footer;
 
-const Wrapper = styled.footer`
-  padding: 40px 0 20px;
-  background-color: #137c8f;
-  color: #f2f2f2;
+// ===== Styled Components ===== //
 
-  .container {
-    max-width: 1200px;
-    margin: auto;
+const Wrapper = styled.footer`
+  background-color: ${(props) => props.theme.colors.colorPrimary};
+  color: #f2f2f2;
+  padding: 40px 16px 20px;
+
+  @media (min-width: 768px) {
+    padding: 60px 32px 30px;
   }
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const FooterLogo = styled.img`
   max-width: 220px;
   margin-bottom: 16px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.25));
 `;
 
 const IconRow = styled.div`
@@ -147,9 +160,12 @@ const IconRow = styled.div`
 
   a {
     color: #f2f2f2;
+    transition: color 0.3s ease;
 
-    &:hover {
-      color: #f2f2f2;
+    &:hover,
+    &:focus {
+      color: ${(props) => props.theme.colors.colorSecondary || "#004353"};
+      outline: none;
     }
   }
 `;
@@ -158,15 +174,21 @@ const StyledList = styled.ul`
   list-style: none;
   padding: 0;
   font-size: 16px;
+  margin-top: 1rem;
 
   li {
     margin-bottom: 10px;
 
     a {
       color: #f2f2f2;
-      &:hover {
-        color: 004353;
-        transition: 0.3s;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: ${(props) => props.theme.colors.colorSecondary};
+        text-decoration: underline;
+        outline: none;
       }
     }
   }
@@ -186,20 +208,42 @@ const ContactRow = styled.div`
   a {
     color: #f2f2f2;
     text-decoration: none;
+    transition: color 0.3s ease;
 
-    &:hover {
-      color: #004353;
+    &:hover,
+    &:focus {
+      color: ${(props) => props.theme.colors.colorSecondary || "#004353"};
+      outline: none;
     }
+  }
+`;
+
+const OfficesTitle = styled.div`
+  margin-top: 16px;
+  font-weight: bold;
+  font-size: 18px;
+`;
+
+const OfficesList = styled.ul`
+  margin-top: 8px;
+  list-style: none;
+  padding-left: 0;
+  font-size: 16px;
+
+  li {
+    margin-bottom: 6px;
   }
 `;
 
 const StyledDivider = styled(Divider)`
   background-color: #72819f;
   opacity: 0.2;
+  margin: 32px 0 16px 0;
 `;
 
 const CopyRight = styled.div`
   text-align: center;
   padding-top: 20px;
   font-size: 16px;
+  color: #ddd;
 `;

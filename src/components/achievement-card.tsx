@@ -1,3 +1,4 @@
+import { Card } from "antd";
 import styled from "styled-components";
 
 type cardProps = {
@@ -8,58 +9,52 @@ type cardProps = {
 
 const AchievementCard = (props: cardProps) => {
   return (
-    <Wrapper>
-      <h1>{props.counter}</h1>
+    <StyledCard bordered={false}>
+      <IconCircle>{props.icon}</IconCircle>
+      <Counter>{props.counter}</Counter>
       <Title>{props.title}</Title>
-      {/* <CardCircle>
-        <CircleIcon>{props.icon}</CircleIcon>
-      </CardCircle> */}
-    </Wrapper>
+    </StyledCard>
   );
 };
 
 export default AchievementCard;
 
-const Wrapper = styled.div`
-  margin-right: auto;
-  margin-left: auto;
+const StyledCard = styled(Card)`
   min-width: 250px;
   width: 100%;
   text-align: center;
   padding: 40px 20px;
-  border: 1px dashed #bcbcbc;
-  border-radius: 8px;
-  position: relative;
-  margin-right: 24px;
+  border: 1px dashed ${({ theme }) => theme.colors.colorPrimary};
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s;
 
-  &:last-child {
-    margin-right: 0px;
-  }
-
-  h1 {
-    color: #137c8f;
+  &:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   }
 `;
 
-// const CardCircle = styled.div`
-//   width: 65px;
-//   height: 65px;
-//   border-radius: 50%;
-//   background-color: #e5f8f8;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: absolute;
-//   top: -22px;
-//   left: -20px;
-// `;
+const IconCircle = styled.div`
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 16px auto;
+  border-radius: 50%;
+  background-color: ${({ theme }) => theme.colors.colorPrimary + "20"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: ${({ theme }) => theme.colors.colorPrimary};
+`;
 
-// const CircleIcon = styled.span`
-//   font-size: 28px;
-//   color: blue;
-// `;
+const Counter = styled.h2`
+  color: ${({ theme }) => theme.colors.colorPrimary};
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
 
-const Title = styled.span`
-  font-size: 18px;
-  color: #c78426;
+const Title = styled.div`
+  font-size: 16px;
+  color: #666;
 `;

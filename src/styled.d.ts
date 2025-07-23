@@ -4,13 +4,13 @@ declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       colorPrimary: string;
+      colorSecondary: string;
       colorPrimaryText: string;
       themeTextColor: string;
       themeTextColor2: string;
     };
 
     background: string;
-    text: string;
     boxShadow: string;
   }
 }

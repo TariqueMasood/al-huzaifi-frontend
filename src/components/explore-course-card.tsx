@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { mq } from "../styles/breakpoints";
 import { ReactNode } from "react";
+import { mq } from "../styles/breakpoints";
 
 type CardProps = {
   cardImage: ReactNode;
@@ -11,96 +11,77 @@ type CardProps = {
 
 const ExploreCourseCard = (props: CardProps) => {
   return (
-    <CardWraaper>
-      <CardCotainer>
+    <CardWrapper>
+      <CardContainer>
         <CardImage>{props.cardImage}</CardImage>
-      </CardCotainer>
+      </CardContainer>
       <CardTitle href={props.link}>{props.cardTitle}</CardTitle>
-      {/* <CardSubtitle>{props.cardSubTitle}</CardSubtitle> */}
-    </CardWraaper>
+    </CardWrapper>
   );
 };
 
 export default ExploreCourseCard;
 
-const CardWraaper = styled.div`
-  ${mq("lg")} {
-    max-width: 280px;
-    width: 100%;
-    border: 1px solid rgb(200, 200, 200);
-    box-shadow: 0 1px 3px 0 rgba(223, 223, 223, 0.1),
-      0 1px 2px -1px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.5s;
-    margin-bottom: 20px;
-    margin-right: 24px;
-  }
-
-  min-width: 230px;
+// Styled Components
+const CardWrapper = styled.div`
   width: 100%;
-  border: 1px solid #394051;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  min-width: 230px;
+  border-radius: 10px;
   padding: 30px 20px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 0.5s;
-  margin-bottom: 20px;
-  margin-right: 24px;
+  transition: all 0.3s ease;
 
-  &:last-child {
-    margin-right: 0px;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   }
 
-  // &:hover {
-  //   border-color: #137C8F;
-  // }
-`;
+  ${mq("lg")} {
+    max-width: 280px;
+    margin-right: 24px;
 
-const CardImage = styled.div`
-  max-width: 60px;
-  width: 100%;
-  max-height: 60px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    width: 40px;
-    height: 40px;
-    color: #cdad7e;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 `;
 
-const CardCotainer = styled.div`
+const CardContainer = styled.div`
   width: 85px;
   height: 85px;
   border-radius: 50%;
-  background-color: #fef2f4;
+  background-color: ${({ theme }) =>
+    theme.colors.colorPrimary + "1A"}; // Light transparent background
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const CardImage = styled.div`
+  svg {
+    width: 40px;
+    height: 40px;
+    color: ${({ theme }) => theme.colors.colorPrimary};
+  }
 `;
 
 const CardTitle = styled.a`
   cursor: pointer;
-  padding: 20px 0px;
-  margin-bottom: 0;
-  text-transform: capitalize;
-  text-decoration: none;
-  font-size: 24px;
+  padding-top: 20px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
-  color: #f2f2f2;
-  // transition: all ease 0.5s;
+  color: ${({ theme }) => theme.colors.colorPrimary};
+  text-decoration: none;
+  transition: color 0.3s ease;
 
-  // &:hover {
-  //   color: #137C8F;
-  // }
+  &:hover {
+    color: ${({ theme }) => theme.colors.colorPrimary};
+    text-decoration: underline;
+  }
 `;

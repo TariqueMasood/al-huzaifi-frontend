@@ -1,22 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { Form, Input, Button } from "antd";
-import { mq } from "../styles/breakpoints";
-// import Title from "./title"; // assuming you're still using Title component
 
 export const GetInTouch = () => {
   const [form] = Form.useForm();
 
   const onFinish = (values: any) => {
     console.log("Form submitted: ", values);
-    // Submit logic here
   };
 
   return (
     <Wrapper>
       <Container>
         <ContentWrap>
-          <Heading>get in touch</Heading>
+          <Heading>Get in touch</Heading>
           <SubHeading>
             Get daily updates, Upcoming Events and Courses!
           </SubHeading>
@@ -26,6 +23,7 @@ export const GetInTouch = () => {
               layout="vertical"
               onFinish={onFinish}
               autoComplete="off"
+              size="large"
             >
               <Form.Item
                 label="Name"
@@ -47,7 +45,9 @@ export const GetInTouch = () => {
               </Form.Item>
 
               <ButtonWrapper>
-                <StyledButton htmlType="submit">Submit</StyledButton>
+                <StyledButton htmlType="submit" type="default">
+                  Submit
+                </StyledButton>
               </ButtonWrapper>
             </Form>
           </FormContainer>
@@ -59,7 +59,15 @@ export const GetInTouch = () => {
 
 export default GetInTouch;
 
-// Styled Components
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+
+  @media (min-width: 768px) {
+    padding: 60px 0;
+  }
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -68,105 +76,86 @@ const Container = styled.div`
   margin: 0 auto;
 `;
 
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 20px 0px;
-
-  ${mq("sm")} {
-    padding: 30px 0px;
-  }
-
-  ${mq("md")} {
-    padding: 60px 0px;
-  }
-`;
-
-const Heading = styled.div`
-  font-size: 22px;
-  font-weight: 600;
-  text-transform: capitalize;
-  color: #137c8f;
-
-  ${mq("sm")} {
-    font-size: 26px;
-    font-weight: 700;
-  }
-
-  ${mq("md")} {
-    font-size: 32px;
-    font-weight: 700;
-  }
-`;
-
-const SubHeading = styled.div`
-  font-size: 16px;
-  color: #cdad7e;
-
-  ${mq("sm")} {
-    font-size: 18px;
-    padding: 12px 0px;
-    font-weight: 500;
-  }
-
-  ${mq("md")} {
-    font-size: 22px;
-    padding: 20px 0px;
-    font-weight: 600;
-  }
-`;
-
 const ContentWrap = styled.div`
   max-width: 750px;
+  width: 100%;
+  padding: 24px;
   margin: auto;
-  padding: 7px;
   border-radius: 20px;
-  border: 1px solid #137c8f;
+  border: 2px solid ${(props) => props.theme.colors.colorPrimary};
+  box-shadow: 0 4px 16px ${(props) => props.theme.colors.colorPrimary}33; /* 20% opacity */
 
-  ${mq("sm")} {
-    padding: 20px;
-    border: 2px solid #137c8f;
+  @media (min-width: 768px) {
+    padding: 40px;
+    border-width: 3px;
   }
+`;
 
-  ${mq("md")} {
-    padding: 30px;
-    border: 3px solid #137c8f;
+const Heading = styled.h2`
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: ${(props) => props.theme.colors.colorPrimary};
+  margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
+`;
+
+const SubHeading = styled.p`
+  font-size: 18px;
+  color: #cdad7e;
+  margin-bottom: 24px;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+    margin-bottom: 32px;
   }
 `;
 
 const FormContainer = styled.div`
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto;
   text-align: left;
 `;
 
 const StyledInput = styled(Input)`
-  height: 40px;
+  height: 44px;
   font-size: 16px;
+  border-radius: 8px;
+
+  &:focus,
+  &:hover {
+    border-color: ${(props) => props.theme.colors.colorPrimary};
+    box-shadow: 0 0 6px ${(props) => props.theme.colors.colorPrimary}66;
+  }
 `;
 
 const StyledButton = styled(Button)`
-  padding: 6px 24px;
-  border: 1px solid #137c8f;
-  color: #137c8f;
-  background-color: #ffffff;
+  padding: 8px 28px;
   border-radius: 8px;
-  transition: all ease-in 0.4s;
+  font-weight: 600;
+  border: 1.5px solid ${(props) => props.theme.colors.colorPrimary};
+  color: ${(props) => props.theme.colors.colorPrimary};
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  min-width: 120px;
 
-  &:hover {
-    background-color: #137c8f;
+  &:hover,
+  &:focus {
+    background-color: ${(props) => props.theme.colors.colorPrimary};
     color: #fff;
+    border-color: ${(props) => props.theme.colors.colorPrimary};
   }
 
-  ${mq("md")} {
-    padding: 9px 36px;
+  @media (min-width: 768px) {
+    padding: 10px 36px;
     font-size: 18px;
-    font-weight: 600;
   }
 `;
 
 const ButtonWrapper = styled.div`
-  margin-top: 24px;
+  margin-top: 28px;
   text-align: center;
 `;

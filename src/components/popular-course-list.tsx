@@ -104,8 +104,14 @@ const PopularCourseList = () => {
         <RowContainer>
           <Row gutter={[32, 32]}>
             {popularCourseCardData.map((item) => (
-              <Col xs={24} sm={12} md={8}>
-                <PopularCourseCard key={item.id} {...item} />
+              <Col
+                xs={24}
+                sm={12}
+                md={8}
+                key={item.id}
+                style={{ display: "flex" }}
+              >
+                <PopularCourseCard {...item} />
               </Col>
             ))}
           </Row>

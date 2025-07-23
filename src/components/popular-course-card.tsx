@@ -1,4 +1,7 @@
+import { Card, Typography } from "antd";
 import styled from "styled-components";
+
+const { Text } = Typography;
 
 type CardProps = {
   cardImage: string;
@@ -14,96 +17,94 @@ type CardProps = {
 
 const PopularCourseCard = (props: CardProps) => {
   return (
-    <div>
-      <Wrapper>
-        <ImageContainer>
-          <Image src={props.cardImage} alt="Card-Image" />
-          {/* <Fee>{props.courseFee}</Fee> */}
-        </ImageContainer>
-        <CardContent>
-          <CardHeading href={props.link}>{props.cardTitle}</CardHeading>
-          <CardDetailWrapper>
-            <CardDetail>
-              <span>{props.student}</span>
-            </CardDetail>
-            <CardDetail>
-              <span>{props.notes}</span>
-            </CardDetail>
-            <CardDetail>
-              <span>{props.hour}</span>
-            </CardDetail>
-          </CardDetailWrapper>
-          {/* <Author>
-            <AuthorDeatil>
-              <span>
-                <NameLink href="#">{props.userName}</NameLink>
-              </span>
-            </AuthorDeatil>
-            <span>
-              <DesignationLink href="#">{props.designation}</DesignationLink>
-            </span>
-          </Author> */}
-        </CardContent>
-      </Wrapper>
-    </div>
+    <StyledCard
+      cover={
+        <ImageWrapper>
+          <StyledImage src={props.cardImage} alt="Course" />
+        </ImageWrapper>
+      }
+      hoverable
+    >
+      <CourseTitle href={props.link}>{props.cardTitle}</CourseTitle>
+
+      <DetailWrapper>
+        <DetailItem>{props.student}</DetailItem>
+        <DetailItem>{props.notes}</DetailItem>
+        <DetailItem>{props.hour}</DetailItem>
+      </DetailWrapper>
+    </StyledCard>
   );
 };
 
 export default PopularCourseCard;
 
-const Wrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 420px;
-  width: 100%;
-  height: auto;
-  box-shadow: 0px 3px 6px 0px rgba(140, 149, 159, 0.15);
-  margin-bottom: 20px;
-  border: 1px solid #434343;
-  border-radius: 8px;
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-`;
-
-const Image = styled.img`
-  max-width: 420px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-`;
-
-const CardContent = styled.div`
-  padding: 12px;
-`;
-
-const CardHeading = styled.a`
-  text-transform: capitalize;
-  cursor: pointer;
-  font-weight: 700;
-  // line-height: 24px;
-  font-size: 20px;
-  color: #137c8f;
-  transition: ease-in-out 0.4s;
-
-  // &:hover {
-  //   color: #137C8F;
-  //   transform: scale(1.1);
-  // }
-`;
-
-const CardDetail = styled.span`
+const StyledCard = styled(Card)`
   display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 12px 0px;
-  color: #cdad7e;
-  font-size: 12px;
-  font-weight: 600;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+
+  max-width: 420px;
+  width: 100%;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 16px;
+  }
 `;
 
-const CardDetailWrapper = styled.div`
+const ImageWrapper = styled.div`
+  height: 200px;
+  overflow: hidden;
+`;
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+const CourseTitle = styled.a`
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  color: ${(props) => props.theme.colors.colorPrimary};
+  margin-bottom: 12px;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+    color: ${(props) => props.theme.colors.colorPrimary};
+  }
+`;
+
+const DetailWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-top: 12px;
+  gap: 8px;
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+    gap: 6px;
+  }
+`;
+
+const DetailItem = styled(Text)`
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
 `;

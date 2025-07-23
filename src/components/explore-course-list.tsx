@@ -52,10 +52,10 @@ const exploreCardData = [
 const ExploreCourseList = () => {
   return (
     <Wrapper>
-      <div className="container">
+      <Container>
         <Title title="Explore Our" colorTitle="Courses" />
         <CardWrapper>
-          <Row gutter={[24, 24]} justify="center">
+          <Row gutter={[32, 32]} justify="center">
             {exploreCardData.map((data) => (
               <Col xs={24} sm={12} md={8} lg={6} key={data.id}>
                 <ExploreCourseCard
@@ -68,27 +68,34 @@ const ExploreCourseList = () => {
             ))}
           </Row>
         </CardWrapper>
-      </div>
+      </Container>
     </Wrapper>
   );
 };
 
 export default ExploreCourseList;
 
-// Styled Components
-const Wrapper = styled.div`
-  background-color: #137c8f;
-  color: #72819f;
+const Wrapper = styled.section`
+  background-color: ${({ theme }) =>
+    theme.colors.colorPrimary + "10"}; // Light primary shade
+  padding: 60px 0;
+  overflow: hidden;
+`;
+
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 `;
 
 const CardWrapper = styled.div`
-  padding: 40px 0px;
+  padding-top: 40px;
 
-  ${mq("lg")} {
-    display: block;
+  .ant-row {
+    row-gap: 40px;
   }
 
-  display: block;
-  overflow-x: auto;
-  scrollbar-width: none;
+  ${mq("md")} {
+    padding: 60px 0 0 0;
+  }
 `;

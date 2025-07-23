@@ -2,83 +2,95 @@ import styled from "styled-components";
 import AchievementCard from "./achievement-card";
 import Title from "./title";
 import { Row, Col } from "antd";
-import { UsergroupAddOutlined } from "@ant-design/icons";
 import { mq } from "../styles/breakpoints";
+import {
+  UsergroupAddOutlined,
+  BookOutlined,
+  GlobalOutlined,
+  TeamOutlined,
+} from "@ant-design/icons";
 
 const achievementCardData = [
   {
     id: 1,
     counter: "1000+",
     title: "Students Enrolled",
-    icon: <UsergroupAddOutlined />,
+    icon: <UsergroupAddOutlined style={{ fontSize: 32, color: "#007b5e" }} />,
   },
   {
     id: 2,
     counter: "40+",
     title: "Courses Offered",
-    icon: <UsergroupAddOutlined />,
+    icon: <BookOutlined style={{ fontSize: 32, color: "#fa8c16" }} />,
   },
   {
     id: 3,
     counter: "20+",
     title: "Countries Reached",
-    icon: <UsergroupAddOutlined />,
+    icon: <GlobalOutlined style={{ fontSize: 32, color: "#1890ff" }} />,
   },
   {
     id: 4,
     counter: "10+",
     title: "Teacher Nationalities",
-    icon: <UsergroupAddOutlined />,
+    icon: <TeamOutlined style={{ fontSize: 32, color: "#722ed1" }} />,
   },
 ];
 
 const AchievementList = () => {
   return (
     <Wrapper>
-      <div className="container">
+      <Container>
         <TitleContainer>
           <Title title="Our" colorTitle="Achievements" />
         </TitleContainer>
-        <CardWrapper>
-          <Row gutter={[24, 24]} justify="center">
-            {achievementCardData.map((data) => (
-              <Col xs={24} sm={12} md={6} key={data.id}>
-                <AchievementCard
-                  counter={data.counter}
-                  title={data.title}
-                  icon={data.icon}
-                />
-              </Col>
-            ))}
-          </Row>
-        </CardWrapper>
-      </div>
+        <Row gutter={[24, 24]} justify="center">
+          {achievementCardData.map((data) => (
+            <Col xs={24} sm={12} md={12} lg={6} key={data.id}>
+              <AchievementCard
+                counter={data.counter}
+                title={data.title}
+                icon={data.icon}
+              />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </Wrapper>
   );
 };
 
 export default AchievementList;
 
-// Styled Components
-
-const Wrapper = styled.div`
-  padding: 24px 0;
+const Wrapper = styled.section`
+  background-color: #f9f9f9;
+  padding: 50px 0;
 
   ${mq("sm")} {
-    padding: 30px 0;
+    padding: 60px 0;
   }
 
   ${mq("md")} {
-    padding: 40px 0;
+    padding: 80px 0;
   }
 `;
 
-const TitleContainer = styled.div`
-  padding-bottom: 40px;
+const Container = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 `;
 
-const CardWrapper = styled.div`
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 50px;
+const TitleContainer = styled.div`
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+
+    ${mq("md")} {
+      font-size: 32px;
+    }
+  }
 `;
