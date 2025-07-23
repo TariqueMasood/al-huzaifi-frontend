@@ -2,12 +2,10 @@ import {
   InstagramOutlined,
   FacebookFilled,
   YoutubeFilled,
-  UserOutlined,
-  UserAddOutlined,
 } from "@ant-design/icons";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { Space, Tooltip, Button } from "antd";
+import { mq } from "../styles/breakpoints";
 
 export const TopHeader = () => {
   return (
@@ -44,11 +42,15 @@ export const TopHeader = () => {
         </SocialIcons>
 
         <UserActions>
-          <Link to="/registration">
-            <Button type="primary" icon={<UserAddOutlined />} size="small">
-              Register
-            </Button>
-          </Link>
+          <ContactItem>
+            <a href="mailto:info@alhuzaifiacademy.com">
+              info@alhuzaifiacademy.com
+            </a>
+          </ContactItem>
+          <Separator>|</Separator>
+          <ContactItem>
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </ContactItem>
         </UserActions>
       </ContentWrapper>
     </Wrapper>
@@ -97,4 +99,23 @@ const UserActions = styled.div`
   a {
     text-decoration: none;
   }
+`;
+
+const ContactItem = styled.div`
+  color: #555;
+  font-size: 12px;
+
+  ${mq("md")} {
+    font-size: 14px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
+
+const Separator = styled.span`
+  padding: 0 10px;
+  color: #ddd;
 `;
