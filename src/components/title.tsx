@@ -10,56 +10,75 @@ type TitleProps = {
 
 const Title = (props: TitleProps) => {
   return (
-    <TitleWrapper>
-      <SubHeading>{props.subTitle}</SubHeading>
+    <TitleWrapper style={props.styles}>
+      {props.subTitle && <SubHeading>{props.subTitle}</SubHeading>}
       <Heading>
-        {props.title} <ColorTitle>{props.colorTitle}</ColorTitle>
+        {props.title}
+        {props.colorTitle && <ColorTitle> {props.colorTitle}</ColorTitle>}
+        <Underline />
       </Heading>
     </TitleWrapper>
   );
 };
+
 export default Title;
 
 const TitleWrapper = styled.div`
-  max-width: 400px;
   width: 100%;
-  background-color: #137c8f;
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 1rem;
   text-align: center;
-  border-radius: 50px;
-  color: #e6f7ff;
-`;
-
-const Heading = styled.h1`
-  font-size: 18px;
-  font-weight: 500;
-  padding: 12px 0px;
-  margin: 0;
-
-  ${mq("sm")} {
-    font-size: 24px;
-    font-weight: 600;
-    padding: 16px 0px;
-  }
-
-  ${mq("md")} {
-    font-size: 32px;
-    font-weight: 700;
-    padding: 16px 0px;
-  }
+  overflow: hidden;
 `;
 
 const SubHeading = styled.h5`
   margin-bottom: 0.5rem;
   font-weight: 400;
+  font-size: 14px;
+
+  ${mq("sm")} {
+    font-size: 16px;
+  }
+
+  ${mq("md")} {
+    font-size: 18px;
+  }
+`;
+
+const Heading = styled.h1`
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 auto;
+  padding-bottom: 0.75rem;
+  color: ${({ theme }) => theme.colors.colorPrimaryText};
+
+  ${mq("sm")} {
+    font-size: 26px;
+  }
+
+  ${mq("md")} {
+    font-size: 32px;
+  }
 `;
 
 const ColorTitle = styled.span`
-  // color: #E6F7FF;
+  color: ${({ theme }) => theme.colors.colorPrimary};
+`;
+
+const Underline = styled.div`
+  height: 3px;
+  width: 60%;
+  max-width: 160px;
+  margin: 0.25rem auto 0;
+  background-color: ${({ theme }) => theme.colors.colorPrimary};
+  border-radius: 2px;
+
+  ${mq("sm")} {
+    width: 80px;
+  }
+
+  ${mq("md")} {
+    width: 100px;
+  }
 `;

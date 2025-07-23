@@ -24,12 +24,18 @@ function HeroCarousel() {
     {
       image: slider4,
       caption:
-        "A guide to strengthen your connection with faith, empowering you to lead a life a purpose",
+        "A guide to strengthen your connection with faith, empowering you to lead a life of purpose",
     },
   ];
 
   return (
-    <StyledCarousel autoplay>
+    <StyledCarousel
+      autoplay
+      effect="fade"
+      draggable
+      pauseOnHover
+      adaptiveHeight
+    >
       {slides.map((slide, index) => (
         <SlideWrapper key={index}>
           <Image src={slide.image} alt={`slide-${index}`} />
@@ -44,46 +50,70 @@ function HeroCarousel() {
 
 export default HeroCarousel;
 
-// Styled Components
-
 const StyledCarousel = styled(Carousel)`
   .slick-dots li button {
-    background-color: #aaa;
+    background-color: #ccc;
+    border-radius: 50%;
   }
+
   .slick-dots li.slick-active button {
-    background-color: #555d50;
+    background-color: ${({ theme }) => theme.colors.colorPrimary};
+  }
+
+  .slick-dots-bottom {
+    bottom: 12px;
   }
 `;
 
 const SlideWrapper = styled.div`
   position: relative;
+  width: 100%;
 `;
 
 const Image = styled.img`
   width: 100%;
-  height: auto;
+  max-height: 600px;
+  object-fit: cover;
   display: block;
+
+  ${mq("sm")} {
+    max-height: 500px;
+  }
 `;
 
 const Caption = styled.div`
   position: absolute;
-  bottom: 20%;
-  left: 10%;
-  right: 10%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
   text-align: center;
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+
+  ${mq("sm")} {
+    bottom: 12%;
+  }
 `;
 
 const SliderTitle = styled.h3`
-  color: #555d50;
   font-family: "Oswald", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 18px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.colors.colorPrimary};
+  margin: 0;
 
   ${mq("sm")} {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   ${mq("md")} {
+    font-size: 28px;
+  }
+
+  ${mq("lg")} {
     font-size: 32px;
   }
 `;

@@ -1,12 +1,9 @@
 import { Row, Col } from "antd";
-
 import {
   GlobalOutlined,
   EnvironmentOutlined,
   BookOutlined,
   TeamOutlined,
-} from "@ant-design/icons";
-import {
   UserOutlined,
   CheckCircleOutlined,
   EditOutlined,
@@ -63,111 +60,91 @@ export const WhychooseHomePage = () => {
   return (
     <Wrapper>
       <TitleContainer>
-        <Title title="Why Choose Us?" />
+        <Title title="Why" colorTitle="Choose Us?" />
       </TitleContainer>
+
       <div className="container">
-        <Row gutter={[32, 32]}>
-          <Col span={12} xs={24} md={12}>
-            {features.slice(0, 4).map((item, index) => (
-              <CardWrapper key={index}>
+        <Row gutter={[24, 24]}>
+          {features.map((item, index) => (
+            <Col key={index} xs={24} sm={12} lg={12}>
+              <CardWrapper>
                 <IconWrapper>{item.icon}</IconWrapper>
                 <TextWrapper>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </TextWrapper>
               </CardWrapper>
-            ))}
-          </Col>
-          <Col span={12} xs={24} md={12}>
-            {features.slice(4).map((item, index) => (
-              <CardWrapper key={index + 4}>
-                <IconWrapper>{item.icon}</IconWrapper>
-                <TextWrapper>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </TextWrapper>
-              </CardWrapper>
-            ))}
-          </Col>
+            </Col>
+          ))}
         </Row>
       </div>
     </Wrapper>
   );
 };
 
-// Styled Components
 const Wrapper = styled.div`
-  padding: 30px 0px;
+  padding: 40px 0;
+  background-color: #fafafa";
 
-  ${mq("md")} {
-    padding: 40px 0px;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
   }
 `;
 
 const TitleContainer = styled.div`
-  margin-bottom: 50px;
+  text-align: center;
+  margin-bottom: 40px;
 `;
-
-// const Container = styled.div`
-//   max-width: 1200px;
-//   width: 100%;
-//   margin: 0 auto;
-//   padding: 0 16px;
-// `;
 
 const CardWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
   gap: 16px;
-  margin-bottom: 24px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
 
   h3 {
     font-size: 18px;
     font-weight: 600;
-    color: #137c8f;
+    color: ${({ theme }) => theme.colors.colorPrimary};
     margin: 0;
   }
 
   p {
     font-size: 14px;
     color: #c78426;
-    text-transform: capitalize;
-    margin: 0;
-  }
+    margin: 4px 0 0;
 
-  ${mq("sm")} {
-    h3 {
-      font-size: 20px;
-    }
-
-    p {
+    ${mq("md")} {
       font-size: 16px;
+      font-style: italic;
     }
   }
 
   ${mq("md")} {
-    h3 {
-      font-size: 22px;
-    }
-
-    p {
-      font-size: 18px;
-      font-style: italic;
-    }
+    padding: 20px;
   }
 `;
 
 const IconWrapper = styled.div`
-  font-size: 36px;
-  color: #137c8f;
+  font-size: 32px;
+  color: ${({ theme }) => theme.colors.colorPrimary};
   margin-top: 4px;
 
   ${mq("md")} {
-    font-size: 44px;
+    font-size: 40px;
   }
 `;
 
 const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  flex: 1;
 `;
