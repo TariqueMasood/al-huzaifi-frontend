@@ -1,4 +1,3 @@
-import React from "react";
 import {
   InstagramOutlined,
   FacebookFilled,
@@ -7,56 +6,61 @@ import {
   UserAddOutlined,
 } from "@ant-design/icons";
 import styled from "styled-components";
-import { mq } from "../styles/breakpoints";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Space, Tooltip, Button } from "antd";
 
 export const TopHeader = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <SocialIcon>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.instagram.com/alhuzaifiacademy/?igsh=MWswMzl6NGM3Z25zcw%3D%3D&utm_source=qr#"
-          >
-            <InstagramOutlined />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.facebook.com/alhuzaifiacademy?mibextid=wwXIfr&rdid=QVVmcr6dT9Z3LCEn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FGoKAA3Pg%2F%3Fmibextid%3DwwXIfr#"
-          >
-            <FacebookFilled />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.youtube.com/@alhuzaifiacademy"
-          >
-            <YoutubeFilled />
-          </a>
-        </SocialIcon>
+        <SocialIcons>
+          <Tooltip title="Instagram">
+            <a
+              href="https://www.instagram.com/alhuzaifiacademy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramOutlined />
+            </a>
+          </Tooltip>
+          <Tooltip title="Facebook">
+            <a
+              href="https://www.facebook.com/alhuzaifiacademy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookFilled />
+            </a>
+          </Tooltip>
+          <Tooltip title="YouTube">
+            <a
+              href="https://www.youtube.com/@alhuzaifiacademy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <YoutubeFilled />
+            </a>
+          </Tooltip>
+        </SocialIcons>
 
-        <LoginRegister>
-          <LoginBtn>
-            <UserOutlined />
-            {/* <Link to="/login">Login</Link> */}
-          </LoginBtn>
-          <RegBtn>
-            <UserAddOutlined />
-            {/* <Link to="/login">Register</Link> */}
-          </RegBtn>
-        </LoginRegister>
+        <UserActions>
+          <Link to="/registration">
+            <Button type="primary" icon={<UserAddOutlined />} size="small">
+              Register
+            </Button>
+          </Link>
+        </UserActions>
       </ContentWrapper>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  color: #f2f2f2;
-  padding: 7px 0px;
-  border-bottom: 1px solid #ccc;
+  background-color: #ffffff; /* Matches the main header */
+  color: #333;
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #eaeaea; /* subtle bottom separator */
 `;
 
 const ContentWrapper = styled.div`
@@ -64,54 +68,33 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 0 16px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 `;
 
-const SocialIcon = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
+const SocialIcons = styled(Space)`
   font-size: 20px;
 
-  ${mq("md")} {
-    gap: 24px;
-    font-size: 24px;
-  }
-
   a {
-    transition: all ease-in-out 0.4s;
-    color: inherit;
+    color: #555;
+    transition: color 0.3s ease;
   }
 
   a:hover {
-    color: rgb(133, 156, 162);
+    color: #1890ff;
   }
 `;
 
-const LoginRegister = styled.div`
+const UserActions = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
-  font-size: 12px;
+  gap: 10px;
 
-  ${mq("md")} {
-    font-size: 16px;
+  .ant-btn {
+    font-size: 13px;
   }
 
   a {
-    color: #f2f2f2;
     text-decoration: none;
   }
 `;
-
-const LoginBtn = styled.button`
-  background: transparent;
-  border: none;
-  color: #f2f2f2;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-`;
-
-const RegBtn = styled(LoginBtn)``;

@@ -1,7 +1,6 @@
 import {
   PieChartOutlined,
   FileOutlined,
-  TeamOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import { ReactNode } from "react";
