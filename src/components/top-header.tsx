@@ -4,7 +4,7 @@ import {
   YoutubeFilled,
 } from "@ant-design/icons";
 import styled from "styled-components";
-import { Space, Tooltip, Button } from "antd";
+import { Tooltip } from "antd";
 import { mq } from "../styles/breakpoints";
 
 export const TopHeader = () => {
@@ -17,6 +17,7 @@ export const TopHeader = () => {
               href="https://www.instagram.com/alhuzaifiacademy"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <InstagramOutlined />
             </a>
@@ -26,6 +27,7 @@ export const TopHeader = () => {
               href="https://www.facebook.com/alhuzaifiacademy"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook"
             >
               <FacebookFilled />
             </a>
@@ -35,6 +37,7 @@ export const TopHeader = () => {
               href="https://www.youtube.com/@alhuzaifiacademy"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="YouTube"
             >
               <YoutubeFilled />
             </a>
@@ -43,13 +46,11 @@ export const TopHeader = () => {
 
         <UserActions>
           <ContactItem>
-            <a href="mailto:info@alhuzaifiacademy.com">
-              info@alhuzaifiacademy.com
-            </a>
+            <a href="mailto:info@alhuzaifi.com">info@alhuzaifi.com</a>
           </ContactItem>
           <Separator>|</Separator>
           <ContactItem>
-            <a href="tel:+919876543210">+91 98765 43210</a>
+            <a href="tel:+919535316943">+91 9535316943</a>
           </ContactItem>
         </UserActions>
       </ContentWrapper>
@@ -72,29 +73,31 @@ const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
-const SocialIcons = styled(Space)`
-  font-size: 20px;
+const SocialIcons = styled.div`
+  display: flex;
+  gap: 14px;
+  align-items: center;
 
   a {
     color: #555;
-    transition: color 0.3s ease;
-  }
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.2s ease;
 
-  a:hover {
-    color: ${(props) => props.theme.colors.colorPrimary};
+    &:hover {
+      color: ${(props) => props.theme.colors.colorPrimary};
+      transform: scale(1.15);
+    }
   }
 `;
 
 const UserActions = styled.div`
   display: flex;
   align-items: center;
-  gap: 10px;
-
-  .ant-btn {
-    font-size: 13px;
-  }
+  flex-wrap: wrap;
+  gap: 8px;
 
   a {
     text-decoration: none;
@@ -117,5 +120,5 @@ const ContactItem = styled.div`
 
 const Separator = styled.span`
   padding: 0 10px;
-  color: #ddd;
+  color: #bbb;
 `;

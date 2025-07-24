@@ -248,13 +248,13 @@ const SubHeading = styled.h3`
   text-align: center;
   font-size: 20px;
   margin-bottom: 9px;
-  color: ${(props) => props.theme.colors.themeTextColor2};
+  color: ${(props) => props.theme.colors.colorPrimary};
 
   ${mq("sm")} {
     text-align: center;
     font-style: italic;
     font-size: 22px;
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 
   ${mq("md")} {
@@ -262,7 +262,7 @@ const SubHeading = styled.h3`
     font-style: italic;
     margin-bottom: 20px;
     font-size: 26px;
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 `;
 
@@ -270,14 +270,14 @@ const SubTitle = styled.h4`
   text-align: center;
   font-style: italic;
   font-size: 18px;
-  color: ${(props) => props.theme.colors.themeTextColor2};
+  color: ${(props) => props.theme.colors.colorPrimary};
 
   ${mq("sm")} {
     text-align: center;
     font-style: italic;
     text-decoration: underline;
     font-size: 20px;
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 
   ${mq("md")} {
@@ -286,7 +286,7 @@ const SubTitle = styled.h4`
     text-decoration: underline;
     margin-bottom: 30px;
     font-size: 22px;
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 `;
 

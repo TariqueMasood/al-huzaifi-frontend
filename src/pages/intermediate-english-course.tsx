@@ -199,14 +199,14 @@ const SubTitle = styled.h4`
   text-align: center;
   font-style: italic;
   font-size: 18px;
-  color: ${(props) => props.theme.colors.themeTextColor2};
+  color: ${(props) => props.theme.colors.colorPrimary};
 
   ${mq("sm")} {
     text-align: center;
     font-style: italic;
     text-decoration: underline;
     font-size: 20px;
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 
   ${mq("md")} {
@@ -215,7 +215,7 @@ const SubTitle = styled.h4`
     text-decoration: underline;
     margin-bottom: 30px;
     font-size: 22px;
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
   }
 `;
 
@@ -303,11 +303,11 @@ const CourseDetail = styled.div`
   margin: 12px 0px;
 
   h5:first-of-type {
-    border-top: 1px solid ${(props) => props.theme.colors.themeTextColor2};
+    border-top: 1px solid ${(props) => props.theme.colors.colorPrimary};
   }
 
   h5:last-of-type {
-    border-bottom: 1px solid ${(props) => props.theme.colors.themeTextColor2};
+    border-bottom: 1px solid ${(props) => props.theme.colors.colorPrimary};
   }
 
   h5:nth-of-type(2) {
@@ -335,7 +335,7 @@ const CourseDetail = styled.div`
   }
 
   h5 {
-    color: ${(props) => props.theme.colors.themeTextColor2};
+    color: ${(props) => props.theme.colors.colorPrimary};
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
@@ -357,7 +357,7 @@ const CourseDetail = styled.div`
     }
 
     h5 {
-      color: ${(props) => props.theme.colors.themeTextColor2};
+      color: ${(props) => props.theme.colors.colorPrimary};
       font-size: 18px;
       font-weight: 600;
       text-transform: capitalize;

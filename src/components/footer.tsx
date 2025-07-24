@@ -12,6 +12,16 @@ import fLogo from "../../src/images/al-hozaifi-academy-logo-white.png";
 
 const { Title, Paragraph } = Typography;
 
+const usefulLinks = [
+  { name: "Home", path: "/" },
+  { name: "About", path: "/why-choose-us" },
+  { name: "Registration", path: "/registration" },
+  { name: "Tuition Fee", path: "/tution-fee" },
+  { name: "Scholarship", path: "/scholarship-program" },
+  { name: "Academic Calendar", path: "/acadmic-calendar" },
+  { name: "Ask Fatwa", path: "/darul-ifta" },
+];
+
 const Footer = () => {
   return (
     <Wrapper>
@@ -20,11 +30,11 @@ const Footer = () => {
           {/* Logo and Socials */}
           <Col xs={24} md={12} lg={8}>
             <FooterLogo src={fLogo} alt="Al-Huzaifi Academy Logo" />
-            <Paragraph>
+            <FooterParagraph>
               An online hub for authentic Islamic and academic education,
               serving a global community with a focus on faith, excellence, and
               holistic development.
-            </Paragraph>
+            </FooterParagraph>
             <Title level={5} style={{ color: "inherit", marginTop: "1.5rem" }}>
               Follow Us On:
             </Title>
@@ -62,27 +72,11 @@ const Footer = () => {
               Useful Links
             </Title>
             <StyledList>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/why-choose-us">About</Link>
-              </li>
-              <li>
-                <Link to="/registration">Registration</Link>
-              </li>
-              <li>
-                <Link to="/tution-fee">Tuition Fee</Link>
-              </li>
-              <li>
-                <Link to="/scholarship-program">Scholarship</Link>
-              </li>
-              <li>
-                <Link to="/acadmic-calendar">Academic Calendar</Link>
-              </li>
-              <li>
-                <Link to="/darul-ifta">Ask Fatwa</Link>
-              </li>
+              {usefulLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path}>{link.name}</Link>
+                </li>
+              ))}
             </StyledList>
           </Col>
 
@@ -129,15 +123,13 @@ const Footer = () => {
 
 export default Footer;
 
-// ===== Styled Components ===== //
-
 const Wrapper = styled.footer`
-  background-color: ${(props) => props.theme.colors.colorPrimary};
-  color: #f2f2f2;
-  padding: 40px 16px 20px;
+  background-color: #101d2c;
+  color: #f1f1f1;
+  padding: 50px 20px 30px;
 
   @media (min-width: 768px) {
-    padding: 60px 32px 30px;
+    padding: 70px 32px 40px;
   }
 `;
 
@@ -148,24 +140,29 @@ const Container = styled.div`
 
 const FooterLogo = styled.img`
   max-width: 220px;
-  margin-bottom: 16px;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.25));
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+`;
+
+const FooterParagraph = styled(Paragraph)`
+  color: #f0f0f0 !important;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 480px;
 `;
 
 const IconRow = styled.div`
   display: flex;
-  gap: 24px;
-  font-size: 24px;
+  gap: 20px;
+  font-size: 22px;
   margin-top: 12px;
 
   a {
     color: #f2f2f2;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 
-    &:hover,
-    &:focus {
-      color: ${(props) => props.theme.colors.colorSecondary || "#004353"};
-      outline: none;
+    &:hover {
+      color: #00bfa5;
     }
   }
 `;
@@ -184,11 +181,9 @@ const StyledList = styled.ul`
       text-decoration: none;
       transition: color 0.3s ease;
 
-      &:hover,
-      &:focus {
-        color: ${(props) => props.theme.colors.colorSecondary};
+      &:hover {
+        color: #00bfa5;
         text-decoration: underline;
-        outline: none;
       }
     }
   }
@@ -197,7 +192,7 @@ const StyledList = styled.ul`
 const ContactRow = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   font-size: 18px;
 
   svg {
@@ -210,40 +205,40 @@ const ContactRow = styled.div`
     text-decoration: none;
     transition: color 0.3s ease;
 
-    &:hover,
-    &:focus {
-      color: ${(props) => props.theme.colors.colorSecondary || "#004353"};
-      outline: none;
+    &:hover {
+      color: #00bfa5;
     }
   }
 `;
 
 const OfficesTitle = styled.div`
-  margin-top: 16px;
-  font-weight: bold;
+  margin-top: 20px;
+  font-weight: 600;
   font-size: 18px;
+  color: #f2f2f2;
 `;
 
 const OfficesList = styled.ul`
   margin-top: 8px;
-  list-style: none;
   padding-left: 0;
+  list-style: none;
   font-size: 16px;
 
   li {
     margin-bottom: 6px;
+    color: #f2f2f2;
   }
 `;
 
 const StyledDivider = styled(Divider)`
   background-color: #72819f;
-  opacity: 0.2;
-  margin: 32px 0 16px 0;
+  opacity: 0.15;
+  margin: 40px 0 20px 0;
 `;
 
 const CopyRight = styled.div`
   text-align: center;
-  padding-top: 20px;
-  font-size: 16px;
-  color: #ddd;
+  padding-top: 16px;
+  font-size: 15px;
+  color: #aaa;
 `;
