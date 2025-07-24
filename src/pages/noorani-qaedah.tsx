@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { mq } from "../styles/breakpoints";
 import BgImage from "../../src/images/noorani-qaida.png";
-import { Row, Col, Typography } from "antd";
+import { Row, Col } from "antd";
 import PageHeader from "../components/page-header";
 import CourseDetailsCard from "../components/course-details-card";
 import CourseDescriptionSection from "../components/course-description-section";
-
-const { Title, Text } = Typography;
+import HeroSection from "../components/hero-section";
 
 const descriptionSections = [
   {
@@ -128,7 +126,7 @@ const descriptionSections = [
 export const NooraniQaedahPage = () => {
   return (
     <>
-      <HeroImage src={BgImage} alt="Noorani Qa'edah Banner" />
+      <HeroSection image={BgImage} alt="Noorani Qa'edah Banner" />
 
       <Wrapper className="container">
         <PageHeader
@@ -159,12 +157,4 @@ export const NooraniQaedahPage = () => {
 
 const Wrapper = styled.div`
   padding: 40px 0;
-`;
-
-const HeroImage = styled.img`
-  width: 100%;
-  height: auto;
-  max-height: 520px;
-  object-fit: cover;
-  display: block;
 `;
