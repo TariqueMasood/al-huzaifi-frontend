@@ -70,7 +70,7 @@ const Underline = styled.div`
   height: 3px;
   width: 60%;
   max-width: 160px;
-  margin: 0.25rem auto 0;
+  margin: 0.75rem auto 0;
   background-color: ${({ theme }) => theme.colors.colorPrimary};
   border-radius: 2px;
 

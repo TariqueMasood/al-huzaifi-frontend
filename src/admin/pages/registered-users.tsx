@@ -92,7 +92,7 @@ export default RegisteredUsers;
 
 const Wrapper = styled.div`
   padding: 1.5rem;
-  background-color: ${({ theme }) => theme.backgroundWhite};
+  background-color: ${({ theme }) => theme.colors.backgroundWhite};
   border-radius: 8px;
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;

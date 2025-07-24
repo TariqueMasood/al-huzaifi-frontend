@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background: ${({ theme }) => theme.backgroundWhite};
+    background: ${({ theme }) => theme.colors.backgroundWhite};
     color: ${({ theme }) => theme.colors.colorPrimaryText};
     transition: all 0.3s linear;
   }

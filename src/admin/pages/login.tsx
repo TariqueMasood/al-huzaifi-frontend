@@ -131,7 +131,7 @@ export default Login;
 
 const PageContainer = styled.div`
   min-height: 100vh;
-  background-color: ${(props) => props.theme.backgroundWhite};
+  background-color: ${(props) => props.theme.colors.backgroundWhite};
   display: flex;
   align-items: center;
   justify-content: center;

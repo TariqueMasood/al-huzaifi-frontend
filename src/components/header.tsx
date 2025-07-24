@@ -155,7 +155,6 @@ const RegisterButton = styled(Button)`
   font-weight: 500;
   padding: 0 20px;
   height: 38px;
-  border-radius: 20px;
   color: #fff;
   transition: all 0.3s ease;
 

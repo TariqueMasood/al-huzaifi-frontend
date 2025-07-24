@@ -5,10 +5,13 @@ declare module "styled-components" {
     colors: {
       colorPrimary: string;
       colorSecondary: string;
+      backgroundWhite: string;
       colorPrimaryText: string;
+      colorSecondaryText: string;
+      colorBorder: string;
+      colorMuted: string;
     };
 
-    backgroundWhite: string;
     boxShadow: string;
   }
 }

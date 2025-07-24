@@ -156,7 +156,7 @@ const Registrations: React.FC = () => {
 export default Registrations;
 
 const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.backgroundWhite};
+  background-color: ${({ theme }) => theme.colors.backgroundWhite};
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: ${({ theme }) => theme.boxShadow};
