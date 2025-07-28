@@ -12,7 +12,10 @@ const descriptionSections = [
     content: (
       <p>
         The Noorani Qa'edah Course is designed to lay a strong foundation for
-        beginners...
+        beginners in reading and reciting the Quran. Utilizing the Noorani
+        Qa'edah method, this course aims to teach students the correct
+        pronunciation of Arabic letters and sounds, enabling them to read the
+        Quran fluently and accurately.
       </p>
     ),
   },
@@ -21,8 +24,9 @@ const descriptionSections = [
     content: (
       <>
         <p>
-          The Noorani Qa’edah Course provides a structured and systematic
-          curriculum...
+          The Noorani Qa'edah Course provides a structured and systematic
+          curriculum designed to teach students the basics of Arabic reading and
+          Quranic recitation. Key components of the course include:
         </p>
         <ol>
           <li>
@@ -65,8 +69,8 @@ const descriptionSections = [
     content: (
       <>
         <p>
-          Upon successful completion of the Noorani Qa’edah Course, students
-          will achieve:
+          Upon successful completion of the Noorani Qa'edah Course, students
+          will achieve the following learning outcomes:
         </p>
         <ol>
           <li>
@@ -97,7 +101,10 @@ const descriptionSections = [
     heading: "Who Should Enroll",
     content: (
       <>
-        <p>This course is ideal for:</p>
+        <p>
+          The Noorani Qa'edah Course is ideal for a wide range of learners who
+          are at the beginning of their Quranic learning journey. This includes:
+        </p>
         <ol>
           <li>
             <strong>Young Children: </strong>Starting Quranic education.
@@ -115,8 +122,12 @@ const descriptionSections = [
           </li>
         </ol>
         <p>
-          Enrolling in this course equips students with foundational skills for
-          lifelong Quranic study.
+          By enrolling in the Noorani Qa'edah Course, students embark on an
+          essential journey to master the basics of Arabic reading and Quranic
+          recitation. This course provides the foundational knowledge and
+          practical skills needed to progress to more advanced Quranic studies,
+          ensuring that students can read the Quran fluently, accurately, and
+          with a deep sense of connection and reverence.
         </p>
       </>
     ),
