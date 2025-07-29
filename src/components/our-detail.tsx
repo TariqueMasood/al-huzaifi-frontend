@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Row, Col, Button } from "antd";
 import { mq } from "../styles/breakpoints";
+import Container from "./ui/container";
 
 export const OurDetail = () => {
   return (
     <Wrapper>
-      <div className="container">
+      <Container>
         <Row justify="center">
           <Col>
             <ContentWrapper>
@@ -25,7 +26,7 @@ export const OurDetail = () => {
             </ContentWrapper>
           </Col>
         </Row>
-      </div>
+      </Container>
     </Wrapper>
   );
 };

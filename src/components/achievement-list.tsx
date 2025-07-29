@@ -9,6 +9,7 @@ import {
   GlobalOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
+import Container from "./ui/container";
 
 const achievementCardData = [
   {
@@ -73,12 +74,6 @@ const Wrapper = styled.section`
   ${mq("md")} {
     padding: 80px 0;
   }
-`;
-
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
 `;
 
 const TitleContainer = styled.div`

@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import fLogo from "../../src/images/al-hozaifi-academy-logo-white.png";
+import Container from "./ui/container";
 
 const { Title, Paragraph } = Typography;
 
@@ -131,11 +132,6 @@ const Wrapper = styled.footer`
   @media (min-width: 768px) {
     padding: 70px 32px 40px;
   }
-`;
-
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
 `;
 
 const FooterLogo = styled.img`

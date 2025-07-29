@@ -10,6 +10,7 @@ import userImage from "../../src/images/user-image.jpg";
 import styled from "styled-components";
 import Title from "./title";
 import { Col, Row } from "antd";
+import Container from "./ui/container";
 
 const popularCourseCardData = [
   {
@@ -95,12 +96,8 @@ const popularCourseCardData = [
 const PopularCourseList = () => {
   return (
     <Wrapper>
-      <div className="container">
-        <Title
-          // subTitle="Our Courses List"
-          title="Most Popular"
-          colorTitle="Courses"
-        />
+      <Container>
+        <Title title="Most Popular" colorTitle="Courses" />
         <RowContainer>
           <Row gutter={[32, 32]}>
             {popularCourseCardData.map((item) => (
@@ -116,7 +113,7 @@ const PopularCourseList = () => {
             ))}
           </Row>
         </RowContainer>
-      </div>
+      </Container>
     </Wrapper>
   );
 };

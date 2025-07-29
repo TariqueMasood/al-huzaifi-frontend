@@ -10,6 +10,7 @@ import {
   TeamOutlined,
   GlobalOutlined,
 } from "@ant-design/icons";
+import Container from "./ui/container";
 
 const exploreCardData = [
   {
@@ -80,12 +81,6 @@ const Wrapper = styled.section`
     theme.colors.colorPrimary + "10"}; // Light primary shade
   padding: 60px 0;
   overflow: hidden;
-`;
-
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
 `;
 
 const CardWrapper = styled.div`
