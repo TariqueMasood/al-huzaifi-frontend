@@ -5,6 +5,7 @@ import HeroSection from "../components/hero-section";
 import PageHeader from "../components/page-header";
 import CourseDescriptionSection from "../components/course-description-section";
 import CourseDetailsCard from "../components/course-details-card";
+import Container from "../components/ui/container";
 
 const descriptionSections = [
   {
@@ -155,28 +156,30 @@ export const MemorizationCoursePage = () => {
     <>
       <HeroSection image={bgImage} alt="Memorization Course Image" />
 
-      <Wrapper className="container">
-        <PageHeader
-          title="Quran Memorization Course"
-          subtitle="Al-Huzaifi Academy"
-        />
-        <Row gutter={24}>
-          <Col xs={24} sm={12} md={16}>
-            <CourseDescriptionSection sections={descriptionSections} />
-          </Col>
-          <Col xs={24} sm={12} md={8}>
-            <CourseDetailsCard
-              courseName="Quran Memorization Course"
-              courseCode="QRN03"
-              learningMode="Online"
-              language="English, Arabic, Urdu"
-              type="Part Time"
-              duration="2-4 Years"
-              entryRequirement="Must have proficiency in Quran Recitation"
-              deadline="Open"
-            />
-          </Col>
-        </Row>
+      <Wrapper>
+        <Container>
+          <PageHeader
+            title="Quran Memorization Course"
+            subtitle="Al-Huzaifi Academy"
+          />
+          <Row gutter={24}>
+            <Col xs={24} sm={12} md={16}>
+              <CourseDescriptionSection sections={descriptionSections} />
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <CourseDetailsCard
+                courseName="Quran Memorization Course"
+                courseCode="QRN03"
+                learningMode="Online"
+                language="English, Arabic, Urdu"
+                type="Part Time"
+                duration="2-4 Years"
+                entryRequirement="Must have proficiency in Quran Recitation"
+                deadline="Open"
+              />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </>
   );

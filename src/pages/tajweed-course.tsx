@@ -5,6 +5,7 @@ import CourseDescriptionSection from "../components/course-description-section";
 import CourseDetailsCard from "../components/course-details-card";
 import HeroSection from "../components/hero-section";
 import PageHeader from "../components/page-header";
+import Container from "../components/ui/container";
 
 const descriptionSections = [
   {
@@ -167,26 +168,27 @@ export const TajweedCoursePage = () => {
     <>
       <HeroSection image={bgImage} alt="Tajweed Course Image" />
 
-      <Wrapper className="container">
-        <PageHeader title="Tajweed Course" subtitle="Al-Huzaifi Academy" />
-
-        <Row gutter={24}>
-          <Col xs={24} sm={12} md={16}>
-            <CourseDescriptionSection sections={descriptionSections} />
-          </Col>
-          <Col xs={24} sm={12} md={8}>
-            <CourseDetailsCard
-              courseName="Tajweed Course"
-              courseCode="QRN04"
-              learningMode="Online"
-              language="English, Arabic, Urdu"
-              type="Part Time"
-              duration="1 Year"
-              entryRequirement="Must have proficiency in Quran Recitation"
-              deadline="Open"
-            />
-          </Col>
-        </Row>
+      <Wrapper>
+        <Container>
+          <PageHeader title="Tajweed Course" subtitle="Al-Huzaifi Academy" />
+          <Row gutter={24}>
+            <Col xs={24} sm={12} md={16}>
+              <CourseDescriptionSection sections={descriptionSections} />
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <CourseDetailsCard
+                courseName="Tajweed Course"
+                courseCode="QRN04"
+                learningMode="Online"
+                language="English, Arabic, Urdu"
+                type="Part Time"
+                duration="1 Year"
+                entryRequirement="Must have proficiency in Quran Recitation"
+                deadline="Open"
+              />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </>
   );

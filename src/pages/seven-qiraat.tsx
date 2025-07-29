@@ -5,6 +5,7 @@ import CourseDescriptionSection from "../components/course-description-section";
 import HeroSection from "../components/hero-section";
 import PageHeader from "../components/page-header";
 import CourseDetailsCard from "../components/course-details-card";
+import Container from "../components/ui/container";
 
 const descriptionSections = [
   {
@@ -162,29 +163,30 @@ export const SevenQiraatCoursePage = () => {
   return (
     <>
       <HeroSection image={bgImage} alt="Seven Qiraat Course Image" />
-
-      <Wrapper className="container">
-        <PageHeader
-          title="Seven Qira'ats Course"
-          subtitle="Al-Huzaifi Academy"
-        />
-        <Row>
-          <Col xs={24} sm={12} md={16}>
-            <CourseDescriptionSection sections={descriptionSections} />
-          </Col>
-          <Col xs={24} sm={12} md={8}>
-            <CourseDetailsCard
-              courseName="Seven Qira'ats Course"
-              courseCode="QRN05"
-              learningMode="Online"
-              language="English, Arabic, Urdu"
-              type="Part Time"
-              duration="1-2 Years"
-              entryRequirement="Must have proficiency in Quran Recitation and application of Basic Arabic Grammer"
-              deadline="Fall & Spring Semester"
-            />
-          </Col>
-        </Row>
+      <Wrapper>
+        <Container>
+          <PageHeader
+            title="Seven Qira'ats Course"
+            subtitle="Al-Huzaifi Academy"
+          />
+          <Row>
+            <Col xs={24} sm={12} md={16}>
+              <CourseDescriptionSection sections={descriptionSections} />
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <CourseDetailsCard
+                courseName="Seven Qira'ats Course"
+                courseCode="QRN05"
+                learningMode="Online"
+                language="English, Arabic, Urdu"
+                type="Part Time"
+                duration="1-2 Years"
+                entryRequirement="Must have proficiency in Quran Recitation and application of Basic Arabic Grammer"
+                deadline="Fall & Spring Semester"
+              />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </>
   );

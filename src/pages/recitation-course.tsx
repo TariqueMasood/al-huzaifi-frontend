@@ -5,6 +5,7 @@ import HeroSection from "../components/hero-section";
 import PageHeader from "../components/page-header";
 import CourseDescriptionSection from "../components/course-description-section";
 import CourseDetailsCard from "../components/course-details-card";
+import Container from "../components/ui/container";
 
 const descriptionSections = [
   {
@@ -183,28 +184,30 @@ export const RecitationCoursePage = () => {
     <>
       <HeroSection image={bgImage} alt="Recitation Course Image" />
 
-      <Wrapper className="container">
-        <PageHeader
-          title="Quran Recitation Course"
-          subtitle="Al-Huzaifi Academy"
-        />
-        <Row gutter={24}>
-          <Col xs={24} sm={12} md={16}>
-            <CourseDescriptionSection sections={descriptionSections} />
-          </Col>
-          <Col xs={24} sm={12} md={8}>
-            <CourseDetailsCard
-              courseName="Quran Recitation Course"
-              courseCode="QRN02"
-              learningMode="Online"
-              language="English, Arabic, Urdu"
-              type="Part Time"
-              duration="1 Year"
-              entryRequirement="Must hold QRN01 Certificate or an equivalent that demonstrates proficiency in basic Quranic reading skills."
-              deadline="Open"
-            />
-          </Col>
-        </Row>
+      <Wrapper>
+        <Container>
+          <PageHeader
+            title="Quran Recitation Course"
+            subtitle="Al-Huzaifi Academy"
+          />
+          <Row gutter={24}>
+            <Col xs={24} sm={12} md={16}>
+              <CourseDescriptionSection sections={descriptionSections} />
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <CourseDetailsCard
+                courseName="Quran Recitation Course"
+                courseCode="QRN02"
+                learningMode="Online"
+                language="English, Arabic, Urdu"
+                type="Part Time"
+                duration="1 Year"
+                entryRequirement="Must hold QRN01 Certificate or an equivalent that demonstrates proficiency in basic Quranic reading skills."
+                deadline="Open"
+              />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </>
   );

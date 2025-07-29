@@ -5,6 +5,7 @@ import CourseDescriptionSection from "../components/course-description-section";
 import HeroSection from "../components/hero-section";
 import PageHeader from "../components/page-header";
 import CourseDetailsCard from "../components/course-details-card";
+import Container from "../components/ui/container";
 
 const descriptionSections = [
   {
@@ -163,29 +164,31 @@ export const TranslationCoursePage = () => {
     <>
       <HeroSection image={bgImage} alt="Translation Course Image" />
 
-      <Wrapper className="container">
-        <PageHeader
-          title="Quran Translation Course"
-          subtitle="Al-Huzaifi Academy"
-        />
-        <Row gutter={24}>
-          <Col xs={24} sm={12} md={16}>
-            <CourseDescriptionSection sections={descriptionSections} />
-          </Col>
-          <Col xs={24} sm={12} md={8}>
-            <CourseDetailsCard
-              courseName="Quran Translation Course"
-              courseCode="QRN07"
-              learningMode="Online"
-              language="English, Arabic, Urdu"
-              type="Part Time"
-              duration="1-2 Years"
-              entryRequirement=" Must have proficiency in Quran Recitation and Basic Arabic
+      <Wrapper>
+        <Container>
+          <PageHeader
+            title="Quran Translation Course"
+            subtitle="Al-Huzaifi Academy"
+          />
+          <Row gutter={24}>
+            <Col xs={24} sm={12} md={16}>
+              <CourseDescriptionSection sections={descriptionSections} />
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <CourseDetailsCard
+                courseName="Quran Translation Course"
+                courseCode="QRN07"
+                learningMode="Online"
+                language="English, Arabic, Urdu"
+                type="Part Time"
+                duration="1-2 Years"
+                entryRequirement=" Must have proficiency in Quran Recitation and Basic Arabic
                   Knowledge"
-              deadline="Fall & Spring Semester"
-            />
-          </Col>
-        </Row>
+                deadline="Fall & Spring Semester"
+              />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </>
   );

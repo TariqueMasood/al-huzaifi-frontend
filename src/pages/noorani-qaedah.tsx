@@ -5,6 +5,7 @@ import PageHeader from "../components/page-header";
 import CourseDetailsCard from "../components/course-details-card";
 import CourseDescriptionSection from "../components/course-description-section";
 import HeroSection from "../components/hero-section";
+import Container from "../components/ui/container";
 
 const descriptionSections = [
   {
@@ -139,28 +140,30 @@ export const NooraniQaedahPage = () => {
     <>
       <HeroSection image={BgImage} alt="Noorani Qa'edah Banner" />
 
-      <Wrapper className="container">
-        <PageHeader
-          title="Noorani Qa'edah Course"
-          subtitle="Al-Huzaifi Academy"
-        />
-        <Row gutter={24}>
-          <Col xs={24} sm={12} md={16}>
-            <CourseDescriptionSection sections={descriptionSections} />
-          </Col>
-          <Col xs={24} sm={12} md={8}>
-            <CourseDetailsCard
-              courseName="Noorani Qa'edah Course"
-              courseCode="QRN01"
-              learningMode="Online"
-              language="English, Arabic, Urdu"
-              type="Part Time"
-              duration="4-6 Months"
-              entryRequirement="Open for all"
-              deadline="Open"
-            />
-          </Col>
-        </Row>
+      <Wrapper>
+        <Container>
+          <PageHeader
+            title="Noorani Qa'edah Course"
+            subtitle="Al-Huzaifi Academy"
+          />
+          <Row gutter={24}>
+            <Col xs={24} sm={12} md={16}>
+              <CourseDescriptionSection sections={descriptionSections} />
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <CourseDetailsCard
+                courseName="Noorani Qa'edah Course"
+                courseCode="QRN01"
+                learningMode="Online"
+                language="English, Arabic, Urdu"
+                type="Part Time"
+                duration="4-6 Months"
+                entryRequirement="Open for all"
+                deadline="Open"
+              />
+            </Col>
+          </Row>
+        </Container>
       </Wrapper>
     </>
   );
