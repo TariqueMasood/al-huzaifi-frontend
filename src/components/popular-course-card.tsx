@@ -44,7 +44,6 @@ const StyledCard = styled(Card)`
   flex: 1;
   height: 100%;
 
-  max-width: 420px;
   width: 100%;
   margin: auto;
   border-radius: 12px;

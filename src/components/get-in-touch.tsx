@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Form, Input, Button } from "antd";
+import Container from "./ui/container";
 
 export const GetInTouch = () => {
   const [form] = Form.useForm();
@@ -67,13 +68,6 @@ const Wrapper = styled.div`
   @media (min-width: 768px) {
     padding: 60px 0;
   }
-`;
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 1140px;
-  padding: 0 16px;
-  margin: 0 auto;
 `;
 
 const ContentWrap = styled.div`

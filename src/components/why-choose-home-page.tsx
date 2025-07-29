@@ -12,6 +12,7 @@ import {
 import styled from "styled-components";
 import { mq } from "../styles/breakpoints";
 import Title from "./title";
+import Container from "./ui/container";
 
 export const WhychooseHomePage = () => {
   const features = [
@@ -63,7 +64,7 @@ export const WhychooseHomePage = () => {
         <Title title="Why" colorTitle="Choose Us?" />
       </TitleContainer>
 
-      <div className="container">
+      <Container>
         <Row gutter={[24, 24]}>
           {features.map((item, index) => (
             <Col key={index} xs={24} sm={12} lg={12}>
@@ -77,7 +78,7 @@ export const WhychooseHomePage = () => {
             </Col>
           ))}
         </Row>
-      </div>
+      </Container>
     </Wrapper>
   );
 };

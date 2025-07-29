@@ -9,6 +9,7 @@ import {
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import fLogo from "../../src/images/al-hozaifi-academy-logo-white.png";
+import Container from "./ui/container";
 
 const { Title, Paragraph } = Typography;
 
@@ -125,17 +126,12 @@ export default Footer;
 
 const Wrapper = styled.footer`
   background-color: #101d2c;
-  color: #f1f1f1;
+  color: ${({ theme }) => theme.colors.grey400};
   padding: 50px 20px 30px;
 
   @media (min-width: 768px) {
     padding: 70px 32px 40px;
   }
-`;
-
-const Container = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
 `;
 
 const FooterLogo = styled.img`
@@ -145,7 +141,7 @@ const FooterLogo = styled.img`
 `;
 
 const FooterParagraph = styled(Paragraph)`
-  color: #f0f0f0 !important;
+  color: inherit;
   font-size: 14px;
   line-height: 1.6;
   max-width: 480px;
@@ -158,7 +154,6 @@ const IconRow = styled.div`
   margin-top: 12px;
 
   a {
-    color: #f2f2f2;
     transition: all 0.3s ease;
 
     &:hover {
@@ -177,7 +172,6 @@ const StyledList = styled.ul`
     margin-bottom: 10px;
 
     a {
-      color: #f2f2f2;
       text-decoration: none;
       transition: color 0.3s ease;
 
@@ -201,7 +195,6 @@ const ContactRow = styled.div`
   }
 
   a {
-    color: #f2f2f2;
     text-decoration: none;
     transition: color 0.3s ease;
 
@@ -215,7 +208,6 @@ const OfficesTitle = styled.div`
   margin-top: 20px;
   font-weight: 600;
   font-size: 18px;
-  color: #f2f2f2;
 `;
 
 const OfficesList = styled.ul`
@@ -226,7 +218,6 @@ const OfficesList = styled.ul`
 
   li {
     margin-bottom: 6px;
-    color: #f2f2f2;
   }
 `;
 
@@ -240,5 +231,4 @@ const CopyRight = styled.div`
   text-align: center;
   padding-top: 16px;
   font-size: 15px;
-  color: #aaa;
 `;

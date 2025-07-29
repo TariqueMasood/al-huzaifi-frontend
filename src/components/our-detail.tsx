@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { Row, Col, Button } from "antd";
 import { mq } from "../styles/breakpoints";
+import Container from "./ui/container";
 
 export const OurDetail = () => {
   return (
     <Wrapper>
-      <div className="container">
+      <Container>
         <Row justify="center">
           <Col>
             <ContentWrapper>
@@ -25,7 +26,7 @@ export const OurDetail = () => {
             </ContentWrapper>
           </Col>
         </Row>
-      </div>
+      </Container>
     </Wrapper>
   );
 };
@@ -49,7 +50,6 @@ const ContentWrapper = styled.div`
 
   h2 {
     color: ${({ theme }) => theme.colors.colorPrimary};
-    font-style: italic;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 18px;

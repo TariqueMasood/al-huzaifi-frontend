@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { mq } from "../styles/breakpoints";
 import bgImg from "../../src/images/about-us-bg-img.jpeg";
+import Container from "../components/ui/container";
 
 export const WhyChooseUsPage = () => {
   return (
@@ -9,7 +10,7 @@ export const WhyChooseUsPage = () => {
         <Image src={bgImg} alt="pic"></Image>
       </div>
       <Wrapper>
-        <div className="container">
+        <Container>
           <Title>About Us</Title>
           <Discription>
             <p>
@@ -133,7 +134,7 @@ export const WhyChooseUsPage = () => {
               connections within a warm, welcoming atmosphere.
             </p>
           </Discription>
-        </div>
+        </Container>
       </Wrapper>
     </>
   );
