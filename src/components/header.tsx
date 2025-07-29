@@ -41,7 +41,11 @@ const Header: React.FC = () => {
           {isMobile ? (
             <>
               <RightContent>
-                <StyledMenu mode="horizontal" items={menuItems} />
+                <StyledMenu
+                  mode="horizontal"
+                  items={menuItems}
+                  overflowedIndicator={false}
+                />
                 <RegisterButton type="primary">
                   <Link to="/registration">Register</Link>
                 </RegisterButton>

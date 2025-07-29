@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Table, Input, Select, Alert, Spin, Typography } from "antd";
+import { Table, Input, Alert, Typography } from "antd";
 import styled from "styled-components";
 import { useUsers } from "../../hooks/use-queries";
 import { User } from "../../@types/registered-user";
 
-const { Option } = Select;
 const { Title } = Typography;
 const { Search } = Input;
 

@@ -49,7 +49,6 @@ const ContentWrapper = styled.div`
 
   h2 {
     color: ${({ theme }) => theme.colors.colorPrimary};
-    font-style: italic;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 18px;

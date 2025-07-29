@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: "Lato", sans-serif;
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 400;
     font-style: normal;
     background: ${({ theme }) => theme.colors.backgroundWhite};
@@ -17,6 +17,8 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: ${({ theme }) => theme.fonts.heading};
+    font-weight: 700;
     margin: 0;
     padding: 0;
   }
