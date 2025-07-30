@@ -32,13 +32,7 @@ export const OurDetail = () => {
 };
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   padding: 30px 0;
-  border-bottom: 2px solid #f4f1ec;
-  background-color: #fdfdfc;
 
   ${mq("md")} {
     padding: 60px 0;
@@ -80,7 +74,6 @@ const StyledButton = styled(Button)`
   border-color: ${({ theme }) => theme.colors.colorPrimary};
   font-size: 16px;
   padding: 0 24px;
-  height: auto;
 
   ${mq("md")} {
     font-size: 20px;
