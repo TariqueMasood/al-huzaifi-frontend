@@ -7,6 +7,7 @@ import useViewportWidth from "../hooks/use-viewport-width";
 import { getMenuItems } from "../config/menu-items";
 import logo from "../images/al-huzaifi-logo-blue.png";
 import { Link } from "react-router-dom";
+import Container from "./ui/container";
 
 const Header: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -31,48 +32,50 @@ const Header: React.FC = () => {
       {isMobile && <TopHeader />}
 
       <Wrapper className={scrolled ? "scrolled" : ""}>
-        <ContentWrapper>
-          <LogoWrapper>
-            <Link to="/">
-              <img src={logo} alt="Logo" />
-            </Link>
-          </LogoWrapper>
+        <Container>
+          <ContentWrapper>
+            <LogoWrapper>
+              <Link to="/">
+                <img src={logo} alt="Logo" />
+              </Link>
+            </LogoWrapper>
 
-          {isMobile ? (
-            <>
-              <RightContent>
-                <StyledMenu mode="horizontal" items={menuItems} />
-                <RegisterButton type="primary">
-                  <Link to="/registration">Register</Link>
-                </RegisterButton>
-              </RightContent>
-            </>
-          ) : (
-            <>
-              <MenuToggle
-                type="text"
-                icon={<MenuOutlined />}
-                onClick={toggleDrawer}
-              />
-              <Drawer
-                title="Menu"
-                placement="right"
-                onClose={closeDrawer}
-                open={open}
-              >
-                <RegisterButton type="primary" block>
-                  <Link to="/registration">Register</Link>
-                </RegisterButton>
-                <Menu
-                  mode="inline"
-                  items={menuItems}
-                  onClick={closeDrawer}
-                  style={{ borderRight: "none" }}
+            {isMobile ? (
+              <>
+                <RightContent>
+                  <StyledMenu mode="horizontal" items={menuItems} />
+                  <RegisterButton type="primary">
+                    <Link to="/registration">Register</Link>
+                  </RegisterButton>
+                </RightContent>
+              </>
+            ) : (
+              <>
+                <MenuToggle
+                  type="text"
+                  icon={<MenuOutlined />}
+                  onClick={toggleDrawer}
                 />
-              </Drawer>
-            </>
-          )}
-        </ContentWrapper>
+                <Drawer
+                  title="Menu"
+                  placement="right"
+                  onClose={closeDrawer}
+                  open={open}
+                >
+                  <RegisterButton type="primary" block>
+                    <Link to="/registration">Register</Link>
+                  </RegisterButton>
+                  <Menu
+                    mode="inline"
+                    items={menuItems}
+                    onClick={closeDrawer}
+                    style={{ borderRight: "none" }}
+                  />
+                </Drawer>
+              </>
+            )}
+          </ContentWrapper>
+        </Container>
       </Wrapper>
     </>
   );
@@ -88,6 +91,8 @@ const Wrapper = styled.header`
   transition: all 0.3s ease;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   height: 90px;
+  display: flex;
+  align-items: center;
 
   &.scrolled {
     height: 64px;
@@ -96,34 +101,25 @@ const Wrapper = styled.header`
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 `;
 
 const LogoWrapper = styled.div`
-  height: 100%;
   display: flex;
   align-items: center;
-
-  a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
+  height: 100%;
 
   img {
-    height: 70%;
+    max-height: 60px;
+    width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
   }
 
   ${Wrapper}.scrolled & img {
-    height: 60%;
+    max-height: 50px;
   }
 `;
 
