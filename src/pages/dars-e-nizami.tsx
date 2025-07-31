@@ -95,14 +95,16 @@ const descriptionSections = [
             <strong>Final Year Specialization: </strong>In the fifth and final
             year, students focus on the intensive study of the Sihah Sitta (the
             six major books of Hadith) and other important works:
-            <li>- Sahih Bukhari</li>
-            <li>- Sahih Muslim</li>
-            <li>- Sunan Abu Dawood</li>
-            <li>- Sunan Tirmidhi</li>
-            <li>- Sunan Nasai</li>
-            <li>- Sunan Ibn Majah</li>
-            <li>- Muwatta Malik</li>
-            <li>- Sharh Ma'anil-Asaar</li>
+            <ol>
+              <li>- Sahih Bukhari</li>
+              <li>- Sahih Muslim</li>
+              <li>- Sunan Abu Dawood</li>
+              <li>- Sunan Tirmidhi</li>
+              <li>- Sunan Nasai</li>
+              <li>- Sunan Ibn Majah</li>
+              <li>- Muwatta Malik</li>
+              <li>- Sharh Ma'anil-Asaar</li>
+            </ol>
             This final year prepares students to specialize in Hadith sciences,
             enabling them to understand, analyze, and apply the teachings of the
             Prophet Muhammad (ﷺ) with precision and depth.
