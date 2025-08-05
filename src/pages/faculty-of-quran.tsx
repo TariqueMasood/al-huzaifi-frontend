@@ -11,7 +11,6 @@ export const FacultyOfQuranPage = () => {
         <Image src={bgImage} alt="pic"></Image>
       </div>
       <Wrapper className="container">
-        {/* <Title title="Faculty of Quran" /> */}
         <SubTitle>Overview:</SubTitle>
         <Content>
           The Faculty of Quran at <BoldText>Al-Huzaifi Academy</BoldText> is
