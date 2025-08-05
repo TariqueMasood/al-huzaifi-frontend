@@ -149,14 +149,14 @@ const Image = styled.img`
 const Title = styled.h1`
   text-align: center;
   font-weight: 600;
-  color: #137c8f;
+  color: ${({ theme }) => theme.colors.colorPrimary};
   padding: 16px 0px;
   font-size: 20px;
 
   ${mq("sm")} {
     text-align: center;
     font-weight: 600;
-    color: #137c8f;
+    color: ${({ theme }) => theme.colors.colorPrimary};
     padding: 24px 0px;
     font-size: 24px;
   }
@@ -164,7 +164,7 @@ const Title = styled.h1`
   ${mq("md")} {
     text-align: center;
     font-weight: 600;
-    color: #137c8f;
+    color: ${({ theme }) => theme.colors.colorPrimary};
     padding: 30px 0px;
     font-size: 36px;
   }
