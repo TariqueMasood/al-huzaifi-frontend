@@ -1,19 +1,17 @@
 import styled from "styled-components";
-import { mq } from "../styles/breakpoints";
 import bgImage from "../../src/images/faculty-of-deeniyat-2.png";
 import { Link } from "react-router-dom";
+import HeroSection from "../components/hero-section";
+import Container from "../components/ui/container";
+import CourseDescriptionSection from "../components/course-description-section";
 
-export const FacultyOfDeeniyatPage = () => {
-  return (
-    <>
-      <div>
-        <Image src={bgImage} alt="pic"></Image>
-      </div>
-      <Wrapper className="container">
-        {/* <Title>Faculty of Deeniyat</Title> */}
-        <SubTitle>Overview:</SubTitle>
-        <Content>
-          The Faculty of Deeniyat at <BoldText>Al-Huzaifi Academy</BoldText> is
+const descriptionSections = [
+  {
+    heading: "Overview",
+    content: (
+      <>
+        <p>
+          The Faculty of Deeniyat at <strong>Al-Huzaifi Academy</strong> is
           dedicated to imparting essential Islamic knowledge to students of all
           ages and backgrounds. Our mission is to provide a strong foundation in
           the basics of Islam, ensuring that students develop a deep
@@ -21,9 +19,8 @@ export const FacultyOfDeeniyatPage = () => {
           under this faculty are designed to cater to the specific needs of
           different demographics, ensuring a personalized and effective learning
           experience.
-        </Content>
-        <Space />
-        <Content>
+        </p>
+        <p>
           Central to our Deeniyat programs is the emphasis on learning the
           recitation of the Quran. We believe that mastering the proper
           recitation of the Quran is crucial for every Muslim, as it enhances
@@ -31,26 +28,31 @@ export const FacultyOfDeeniyatPage = () => {
           journey. Alongside Quranic recitation, our courses cover the
           fundamental teachings of Islam, including the principles of faith,
           worship practices, and moral conduct.
-        </Content>
+        </p>
+      </>
+    ),
+  },
 
-        <Space />
-        <SubTitle>Academic Programs:</SubTitle>
+  {
+    heading: "Academic Programs",
+    content: (
+      <>
         <ol>
           <Link to="/deeniyat-for-kids">
-            <List>Deeniyat for Kids</List>
+            <li>Deeniyat for Kids</li>
           </Link>
-          <Content>
+          <p>
             - This program is tailored for young learners, providing them with
             an engaging and interactive introduction to Islam. It covers basic
             Quranic recitation, simple Islamic teachings, and moral stories that
             instill good values and ethics in children. The curriculum is
             designed to be age-appropriate, making learning fun and memorable
             for kids.
-          </Content>
+          </p>
           <Link to="/deeniyat-for-men">
-            <List>Deeniyat for Men</List>
+            <li>Deeniyat for Men</li>
           </Link>
-          <Content>
+          <p>
             - Designed for adult male learners, this program offers
             comprehensive instruction in the basics of Islam. It includes
             lessons on Quranic recitation with proper Tajweed, daily worship
@@ -58,11 +60,11 @@ export const FacultyOfDeeniyatPage = () => {
             program aims to strengthen the religious knowledge and spiritual
             growth of men, enabling them to lead their lives according to
             Islamic teachings.
-          </Content>
+          </p>
           <Link to="/deeniyat-for-women">
-            <List>Deeniyat for Women</List>
+            <li>Deeniyat for Women</li>
           </Link>
-          <Content>
+          <p>
             - This program caters to adult female learners, providing them with
             a thorough grounding in Islamic knowledge. It covers Quranic
             recitation with Tajweed, the fundamentals of faith, worship
@@ -70,77 +72,33 @@ export const FacultyOfDeeniyatPage = () => {
             empower women with the knowledge and skills needed to practice their
             faith confidently and to play a positive role in their families and
             communities.
-          </Content>
+          </p>
         </ol>
-        <Content>
+        <p>
           The Faculty of Deeniyat is committed to provide accessible and
           high-quality Islamic education to all. Through our tailored programs,
           we strive to cultivate a strong sense of faith and spirituality in our
           students, equipping them with the knowledge and skills to lead a life
           guided by Islamic principles.
-        </Content>
+        </p>
+      </>
+    ),
+  },
+];
+
+export const FacultyOfDeeniyatPage = () => {
+  return (
+    <>
+      <HeroSection image={bgImage} alt="Faculty of Deeniyat Image" />
+      <Wrapper>
+        <Container>
+          <CourseDescriptionSection sections={descriptionSections} />
+        </Container>
       </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div`
-  padding: 30px;
-
-  ${mq("sm")} {
-    padding: 40px;
-  }
-`;
-
-const Image = styled.img`
-  width: 100%;
-`;
-
-const SubTitle = styled.h5`
-  font-weight: 600;
-  padding: 5px 0px;
-  font-size: 18px;
-  color: #137c8f;
-
-  ${mq("sm")} {
-    font-weight: 600;
-    padding: 10px 0px;
-    font-size: 20px;
-    color: #137c8f;
-  }
-`;
-
-const BoldText = styled.span`
-  font-weight: 600;
-  color: #137c8f;
-`;
-
-const Content = styled.p`
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0.2px;
-
-  ${mq("sm")} {
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    line-height: 32px;
-  }
-`;
-
-const Space = styled.div`
-  margin: 20px 0px;
-`;
-
-const List = styled.li`
-  font-size: 16px;
-  padding: 7px 0px;
-  font-weight: 600;
-  color: #137c8f;
-
-  ${mq("sm")} {
-    font-size: 18px;
-    padding: 7px 0px;
-    font-weight: 600;
-    color: #137c8f;
-  }
+  padding: 40px 0;
 `;
