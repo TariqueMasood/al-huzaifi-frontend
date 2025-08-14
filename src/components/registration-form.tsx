@@ -29,6 +29,7 @@ import {
   timingOptions,
 } from "../constants/registration";
 import { RegistrationPayload } from "../@types/registration";
+import PageHeader from "./page-header";
 
 const { Option } = Select;
 const { TextArea } = Input;
@@ -62,9 +63,10 @@ const RegistrationForm = () => {
 
   return (
     <Wrapper>
-      <FormHeading>Registration</FormHeading>
-      <FormSubTitle>Please fill the form below to register</FormSubTitle>
-
+      <PageHeader
+        title="Registration"
+        subtitle="Please fill the form below to register"
+      />
       <FormWrapper form={form} layout="vertical" onFinish={handleFinish}>
         <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>
@@ -426,20 +428,6 @@ export default RegistrationForm;
 const Wrapper = styled.div`
   padding: 60px 1rem;
   background-color: #fafafa;
-`;
-
-const FormHeading = styled.h2`
-  font-weight: 600;
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 10px;
-`;
-
-const FormSubTitle = styled.p`
-  font-size: 16px;
-  color: #666;
-  text-align: center;
-  margin-bottom: 30px;
 `;
 
 const FormWrapper = styled(Form)`
