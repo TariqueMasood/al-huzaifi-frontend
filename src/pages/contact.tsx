@@ -3,143 +3,144 @@ import bgImg from "../../src/images/contact-bg-img.jpeg";
 import { Row, Col, Form, Input } from "antd";
 import { WhatsAppOutlined, MailOutlined } from "@ant-design/icons";
 import { mq } from "../styles/breakpoints";
+import HeroSection from "../components/hero-section";
+import Container from "../components/ui/container";
+import PageHeader from "../components/page-header";
 
 const Contact = () => {
   return (
     <>
-      <div>
-        <Image src={bgImg} alt="pic" />
-      </div>
-      <ContainerWrapper>
-        <FormContainer>
-          <h3>
-            We are here to help you. <br />
-            Reach out anytime.
-          </h3>
-          <Form layout="vertical">
-            <StyledFormGroup>
-              <LabelField>Name:</LabelField>
-              <InputField>
-                <Input placeholder="First Name" name="firstName" />
-              </InputField>
-            </StyledFormGroup>
-            <StyledFormGroup>
-              <LabelField>Email:</LabelField>
-              <InputField>
-                <Input placeholder="Email Address" name="email" type="email" />
-              </InputField>
-            </StyledFormGroup>
-            <StyledFormGroup>
-              <LabelField>Subject:</LabelField>
-              <InputField>
-                <Input placeholder="Subject" name="subject" />
-              </InputField>
-            </StyledFormGroup>
-            <StyledFormGroup>
-              <LabelField>Message:</LabelField>
-              <InputField>
-                <Input.TextArea placeholder="Message" name="message" rows={4} />
-              </InputField>
-            </StyledFormGroup>
-          </Form>
-        </FormContainer>
+      <HeroSection image={bgImg} alt="Contact Page Image" />
+      <Wrapper>
+        <Container>
+          <PageHeader
+            title="We are here to help you"
+            subtitle="Reach out anytime."
+          />
+          <FormContainer>
+            <Form layout="vertical">
+              <Row gutter={[8, 8]}>
+                <Col xs={24}>
+                  <Form.Item
+                    label="Your Name"
+                    name="name"
+                    rules={[
+                      { required: true, message: "Please Enter Your Name" },
+                    ]}
+                  >
+                    <Input placeholder="Enter your name" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24}>
+                  <Form.Item
+                    label="Your Email"
+                    name="email"
+                    rules={[
+                      { required: true, message: "Please Enter Your Email" },
+                    ]}
+                  >
+                    <Input placeholder="Enter your email" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24}>
+                  <Form.Item
+                    label="Your Subject"
+                    name="subject"
+                    rules={[
+                      { required: true, message: "Please Enter Your Subjects" },
+                    ]}
+                  >
+                    <Input placeholder="your subject" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24}>
+                  <Form.Item
+                    label="Your Message"
+                    name="message"
+                    rules={[
+                      { required: true, message: "Please Enter Your Message" },
+                    ]}
+                  >
+                    <Input placeholder="your message" />
+                  </Form.Item>
+                </Col>
+                <Col xs={24} style={{ textAlign: "center" }}>
+                  <SubmitBtn type="submit">Submit</SubmitBtn>
+                </Col>
+              </Row>
+            </Form>
+          </FormContainer>
 
-        <EmailContact>
-          <Row gutter={[24, 24]}>
-            <Col xs={24} md={12}>
-              <ContactContainer>
-                <a
-                  href="https://wa.me/919535316943"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div>
-                    <WhatsAppOutlined />
-                  </div>
-                  <div>WhatsApp:</div>
-                  <div>+91 9535316943</div>
-                </a>
-              </ContactContainer>
-            </Col>
-            <Col xs={24} md={12}>
-              <ContactContainer>
-                <a
-                  href="mailto:info@alhuzaifi.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div>
-                    <MailOutlined />
-                  </div>
-                  <div>Email:</div>
-                  <div>info@alhuzaifi.com</div>
-                </a>
-              </ContactContainer>
-            </Col>
-          </Row>
-        </EmailContact>
-      </ContainerWrapper>
+          <EmailContact>
+            <Row gutter={[24, 24]}>
+              <Col xs={24} md={12}>
+                <ContactContainer>
+                  <a
+                    href="https://wa.me/919535316943"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div>
+                      <WhatsAppOutlined />
+                    </div>
+                    <div>WhatsApp:</div>
+                    <div>+91 9535316943</div>
+                  </a>
+                </ContactContainer>
+              </Col>
+              <Col xs={24} md={12}>
+                <ContactContainer>
+                  <a
+                    href="mailto:info@alhuzaifi.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div>
+                      <MailOutlined />
+                    </div>
+                    <div>Email:</div>
+                    <div>info@alhuzaifi.com</div>
+                  </a>
+                </ContactContainer>
+              </Col>
+            </Row>
+          </EmailContact>
+        </Container>
+      </Wrapper>
     </>
   );
 };
 
 export default Contact;
 
-const ContainerWrapper = styled.div`
-  padding: 0 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-`;
-
-const Image = styled.img`
-  width: 100%;
+const Wrapper = styled.div`
+  padding: 40px 0;
 `;
 
 const FormContainer = styled.div`
-  text-align: center;
-  margin: auto;
-  padding: 20px 0;
-  max-width: 700px;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 550px;
   width: 100%;
-
-  ${mq("sm")} {
-    padding: 30px 0;
-  }
-
-  ${mq("md")} {
-    padding: 40px 0;
-  }
-
-  h3 {
-    font-size: 18px;
-    color: #004353;
-    font-weight: 600;
-
-    ${mq("sm")} {
-      font-size: 24px;
-    }
-
-    ${mq("md")} {
-      font-size: 32px;
-    }
-  }
+  margin: 0 auto;
+  border: 1px solid ${(props) => props.theme.colors.colorPrimary};
 `;
 
-const StyledFormGroup = styled(Form.Item)`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-  gap: 12px;
-`;
+const SubmitBtn = styled.button`
+  padding: 6px 24px;
+  margin: 24px 0px;
+  border: 1px solid ${(props) => props.theme.colors.colorPrimary};
+  color: ${(props) => props.theme.colors.colorPrimary};
+  background-color: #ffffff;
+  border-radius: 8px;
+  transition: all ease-in 0.4s;
 
-const LabelField = styled.div`
-  max-width: 80px;
-  width: 100%;
-`;
-
-const InputField = styled.div`
-  width: 100%;
+  &:hover,
+  &:focus {
+    background-color: ${(props) => props.theme.colors.colorPrimary};
+    color: #fff;
+    border-color: ${(props) => props.theme.colors.colorPrimary};
+  }
 `;
 
 const EmailContact = styled.div`

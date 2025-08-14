@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Form, Input, Button } from "antd";
+import { Form, Input } from "antd";
 import Container from "./ui/container";
 
 export const GetInTouch = () => {
@@ -46,9 +46,7 @@ export const GetInTouch = () => {
               </Form.Item>
 
               <ButtonWrapper>
-                <StyledButton htmlType="submit" type="default">
-                  Submit
-                </StyledButton>
+                <StyledButton type="submit">Submit</StyledButton>
               </ButtonWrapper>
             </Form>
           </FormContainer>
@@ -126,7 +124,7 @@ const StyledInput = styled(Input)`
   }
 `;
 
-const StyledButton = styled(Button)`
+const StyledButton = styled.button`
   padding: 8px 28px;
   border-radius: 8px;
   font-weight: 600;
@@ -144,7 +142,7 @@ const StyledButton = styled(Button)`
   }
 
   @media (min-width: 768px) {
-    padding: 10px 36px;
+    padding: 6px 36px;
     font-size: 18px;
   }
 `;
