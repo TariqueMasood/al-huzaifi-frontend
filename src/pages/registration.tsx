@@ -1,13 +1,12 @@
 import RegistrationForm from "../components/registration-form";
 import bgImg from "../../src/images/regustration-bg-img2.jpg";
 import styled from "styled-components";
+import HeroSection from "../components/hero-section";
 
 const Registration = () => {
   return (
     <Wrapper>
-      <div>
-        <Image src={bgImg} alt="pic"></Image>
-      </div>
+      <HeroSection image={bgImg} alt="Registraion Page Image" />
       <RegistrationForm />
     </Wrapper>
   );
@@ -15,8 +14,6 @@ const Registration = () => {
 
 export default Registration;
 
-const Wrapper = styled.div``;
-
-const Image = styled.img`
-  width: 100%;
+const Wrapper = styled.div`
+  padding: 40px 0;
 `;
