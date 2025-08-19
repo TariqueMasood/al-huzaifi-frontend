@@ -10,24 +10,24 @@ import { genderOptions } from "../constants/registration";
 const { Option } = Select;
 
 const descriptionSections = [
-  {
-    heading: "Darul Ifta Question Submission Form",
-    content: (
-      <>
-        <p>
-          The Darul-Ifta at Al-Huzaifi Academy serves as a beacon of Islamic
-          jurisprudence, offering trusted and reliable religious verdicts
-          (fatwas) to Muslims around the world. Our mission is to provide clear
-          and authentic guidance on Islamic rulings, ensuring that individuals,
-          families, and communities can navigate their lives in accordance with
-          the teachings of Islam in a modern context. Whether addressing
-          traditional queries or contemporary issues, Darul-Ifta is committed to
-          offering scholarly advice grounded in the Quran, Sunnah, and the
-          established schools of Islamic jurisprudence.
-        </p>
-      </>
-    ),
-  },
+  // {
+  //   heading: "Darul Ifta Question Submission Form",
+  //   content: (
+  //     <>
+  //       <p>
+  //         The Darul-Ifta at Al-Huzaifi Academy serves as a beacon of Islamic
+  //         jurisprudence, offering trusted and reliable religious verdicts
+  //         (fatwas) to Muslims around the world. Our mission is to provide clear
+  //         and authentic guidance on Islamic rulings, ensuring that individuals,
+  //         families, and communities can navigate their lives in accordance with
+  //         the teachings of Islam in a modern context. Whether addressing
+  //         traditional queries or contemporary issues, Darul-Ifta is committed to
+  //         offering scholarly advice grounded in the Quran, Sunnah, and the
+  //         established schools of Islamic jurisprudence.
+  //       </p>
+  //     </>
+  //   ),
+  // },
   {
     heading: "Services We Offer",
     content: (
@@ -128,6 +128,19 @@ export const DarulIftaPage = () => {
         />
         <Container>
           <CourseContainer>
+            <IftaDescreption>
+              The Darul-Ifta at Al-Huzaifi Academy serves as a beacon of Islamic
+              jurisprudence, offering trusted and reliable religious verdicts
+              (fatwas) to Muslims around the world. Our mission is to provide
+              clear and authentic guidance on Islamic rulings, ensuring that
+              individuals, families, and communities can navigate their lives in
+              accordance with the teachings of Islam in a modern context.
+              Whether addressing traditional queries or contemporary issues,
+              Darul-Ifta is committed to offering scholarly advice grounded in
+              the Quran, Sunnah, and the established schools of Islamic
+              jurisprudence.
+            </IftaDescreption>
+
             <CourseDescriptionSection sections={descriptionSections} />
           </CourseContainer>
           <FormContainer>
@@ -293,6 +306,13 @@ const SubmitBtn = styled.button`
 
 const CourseContainer = styled.div`
   margin-bottom: 30px;
+`;
+
+const IftaDescreption = styled.p`
+  padding: 28px 0px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: ${({ theme }) => theme.colors.colorPrimaryText};
 `;
 
 const FormContainer = styled.div`
