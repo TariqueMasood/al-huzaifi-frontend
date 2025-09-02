@@ -64,4 +64,7 @@ const StyledContent = styled(Paragraph)`
   strong {
     color: ${({ theme }) => theme.colors.colorSecondary};
   }
+  a {
+    color: ${({ theme }) => theme.colors.colorSecondary};
+  }
 `;

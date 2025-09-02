@@ -340,20 +340,20 @@ export const getMenuItems = (isMobile: boolean) => [
   },
   {
     label: !isMobile ? (
-      "Darul Iftah"
+      "Darul Ifta"
     ) : (
       <span>
-        Darul Iftah <DownOutlined style={{ fontSize: 10, marginLeft: 4 }} />
+        Darul Ifta <DownOutlined style={{ fontSize: 10, marginLeft: 4 }} />
       </span>
     ),
-    key: "darul iftah",
+    key: "darul ifta",
     children: [
       {
-        label: <Link to="/darul-ifta">Ask Darul Iftah</Link>,
+        label: <Link to="/darul-ifta">Ask Darul Ifta</Link>,
         key: "ask darul ifta",
       },
       {
-        label: <Link to="/ifta-course">Iftah Course</Link>,
+        label: <Link to="/ifta-course">Ifta Course</Link>,
         key: "ifta course",
       },
     ],

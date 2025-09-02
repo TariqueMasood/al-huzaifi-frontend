@@ -1,37 +1,33 @@
 import styled from "styled-components";
-import { mq } from "../styles/breakpoints";
 import bgImage from "../../src/images/faculty-of-alimiyat-2.png";
 import { Link } from "react-router-dom";
+import HeroSection from "../components/hero-section";
+import Container from "../components/ui/container";
+import CourseDescriptionSection from "../components/course-description-section";
 
-export const FacultyOfAlimiyatPage = () => {
-  return (
-    <>
-      <div>
-        <Image src={bgImage} alt="pic"></Image>
-      </div>
-      <Wrapper className="container">
-        <SubTitle>Overview:</SubTitle>
-        <Content>
-          The Faculty of Alimiyat at <BoldText>Al-Huzaifi Academy</BoldText> is
+const descriptionSections = [
+  {
+    heading: "Overview",
+    content: (
+      <>
+        <p>
+          The Faculty of Alimiyat at <strong>Al-Huzaifi Academy</strong> is
           dedicated to the advanced study of Islamic sciences, aiming to produce
           knowledgeable and well-rounded scholars (Ulama) who can lead and serve
           their communities with wisdom and integrity. Recognizing the critical
           role that scholars play in preserving and conveying Islamic knowledge,
           our faculty offers rigorous and comprehensive programs that cover
           various aspects of Islamic theology, law, and spirituality.
-        </Content>
-        <Space />
-        <Content>
+        </p>
+        <p>
           Understanding the diverse needs and preferences of our students, we
           provide two distinct methods of Alimiyat studies:
-        </Content>
-
-        <Space />
+        </p>
         <ol>
           <Link to="/dars-e-nizami">
-            <List>Alimiyat with Darse Nizami Curriculum</List>
+            <li>Alimiyat with Darse Nizami Curriculum</li>
           </Link>
-          <Content>
+          <p>
             - This traditional method follows the Darse Nizami curriculum, which
             has been the cornerstone of Islamic education in South Asia for
             centuries. It includes in-depth studies of classical Islamic texts,
@@ -41,11 +37,11 @@ export const FacultyOfAlimiyatPage = () => {
             Nizami curriculum is renowned for its thoroughness and emphasis on
             traditional scholarship, preparing students to become esteemed Ulama
             with a profound understanding of Islamic sciences.
-          </Content>
+          </p>
           <Link to="/modern-curriculum">
-            <List> Alimiyat with Modern Curriculum</List>
+            <li> Alimiyat with Modern Curriculum</li>
           </Link>
-          <Content>
+          <p>
             - This contemporary approach integrates modern educational
             methodologies with traditional Islamic studies and is structured
             similarly to a university's undergraduate program. It is designed to
@@ -57,9 +53,8 @@ export const FacultyOfAlimiyatPage = () => {
             students receive a well-rounded education that equips them with both
             classical knowledge and the skills necessary to address contemporary
             challenges.
-          </Content>
-          <Space />
-          <Content>
+          </p>
+          <p>
             Our Faculty of Alimiyat is committed to providing an enriching and
             transformative educational experience. Whether following the
             traditional Darse Nizami curriculum or the modern curriculum, our
@@ -69,70 +64,27 @@ export const FacultyOfAlimiyatPage = () => {
             Through our holistic approach to Islamic education, we aspire to
             cultivate a new generation of scholars who embody the principles of
             Islam and contribute positively to society.
-          </Content>
+          </p>
         </ol>
+      </>
+    ),
+  },
+];
+
+export const FacultyOfAlimiyatPage = () => {
+  return (
+    <>
+      <HeroSection image={bgImage} alt="Faculty of Alimiyat Image" />
+
+      <Wrapper>
+        <Container>
+          <CourseDescriptionSection sections={descriptionSections} />
+        </Container>
       </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div`
-  padding: 30px;
-
-  ${mq("sm")} {
-    padding: 40px;
-  }
-`;
-
-const Image = styled.img`
-  width: 100%;
-`;
-
-const SubTitle = styled.h5`
-  font-weight: 600;
-  padding: 5px 0px;
-  font-size: 18px;
-  color: #137c8f;
-
-  ${mq("sm")} {
-    font-weight: 600;
-    padding: 10px 0px;
-    font-size: 20px;
-    color: #137c8f;
-  }
-`;
-
-const BoldText = styled.span`
-  font-weight: 600;
-  color: #137c8f;
-`;
-
-const Content = styled.p`
-  font-size: 16px;
-  line-height: 26px;
-  letter-spacing: 0.2px;
-
-  ${mq("sm")} {
-    font-size: 18px;
-    letter-spacing: 0.5px;
-    line-height: 32px;
-  }
-`;
-
-const Space = styled.div`
-  margin: 20px 0px;
-`;
-
-const List = styled.li`
-  font-size: 16px;
-  padding: 7px 0px;
-  font-weight: 600;
-  color: #137c8f;
-
-  ${mq("sm")} {
-    font-size: 18px;
-    padding: 7px 0px;
-    font-weight: 600;
-    color: #137c8f;
-  }
+  padding: 40px 0;
 `;
