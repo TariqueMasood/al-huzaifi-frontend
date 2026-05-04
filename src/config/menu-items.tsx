@@ -141,7 +141,7 @@ export const getMenuItems = (isMobile: boolean) => [
         children: [
           {
             label: (
-              <Link to="/arabic-language-course">Arabic Foundation Course</Link>
+              <Link to="/arabic-language-course">Arabic Mastery Program</Link>
             ),
             key: "arabic foundation course",
           },
