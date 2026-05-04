@@ -6,54 +6,57 @@ import {
 import styled from "styled-components";
 import { Tooltip } from "antd";
 import { mq } from "../styles/breakpoints";
+import Container from "./ui/container";
 
 export const TopHeader = () => {
   return (
     <Wrapper>
-      <ContentWrapper>
-        <SocialIcons>
-          <Tooltip title="Instagram">
-            <a
-              href="https://www.instagram.com/alhuzaifiacademy"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <InstagramOutlined />
-            </a>
-          </Tooltip>
-          <Tooltip title="Facebook">
-            <a
-              href="https://www.facebook.com/alhuzaifiacademy"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <FacebookFilled />
-            </a>
-          </Tooltip>
-          <Tooltip title="YouTube">
-            <a
-              href="https://www.youtube.com/@alhuzaifiacademy"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
-              <YoutubeFilled />
-            </a>
-          </Tooltip>
-        </SocialIcons>
+      <Container>
+        <ContentWrapper>
+          <SocialIcons>
+            <Tooltip title="Instagram">
+              <a
+                href="https://www.instagram.com/alhuzaifiacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <InstagramOutlined />
+              </a>
+            </Tooltip>
+            <Tooltip title="Facebook">
+              <a
+                href="https://www.facebook.com/alhuzaifiacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FacebookFilled />
+              </a>
+            </Tooltip>
+            <Tooltip title="YouTube">
+              <a
+                href="https://www.youtube.com/@alhuzaifiacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+              >
+                <YoutubeFilled />
+              </a>
+            </Tooltip>
+          </SocialIcons>
 
-        <UserActions>
-          <ContactItem>
-            <a href="mailto:info@alhuzaifi.com">info@alhuzaifi.com</a>
-          </ContactItem>
-          <Separator>|</Separator>
-          <ContactItem>
-            <a href="tel:+919535316943">+91 9535316943</a>
-          </ContactItem>
-        </UserActions>
-      </ContentWrapper>
+          <UserActions>
+            <ContactItem>
+              <a href="mailto:info@alhuzaifi.com">info@alhuzaifi.com</a>
+            </ContactItem>
+            <Separator>|</Separator>
+            <ContactItem>
+              <a href="tel:+919535316943">+91 9535316943</a>
+            </ContactItem>
+          </UserActions>
+        </ContentWrapper>
+      </Container>
     </Wrapper>
   );
 };
@@ -67,13 +70,9 @@ const Wrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
 const SocialIcons = styled.div`

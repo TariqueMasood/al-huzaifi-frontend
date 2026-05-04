@@ -14,6 +14,4 @@ const Registration = () => {
 
 export default Registration;
 
-const Wrapper = styled.div`
-  padding: 40px 0;
-`;
+const Wrapper = styled.div``;
