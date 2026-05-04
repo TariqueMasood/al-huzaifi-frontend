@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import { Spin, Alert, Card, Button, Row, Col, Typography, Avatar } from "antd";
+import { Spin, Alert, Card, Button, Row, Col } from "antd";
 import styled from "styled-components";
 import { useRegistrationDetails } from "../../hooks/use-queries";
 import { scholarshipTypeLabels } from "../../components/registration-form";
@@ -8,13 +8,11 @@ import { parsePhoneNumberFromString } from "libphonenumber-js";
 import { DownloadOutlined, PrinterOutlined } from "@ant-design/icons";
 import html2pdf from "html2pdf.js";
 
-const { Title } = Typography;
-
 export function formatPhoneWithCountryCode(phone: string): string {
   if (!phone) return "";
   try {
     const parsed = parsePhoneNumberFromString(
-      "+" + phone.replace(/[^0-9]/g, "")
+      "+" + phone.replace(/[^0-9]/g, ""),
     );
     if (parsed && parsed.isValid()) {
       return `+${parsed.countryCallingCode} ${parsed.nationalNumber}`;
@@ -96,7 +94,7 @@ const RegistrationDetails: React.FC = () => {
           <Row gutter={[16, 16]}>
             {renderItem(
               "Name",
-              `${data.firstName || ""} ${data.lastName || ""}`.trim()
+              `${data.firstName || ""} ${data.lastName || ""}`.trim(),
             )}
             {renderItem("Age", data.age)}
             {renderItem("Gender", data.gender)}
@@ -115,23 +113,23 @@ const RegistrationDetails: React.FC = () => {
               "Known Languages",
               Array.isArray(data.knownLanguage)
                 ? data.knownLanguage.join(", ")
-                : data.knownLanguage
+                : data.knownLanguage,
             )}
             {renderItem(
               "Scholarship Type",
               data.scholarshipType
                 ? scholarshipTypeLabels[data.scholarshipType] ||
                     data.scholarshipType
-                : "-"
+                : "-",
             )}
             {renderItem("Scholarship Reason", data.scholarshipReason)}
             {renderItem(
               "Created At",
-              new Date(data.createdAt).toLocaleString()
+              new Date(data.createdAt).toLocaleString(),
             )}
             {renderItem(
               "Updated At",
-              new Date(data.updatedAt).toLocaleString()
+              new Date(data.updatedAt).toLocaleString(),
             )}
           </Row>
         </PrintSection>

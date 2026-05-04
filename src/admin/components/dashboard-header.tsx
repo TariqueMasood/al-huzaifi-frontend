@@ -1,5 +1,5 @@
 // src/components/common/DashboardHeader.tsx
-import { Breadcrumb, Button, Layout, theme } from "antd";
+import { Breadcrumb, Button, Layout } from "antd";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
@@ -8,9 +8,6 @@ const { Header } = Layout;
 const DashboardHeader: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const {
-    token: { colorBgContainer },
-  } = theme.useToken();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
