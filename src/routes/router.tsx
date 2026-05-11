@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layouts/layout";
 import Home from "../pages/home";
-// import Registration from "../pages/registration";
 import Contact from "../pages/contact";
 import OurTeamPage from "../pages/our-team";
 import { OurMissionPage } from "../pages/our-mission";
