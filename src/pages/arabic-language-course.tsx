@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bgImg from "../../src/images/arabic-foundation-course.png";
+import bgImg from "../../src/images/arabic-mastery-banner.png";
 import { Col, Row } from "antd";
 import HeroSection from "../components/hero-section";
 import PageHeader from "../components/page-header";
@@ -12,7 +12,7 @@ const descriptionSections = [
     heading: "Course Objective",
     content: (
       <p>
-        The Foundation Arabic Course is designed to provide students with a
+        The Arabic Mastery Program is designed to provide students with a
         comprehensive introduction to the Arabic language, covering grammar from
         A1 to C2, alongside reading, writing, listening, and speaking. This
         course is ideal for beginners and intermediate learners who wish to
@@ -28,7 +28,7 @@ const descriptionSections = [
     content: (
       <>
         <p>
-          The Foundation Arabic Course consists of six levels, each requiring 80
+          The Arabic Mastery Program consists of six levels, each requiring 80
           hours of study. The course is structured to progressively develop
           proficiency in all language skills, including a thorough understanding
           of Arabic grammar from beginner to advanced levels.
@@ -97,7 +97,7 @@ const descriptionSections = [
     heading: "Learning Outcomes",
     content: (
       <>
-        <p>By the end of the Foundation Arabic Course, students will:</p>
+        <p>By the end of the Arabic Mastery Program, students will:</p>
         <ol>
           <li>
             <strong>Master Arabic Grammar (Nahw and Sarf): </strong>
@@ -140,7 +140,7 @@ const descriptionSections = [
     heading: "Who Should Enroll",
     content: (
       <>
-        <p>The Foundation Arabic Course is ideal for:</p>
+        <p>The Arabic Mastery Program is ideal for:</p>
         <h5>- Beginners: </h5>
         <p>
           Individuals who are new to Arabic and want to start learning the
@@ -187,7 +187,7 @@ export const ArabicLaguageCoursePage = () => {
       <Wrapper>
         <Container>
           <PageHeader
-            title="Foundation Arabic Course"
+            title="Arabic Mastery Program"
             subtitle="Al-Huzaifi Academy"
           />
           <Row gutter={24}>
@@ -196,7 +196,7 @@ export const ArabicLaguageCoursePage = () => {
             </Col>
             <Col xs={24} sm={12} md={8}>
               <CourseDetailsCard
-                courseName="Foundation Arabic Course"
+                courseName="Arabic Mastery Program"
                 courseCode="ARB01"
                 learningMode="Online"
                 language="English, Arabic, Urdu"
